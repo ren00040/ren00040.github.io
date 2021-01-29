@@ -1,0 +1,46 @@
+nav{
+    background-color: black;
+    height: 171px;
+    line-height: 171px;
+}
+
+.logo{
+    float: left;
+}
+
+#logo-img{
+    display: inline-block;
+    padding-left: 50px;
+    vertical-align: middle;
+}
+
+.navbarul{
+    list-style: none;
+    overflow: hidden;
+}
+
+.navbarli{
+    display: inline-block;
+}
+
+.navbarbutton{
+    width: 120px;
+    line-height: 50px;
+    text-align: center;
+    display: block;
+    text-decoration:none;
+}
+.navbarbutton:link, .navbarbutton:visited{
+    color:#c68d00;
+}
+
+.navbarbutton:hover, .navbarbutton:active{
+    color: black;
+    background-color: #c68d00;
+}
+
+.searchbar{
+    font-size: 20px;
+    padding-right: 50px;
+    float:right;
+}
