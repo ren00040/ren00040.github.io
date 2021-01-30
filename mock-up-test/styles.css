@@ -1,7 +1,8 @@
 nav{
     background-color: black;
     height: 171px;
-    line-height: 171px;
+    line-height: 171px; 
+    min-width:1366px; /* make the navigation bar is not changed by the page size */
 }
 
 .logo{
@@ -43,4 +44,35 @@ nav{
     font-size: 20px;
     padding-right: 50px;
     float:right;
+}
+
+#welcome{
+    height:800px;
+    line-height: 800px;
+    background-image: url("images/main-banner.jpg");
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    text-align: center;
+}
+
+#welcome-square{
+    display: inline-block;
+    vertical-align: middle;
+    height: 500px;
+    width: 1600px;
+    background-color: black;
+    opacity: 0.4;
+    text-align: left;
+}
+
+#welcome-text{
+    display: inline;
+    color: aliceblue;
+    font-size: 100px;
+}
+
+#welcome-text-small{
+    position: absolute;
+    color: black;
 }
