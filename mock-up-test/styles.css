@@ -25,11 +25,13 @@ nav{
 }
 
 .navbarbutton{
-    width: 120px;
-    line-height: 50px;
+    width: 130px;
+    line-height: 80px;
     text-align: center;
     display: block;
     text-decoration:none;
+    font-weight: bold;
+    font-size: 25px;
 }
 .navbarbutton:link, .navbarbutton:visited{
     color:#c68d00;
@@ -48,7 +50,6 @@ nav{
 
 #welcome{
     height:800px;
-    line-height: 800px;
     background-image: url("images/main-banner.jpg");
     background-repeat: no-repeat;
     background-attachment:fixed;
@@ -57,22 +58,47 @@ nav{
 }
 
 #welcome-square{
+    margin-top: 100px;
     display: inline-block;
-    vertical-align: middle;
     height: 500px;
-    width: 1600px;
-    background-color: black;
-    opacity: 0.4;
+    /* line-height: 300px; */
+    width: 1400px;
+    background-color: rgba(0,0,0, 0.6);
     text-align: left;
+    min-width: 1400;
 }
 
 #welcome-text{
+    position: relative;
     display: inline;
     color: aliceblue;
     font-size: 100px;
+    vertical-align: middle;
+    padding-left: 20px;
 }
 
 #welcome-text-small{
     position: absolute;
-    color: black;
+    color:aliceblue;
+    width: 1360px;
+    padding: 100px 20px 0px 20px;
 }
+
+#connect-with-us{
+    position: relative;
+    width: 200px;
+    height: 80px;
+    line-height: 80px;
+    background-color: #c68d00;
+    margin: 250px 0px 0px 20px;
+    text-align: center;
+}
+
+.connect-with-us{
+    color: #000;
+    font-weight: bold;
+}
+
+
+
+
