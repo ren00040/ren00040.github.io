@@ -1,16 +1,17 @@
 <!--
  * @Author: Ke Ren
  * @Date: 2021-01-27 00:15:50
- * @LastEditTime: 2021-02-02 00:24:19
+ * @LastEditTime: 2021-02-03 00:36:36
  * @LastEditors: Ke Ren
  * @Description: MTM6130-21W-010 Week-03 Assignment
- * @FilePath: /html-assignment/index.html
+ * @FilePath: /mtm6130-21w-010/html-assignment/index.html
 -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ke Ren</title>
 </head>
 
@@ -19,24 +20,40 @@
     <header>
         <h1>Ke Ren</h1>
         <nav>
-            <p>About Me</p>
-            <p>Contact</p>
+            <a href="index.html">Home</a>
+            <a href="notes.html">Notes</a>
         </nav>
     </header>
     
     <!--********** Main **********-->
     <main>
+        <div>
+            <a href="#about-me">About Me</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#contact">Contact</a>
+        </div>
         <!--********** About Me **********-->
         <article>
-            <h2>About Me</h2>
+            <h2 id="about-me">About Me</h2>
             <p>Hi, this is Ke Ren from China. I'm studying <strong>Interactive Media Design</strong> in Alqonquin college. I am fascinated by the history and culture of each city and have worked in this field for several years. I hope that in the future, I will bring the history and culture of a country to people's life by digital means. </p>
             <p>I used to be a 3D modeler for over 15 years, and direct and build art teams to create <em>emotive, immersive and dynamic</em> 3D content for <abbr title="Virtual Reality"><strong>VR</strong></abbr> and <abbr title="Building Information Modeling"><strong>BIM</strong></abbr>. I like drawing, programming and soccer. I expect to improve myself and make more friends in Algonquin. Welcome to my website!</p>
+            <img src="images/my-photo.JPG" alt="my photo" title="My photo" width="150">
             <blockquote>Your purpose in life is to find your purpose and give your whole heart and soul to it. -<cite>Buddha</cite></blockquote>
-            <hr>
         </article>
+
+        <!--********** Hobbies **********-->
+        <article>
+            <h2 id="hobbies">Hobbies</h2>
+            <ul>
+                <li>Soccer</li>
+                <li>Drawing</li>
+                <li>Movie</li>
+            </ul>
+        </article>
+
         <!--********** Contact **********-->
         <article>
-            <h2>Contact</h2>
+            <h2 id="contact">Contact</h2>
             <address>
                 Written by <a href="mailto:ren00040@algonquinlive.com">Ke Ren</a>.<br> 
                 1385 Woodroffe Ave, Nepean, ON K2G 1V8
