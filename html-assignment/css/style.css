@@ -1,0 +1,42 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+header, footer{
+    background-color: chocolate;
+}
+
+.site-title{
+    font-size: 40px;
+    text-align: center;
+    color:aliceblue;
+}
+
+#my-image{
+    box-shadow: 0px 0px 2px 1px black;
+    width: 150px;
+}
+
+#hobbies+ul{
+    list-style: square;
+}
+
+#hobbies+ul>li:nth-child(odd){
+    background-color: peru;
+}
+
+nav a{
+    text-decoration: none;
+    background-color: lightslategray;
+    border: 1px solid white;
+    color: white;
+}
+
+nav a:hover,
+nav a:focus{
+    background-color: white;
+    color: peru;
+    text-decoration: underline;
+    box-shadow: none;
+}
