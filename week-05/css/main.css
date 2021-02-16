@@ -1,5 +1,6 @@
+/* important Cascade */
 body{
-color:darkslateblue;
+color:darkslateblue !important;
 font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -92,4 +93,26 @@ aside ul li:nth-child(odd){
 
 section ol li:last-child{
     font-weight: bold;;
+}
+
+/* CSS Specificity */
+
+/* Specificity 0001 */
+footer{
+    background-color: #d5836c;
+    padding: 20px;
+}
+
+/* Specificity 0002 */
+body footer{
+    background-color: rgb(0, 0, 0);
+}
+
+/* Specificity 0010 */
+.site-footer{
+    background-color: cornflowerblue;
+}
+
+footer.site-footer{
+    background-color: rgba(0, 0, 0, .2);
 }
