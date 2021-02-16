@@ -1,0 +1,124 @@
+/* important Cascade */
+body{
+color:darkslateblue !important;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    background-color: peru;
+}
+
+h1{
+    color: white;
+}
+
+p{
+    background-color: lightblue;
+}
+
+h1,h2,h3,h4{
+    text-decoration: underline;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul a{
+    color: darkslategray;
+    text-decoration: none;
+}
+
+.orange-link{
+    background-color: darkslategray;
+    color: orange;
+    text-decoration: none;
+}
+
+#treatofweek{
+    background-color: orange;
+}
+
+.large-text{
+    font-size: 20px;
+}
+
+/* Child selector or Direct Child selector */
+article > p{
+    /* Typography Properties */
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-transform: lowercase;
+    text-align: center;
+    word-spacing: 3px;
+}
+
+/* Adjacent sibling selector */
+h3 + ul{
+    /* thinkness style color */
+    border: 1px solid black;
+}
+
+a[href="#treatofweek"]{
+    font-weight: bold;
+}
+
+[title *= "Executive"]{
+    background-color: yellow;
+}
+
+/* using Pseudo Classes */
+
+/* LoVe HAte */
+nav ul a,
+nav ul a:link,
+nav ul a:visited{
+    background-color: orange;
+    box-shadow: -2px 2px 4px 2px black;
+}
+
+nav ul a:hover,
+nav ul a:focus{
+    text-decoration: underline;
+    color: white;
+}
+
+nav ul a:active{
+    box-shadow: 0 0 4px 2px black;
+}
+
+/* Position Related Presudo Class Selector */
+aside ul li:first-child{
+    font-weight: bold;
+}
+
+aside ul li:nth-child(odd){
+    background-color: orange;
+}
+
+section ol li:last-child{
+    font-weight: bold;;
+}
+
+/* CSS Specificity */
+
+/* Specificity 0001 */
+footer{
+    background-color: #d5836c;
+    padding: 20px;
+}
+
+/* Specificity 0002 */
+body footer{
+    background-color: rgb(0, 0, 0);
+}
+
+/* Specificity 0010 */
+.site-footer{
+    background-color: cornflowerblue;
+}
+
+footer.site-footer{
+    background-color: rgba(0, 0, 0, .2);
+}
