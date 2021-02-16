@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-02-13 18:12:58
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-02-16 00:48:33
+ * @LastEditTime: 2021-02-16 01:10:21
  * @FilePath: /mtm6130-21w-010/midterm/index.html
 -->
 <!DOCTYPE html>
@@ -61,26 +61,26 @@
                 action="https://formspree.io/f/xwkwjoao"
                 method="POST">
                     <label for="contact-name">Your Name</label><br>
-                    <input type="text" name="name" id="contact-name" placeholder="Your name">
+                    <input type="text" name="name" id="contact-name" placeholder="Your name" required>
 
                     <label for="contact-email">Your Email</label><br>
-                    <input type="text" name="emil" id="contact-email" placeholder="Your Email">
+                    <input type="text" name="emil" id="contact-email" placeholder="Your Email" required>
 
                     <label for="contact-message">Your Message</label><br>
-                    <textarea name="message" id="contact-message"></textarea>    
+                    <textarea name="message" id="contact-message" required></textarea>    
                     
                     <p>Would you like to visit the starfish?</p>
                     
                     <label for="yes">Yes</label>
-                    <input type="radio" name="yes" id="yes" value="yes">
+                    <input type="radio" name="like" id="yes" value="yes" required>
 
                     <label for="no">No</label>
-                    <input type="radio" name="no" id="no" value="no">
+                    <input type="radio" name="like" id="no" value="no">
                     
                     <label for="maybe">Maybe</label>
-                    <input type="radio" name="maybe" id="maybe" value="maybe"><br>
+                    <input type="radio" name="like" id="maybe" value="maybe"><br>
                     
-                    <input type="button" value="Send">
+                    <input type="submit" value="Send">
                 </form>
             </div>
         </article>
