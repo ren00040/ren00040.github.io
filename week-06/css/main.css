@@ -1,52 +1,74 @@
-/* important Cascade */
-body{
-color:darkslateblue !important;
-font-family: Arial, Helvetica, sans-serif;
+/* ---------------------------------------------
+            Customs Styles
+--------------------------------------------- */
+
+html{
+    font-size: 16px;
+
 }
 
-header{
+/* important Cascade */
+body {
+    color: darkslateblue !important;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../images/white_brick_wall.png);
+}
+
+header {
     background-color: peru;
 }
 
-h1{
+h1 {
     color: white;
 }
 
-p{
+p {
     background-color: lightblue;
 }
 
-h1,h2,h3,h4{
+h1,
+h2,
+h3,
+h4 {
     text-decoration: underline;
 }
 
-nav ul{
+nav ul {
     list-style: none;
 }
 
-nav ul a{
+nav ul a {
     color: darkslategray;
     text-decoration: none;
+    /* rem is root element's(html tag) font size */
+    font-size: 1.5rem;
 }
 
-.orange-link{
+.orange-link {
     background-color: darkslategray;
     color: orange;
     text-decoration: none;
 }
 
-#treatofweek{
-    background-color: orange;
+#treatofweek {
+    /* background-color: orange; */
+    background: darkslategray url(../images/bread.jpg) no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    font-size: 1.5rem;
+    /* 1.5rem = 16px *1.5 = 24px */
+    padding: 1em;
+    /* 1em = 1 * 1.5 rem = 24px --------> em is for element's font size */
 }
 
-.large-text{
-    font-size: 20px;
+.large-text {
+    font-size: 1.25rem;
 }
 
 /* Child selector or Direct Child selector */
-article > p{
+article>p {
     /* Typography Properties */
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
     line-height: 1.5;
     text-transform: lowercase;
@@ -55,16 +77,16 @@ article > p{
 }
 
 /* Adjacent sibling selector */
-h3 + ul{
+h3+ul {
     /* thinkness style color */
     border: 1px solid black;
 }
 
-a[href="#treatofweek"]{
+a[href="#treatofweek"] {
     font-weight: bold;
 }
 
-[title *= "Executive"]{
+[title *="Executive"] {
     background-color: yellow;
 }
 
@@ -73,52 +95,53 @@ a[href="#treatofweek"]{
 /* LoVe HAte */
 nav ul a,
 nav ul a:link,
-nav ul a:visited{
+nav ul a:visited {
     background-color: orange;
     box-shadow: -2px 2px 4px 2px black;
 }
 
 nav ul a:hover,
-nav ul a:focus{
+nav ul a:focus {
     text-decoration: underline;
     color: white;
 }
 
-nav ul a:active{
+nav ul a:active {
     box-shadow: 0 0 4px 2px black;
 }
 
 /* Position Related Presudo Class Selector */
-aside ul li:first-child{
+aside ul li:first-child {
     font-weight: bold;
 }
 
-aside ul li:nth-child(odd){
+aside ul li:nth-child(odd) {
     background-color: orange;
 }
 
-section ol li:last-child{
-    font-weight: bold;;
+section ol li:last-child {
+    font-weight: bold;
+    ;
 }
 
 /* CSS Specificity */
 
 /* Specificity 0001 */
-footer{
+footer {
     background-color: #d5836c;
-    padding: 20px;
+    padding: 1.25em;
 }
 
 /* Specificity 0002 */
-body footer{
+body footer {
     background-color: rgb(0, 0, 0);
 }
 
 /* Specificity 0010 */
-.site-footer{
+.site-footer {
     background-color: cornflowerblue;
 }
 
-footer.site-footer{
+footer.site-footer {
     background-color: rgba(0, 0, 0, .2);
 }
