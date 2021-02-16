@@ -166,7 +166,7 @@ input[type="radio"]{
     width: auto;
 }
 
-input[value="send"]{
+input[value="Send"]{
     width: auto;
     text-transform: uppercase;
 }

@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-02-13 18:12:58
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-02-14 02:17:36
+ * @LastEditTime: 2021-02-16 00:48:33
  * @FilePath: /mtm6130-21w-010/midterm/index.html
 -->
 <!DOCTYPE html>
@@ -57,7 +57,9 @@
         <article>
             <h2>contact to learn more</h2>
             <div id="contact-form-border">
-                <div id="contact-form">
+                <form id="contact-form" 
+                action="https://formspree.io/f/xwkwjoao"
+                method="POST">
                     <label for="contact-name">Your Name</label><br>
                     <input type="text" name="name" id="contact-name" placeholder="Your name">
 
@@ -78,8 +80,8 @@
                     <label for="maybe">Maybe</label>
                     <input type="radio" name="maybe" id="maybe" value="maybe"><br>
                     
-                    <input type="button" value="send">
-                </div>
+                    <input type="button" value="Send">
+                </form>
             </div>
         </article>
     </main>
