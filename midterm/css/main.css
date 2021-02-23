@@ -1,9 +1,17 @@
+/*
+ * @Date: 2021-02-13 18:13:48
+ * @LastEditors: Ke Ren
+ * @LastEditTime: 2021-02-23 11:41:21
+ * @FilePath: /mtm6130-21w-010/midterm/css/main.css
+ */
+
+/* Reset CSS Style */
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
-/* Reset CSS Style */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -65,16 +73,10 @@ html{
 
 body{
     text-align: center;
-    margin: 0;
     background-color: #aad4cf;
     font-family:Arial, Helvetica, sans-serif;
     line-height: 1.5rem;
-}
-
-#container{
-    position:relative;
     margin:0 auto;
-    padding:0px;
     width:1024px;
 }
 
@@ -85,7 +87,8 @@ header{
 
 .header-background{
     height: 341px;
-    background: url(../images/lone-starfish-wide.jpg) no-repeat center;   
+    background: url(../images/lone-starfish-wide.jpg) no-repeat center center;
+    background-size: cover;   
 }
 
 h1{
@@ -96,20 +99,25 @@ h1{
 }
 
 nav{
-    display: inline-block;
-    line-height: 3rem;
-    font-size: 1.6rem;
+    line-height: 2rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
-    margin-top: 5px;
 }
 
-nav a{
-    width: 340px;
-    float: left;
+nav ul{
+    list-style: none;
+    /* Unknow: why need align again? */
+    margin: 6px auto 0 auto;
+}
+
+nav ul li{
+    display: inline-block;
+    width: 33%;
+    margin: -4px;
 }
 
 /* add lines between buttons */
-nav a:nth-child(even){
+nav li:nth-child(even){
     border-right: 1px black solid;
     border-left: 1px black solid;
 }
@@ -132,7 +140,7 @@ main{
 }
 
 article{
-    padding: 0px 20px 0px 15px;
+    margin: 0px 20px 0px 15px;
 }
 
 h2{
@@ -154,11 +162,12 @@ ul{
 }
 
 #contact-form-border{
-    margin: 10px 10px 0px 10px;
     border: 1px black solid;
+    width: 100%;
 }
 
 #contact-form{
+    position: relative;
     margin: 10px 20px 10px 10px;
     line-height: 1.5rem;
 }
@@ -188,7 +197,8 @@ footer{
 
 #copyright{
     text-align: right;
+    font-weight: bold;
     padding-top: 1.25em;
     padding-bottom: 1.25em;
-    margin-right: 1.25em;
+    margin-right: 3em;
 }
