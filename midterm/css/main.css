@@ -1,3 +1,10 @@
+/*
+ * @Date: 2021-02-14 12:20:32
+ * @LastEditors: Ke Ren
+ * @LastEditTime: 2021-02-24 00:27:32
+ * @FilePath: /mtm6130-21w-010/midterm/css/main.css
+ */
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -54,6 +61,7 @@ table {
 html{
     font-size: 16px;
     box-sizing: border-box;
+    background-color: #aad4cf;
 }
 
 /* Set default box-sizing */
@@ -66,21 +74,21 @@ html{
 body{
     text-align: center;
     margin: 0;
-    background-color: #aad4cf;
+    /* background-color: #aad4cf; */
     font-family:Arial, Helvetica, sans-serif;
     line-height: 1.5rem;
-}
-
-#container{
     position:relative;
     margin:0 auto;
     padding:0px;
-    width:1024px;
+    max-width:1024px;
+    min-width: 600px;
+    background-color: #d4e9e7;
 }
+
 
 header{
     text-align: center;
-    background-color:#d4e9e7;
+    /* background-color:#d4e9e7; */
 }
 
 .header-background{
@@ -96,20 +104,24 @@ h1{
 }
 
 nav{
-    display: inline-block;
     line-height: 3rem;
     font-size: 1.6rem;
     text-transform: uppercase;
-    margin-top: 5px;
 }
 
-nav a{
-    width: 340px;
-    float: left;
+nav ul{
+    list-style: none;
+    margin: 5px auto 0px auto;
+}
+
+nav ul li{
+    display:inline-block;
+    width: 31%;   
+    margin:auto;
 }
 
 /* add lines between buttons */
-nav a:nth-child(even){
+nav li:nth-child(even){
     border-right: 1px black solid;
     border-left: 1px black solid;
 }
@@ -128,7 +140,7 @@ nav a:focus{
 
 main{
     text-align: left;
-    background-color: #d4e9e7;
+    /* background-color: #d4e9e7; */
 }
 
 article{
@@ -154,7 +166,6 @@ ul{
 }
 
 #contact-form-border{
-    margin: 10px 10px 0px 10px;
     border: 1px black solid;
 }
 
@@ -190,5 +201,5 @@ footer{
     text-align: right;
     padding-top: 1.25em;
     padding-bottom: 1.25em;
-    margin-right: 1.25em;
+    margin-right: 2em;
 }
