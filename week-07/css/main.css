@@ -1,0 +1,202 @@
+/* ---------------------------------------------
+            Customs Styles
+--------------------------------------------- */
+
+html{
+    font-size: 16px;
+
+}
+
+/* important Cascade */
+body {
+    color: darkslateblue !important;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../images/white_brick_wall.png);
+    padding-top: 80px;
+}
+
+header {
+    background-color: peru;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    background-color: lightblue;
+}
+
+img{
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-decoration: underline;
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li{
+    display: inline-block;
+    width: 49%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+nav ul a {
+    display: block;
+    color: darkslategray;
+    text-decoration: none;
+    /* rem is root element's(html tag) font size */
+    font-size: 1.5rem;
+}
+
+.orange-link {
+    display: inline-block;
+    padding: 1.5em;
+    background-color: darkslategray;
+    color: orange;
+    text-decoration: none;
+    clear: both;
+}
+
+/* Float */
+article,
+aside{
+    width: 80%;
+    background-color: rgba(255,255,255,0.6);
+    border: 1px solid black;
+    padding: 1.5em;
+    box-sizing: border-box;
+    float: left;
+}
+
+aside{
+    width: 20%;
+}
+
+/* clearfix */
+.clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+#treatofweek {
+    position: relative;
+    /* background-color: orange; */
+    background: darkslategray url(../images/bread.jpg) no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    font-size: 1.5rem;
+    /* 1.5rem = 16px *1.5 = 24px */
+    padding: 1em 1em 3em 1em;
+    /* 1em = 1 * 1.5 rem = 24px --------> em is for element's font size */
+    width: 50%;
+}
+
+.large-text {
+    font-size: 1.25rem;
+}
+
+.orange-link.large-text{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* Child selector or Direct Child selector */
+article>p {
+    /* Typography Properties */
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5;
+    text-transform: lowercase;
+    text-align: center;
+    word-spacing: 3px;
+}
+
+/* Adjacent sibling selector */
+h3+ul {
+    /* thinkness style color */
+    border: 1px solid black;
+}
+
+a[href="#treatofweek"] {
+    font-weight: bold;
+}
+
+[title *="Executive"] {
+    background-color: yellow;
+}
+
+/* using Pseudo Classes */
+
+/* LoVe HAte */
+nav ul a,
+nav ul a:link,
+nav ul a:visited {
+    background-color: orange;
+    box-shadow: -2px 2px 4px 2px black;
+}
+
+nav ul a:hover,
+nav ul a:focus {
+    text-decoration: underline;
+    color: white;
+}
+
+nav ul a:active {
+    box-shadow: 0 0 4px 2px black;
+}
+
+/* Position Related Presudo Class Selector */
+aside ul li:first-child {
+    font-weight: bold;
+}
+
+aside ul li:nth-child(odd) {
+    background-color: orange;
+}
+
+section ol li:last-child {
+    font-weight: bold;
+    ;
+}
+
+/* CSS Specificity */
+
+/* Specificity 0001 */
+footer {
+    background-color: #d5836c;
+    padding: 1.25em;
+}
+
+/* Specificity 0002 */
+body footer {
+    background-color: rgb(0, 0, 0);
+}
+
+/* Specificity 0010 */
+.site-footer {
+    background-color: cornflowerblue;
+}
+
+footer.site-footer {
+    background-color: rgba(0, 0, 0, .2);
+}

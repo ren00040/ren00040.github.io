@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-02-14 12:20:32
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-02-24 00:27:32
+ * @LastEditTime: 2021-02-24 00:43:24
  * @FilePath: /mtm6130-21w-010/midterm/css/main.css
  */
 
@@ -10,7 +10,6 @@
    License: none (public domain)
 */
 
-/* Reset CSS Style */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -93,7 +92,8 @@ header{
 
 .header-background{
     height: 341px;
-    background: url(../images/lone-starfish-wide.jpg) no-repeat center;   
+    background: url(../images/lone-starfish-wide.jpg) no-repeat center center;
+    background-size: cover;   
 }
 
 h1{
@@ -144,7 +144,7 @@ main{
 }
 
 article{
-    padding: 0px 20px 0px 15px;
+    margin: 0px 20px 0px 15px;
 }
 
 h2{
@@ -167,9 +167,11 @@ ul{
 
 #contact-form-border{
     border: 1px black solid;
+    width: 100%;
 }
 
 #contact-form{
+    position: relative;
     margin: 10px 20px 10px 10px;
     line-height: 1.5rem;
 }
@@ -199,6 +201,7 @@ footer{
 
 #copyright{
     text-align: right;
+    font-weight: bold;
     padding-top: 1.25em;
     padding-bottom: 1.25em;
     margin-right: 2em;
