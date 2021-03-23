@@ -1,44 +1,56 @@
 <!--
  * @Date: 2021-03-09 09:41:04
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-03-12 17:41:40
+ * @LastEditTime: 2021-03-20 23:54:20
  * @FilePath: /mtm6130-21w-010/mock-up-test/index.html
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <title>Final Project</title>
 </head>
+
 <body>
     <header>
         <!-- NAVIGATION -->
         <nav>
-            <div class="logobar">
-                <img src="images/logo.png" alt="logo-image">
+            <div class="navbar">
+                <div class="logobar">
+                    <img src="images/logo.png" alt="logo-image">
+                </div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li>
+                        <div>
+                            <input class="search" type="text" placeholder="Search">
+                            <img class="search-img" src="images/search.png" alt="search-img">
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Contact</a></li>
-                <li>
-                    <input class="search" type="text" placeholder="Search">
-                    <img class="search-img" src="images/search.png" alt="search-img">
-                </li>
-            </ul>
+
         </nav>
 
         <div class="mainbanner">
             <div class="mainbanner-dark">
                 <h1 class="welcome">Welcome to Three Star Media</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsam officia alias reiciendis? Ratione nisi, aliquam nostrum ab nemo ipsum, sapiente omnis ullam, consectetur similique atque dolore aut corrupti et!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsam officia alias reiciendis? Ratione
+                    nisi, aliquam nostrum ab nemo ipsum, sapiente omnis ullam, consectetur similique atque dolore aut
+                    corrupti et!</p>
                 <!-- button with triangle right -->
-                <button class="banner-button"><a href="#">Connect with us <div class="triangle-right-black"> </div></a></button>              
+                <button class="banner-button"><a href="#">Connect with us <div class="triangle-right-black"> </div>
+                        </a></button>
             </div>
         </div>
     </header>
@@ -46,10 +58,17 @@
     <main>
         <!-- ABOUT US -->
         <section id="about-us">
-            <img class="content-main-image" src="images/about-us.jpg" alt="table-tennis">
-            <h1>About Us</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum vitae hic suscipit autem impedit blanditiis ducimus quas voluptatibus aliquam dolorum, quidem aut ut molestiae sed magnam magni voluptate sequi.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quidem perferendis, incidunt odio qui cupiditate corrupti quo. Culpa odio quas totam impedit dolor perspiciatis cumque eveniet asperiores, accusantium eaque ad.</p>
+            <div class="about-us-content">
+                <img class="content-main-image" src="images/about-us.jpg" alt="table-tennis">
+                <div class="about-us-text">
+                    <h1>About Us</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum vitae hic suscipit autem
+                        impedit blanditiis ducimus quas voluptatibus aliquam dolorum, quidem aut ut molestiae sed magnam
+                        magni voluptate sequi.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quidem perferendis, incidunt
+                        odio qui cupiditate corrupti quo. Culpa odio quas.</p>
+                </div>
+            </div>
         </section>
 
         <!-- SERVICES -->
@@ -60,40 +79,55 @@
             <div class="secondary-content">
                 <img class="content-main-image" src="images/digital.jpg" alt="a laptop and a phone">
                 <h2>Digital Transformation</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae, accusamus minus vel!</p>
-                <button class="secondary-button"><a href="#">Digital Plans<div class="triangle-right-white"> </div></a></button>                 
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime
+                    labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae,
+                    accusamus minus vel!</p>
+                <button class="secondary-button"><a href="#">Digital Plans<div class="triangle-right-white"> </div>
+                        </a></button>
             </div>
 
             <!-- Marketing -->
             <div class="secondary-content">
                 <img class="content-main-image" src="images/marketing.jpg" alt="a laptop on a desk">
                 <h2>Marketing</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae, accusamus minus vel!</p>
-                <button class="secondary-button"><a href="#">Marketing Plans<div class="triangle-right-white"> </div></a></button>                 
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime
+                    labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae,
+                    accusamus minus vel!</p>
+                <button class="secondary-button"><a href="#">Marketing Plans<div class="triangle-right-white"> </div>
+                        </a></button>
             </div>
 
             <!-- Video Production -->
             <div class="secondary-content">
                 <img class="content-main-image" src="images/video.jpg" alt="a phone">
                 <h2>Video Production</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae, accusamus minus vel!</p>
-                <button class="secondary-button"><a href="#">Video Plans<div class="triangle-right-white"> </div></a></button>                 
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime
+                    labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae,
+                    accusamus minus vel!</p>
+                <button class="secondary-button"><a href="#">Video Plans<div class="triangle-right-white"> </div>
+                        </a></button>
             </div>
 
             <!-- Print -->
             <div class="secondary-content">
                 <img class="content-main-image" src="images/print.jpg" alt="Newspaper vending machine">
                 <h2>Print</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae, accusamus minus vel!</p>
-                <button class="secondary-button"><a href="#">Print Plans<div class="triangle-right-white"> </div></a></button>                 
-            </div>           
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime
+                    labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae,
+                    accusamus minus vel!</p>
+                <button class="secondary-button"><a href="#">Print Plans<div class="triangle-right-white"> </div>
+                        </a></button>
+            </div>
         </section>
         <!-- Our Vision (outside section to disable pannding) -->
         <div class="our-vision">
             <h2>Our Vision</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque expedita molestias doloribus ut illum dolore repudiandae beatae unde, dolorem neque, minus consectetur, eos dolores nulla. Consequuntur sequi laboriosam minima voluptate.</p>
-            <button class="secondary-button"><a href="#">Print Plans<div class="triangle-right-white"> </div></a></button>                 
-        </div> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque expedita molestias doloribus ut illum
+                dolore repudiandae beatae unde, dolorem neque, minus consectetur, eos dolores nulla. Consequuntur sequi
+                laboriosam minima voluptate.</p>
+            <button class="secondary-button"><a href="#">Print Plans<div class="triangle-right-white"> </div>
+                    </a></button>
+        </div>
 
         <!-- TEAM -->
         <section id="team">
@@ -102,16 +136,22 @@
             <!-- John Doe -->
             <div class="secondary-content">
                 <img class="content-main-image" src="images/john.jpg" alt="a laptop and a phone">
-                <h2>John Doe<p class="job-title">CEO and Co-owner</p></h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae, accusamus minus vel!</p>
+                <h2>John Doe<p class="job-title">CEO and Co-owner</p>
+                </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime
+                    labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae,
+                    accusamus minus vel!</p>
             </div>
 
             <!-- Bob Rite -->
             <div class="secondary-content">
                 <img class="content-main-image" src="images/bob.jpg" alt="a laptop and a phone">
-                <h2>Bob Rite<p class="job-title">CFO and Co-owner</p></h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae, accusamus minus vel!</p>
-            </div> 
+                <h2>Bob Rite<p class="job-title">CFO and Co-owner</p>
+                </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime
+                    labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae,
+                    accusamus minus vel!</p>
+            </div>
         </section>
 
         <!-- CONTACT -->
@@ -128,7 +168,7 @@
                 <input type="text" id="email" name="email"><br>
 
                 <label class="contact-label" for="message">Message</label><br>
-                <textarea name="message" id="message" ></textarea><br>
+                <textarea name="message" id="message"></textarea><br>
 
                 <input id="send-button" type="submit" value="Send">
             </form>
@@ -156,13 +196,16 @@
             <div>
                 <h2>Location</h2>
                 <!-- google map share -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3226.623142507069!2d-75.75671205557674!3d45.347294207077276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce0718cc4a6ad7%3A0xc6cc467725843e2b!2sAlgonquin%20College%20%E2%80%93%20Ottawa%20Campus!5e0!3m2!1sen!2sca!4v1615588424295!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3226.623142507069!2d-75.75671205557674!3d45.347294207077276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce0718cc4a6ad7%3A0xc6cc467725843e2b!2sAlgonquin%20College%20%E2%80%93%20Ottawa%20Campus!5e0!3m2!1sen!2sca!4v1615588424295!5m2!1sen!2sca"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
     </main>
     <footer>
-        <p>Copyright Three Star Media, 2020</p>
+        <p>&#169Copyright Three Star Media, 2020</p>
         <p>All images are taken form <u>Unsplash</u></p>
     </footer>
 </body>
+
 </html>
