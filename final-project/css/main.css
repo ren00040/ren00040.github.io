@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-03-09 09:32:40
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-03-24 02:17:09
+ * @LastEditTime: 2021-03-26 01:02:45
  * @FilePath: /mtm6130-21w-010/final-project/css/main.css
  */
 
@@ -307,14 +307,65 @@ h2{
 
 #team{
     grid-area: team;
-    background-color: aqua;
+}
+
+
+#team h2{
+    margin: 1rem 0 0 0;
+}
+
+h2 .job-title{
+    font-size: 1rem;
+    padding: 1rem 0 0 0;
+    border-bottom: #C78B08 2px solid;
 }
 
 #contact{
     grid-area: contact;
-    background-color: aquamarine;
 }
 
+#contact h2{
+    margin: 2rem 0 1rem 0;
+}
 
+#contact-form .contact-label,
+#contact-form input{
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 0.8rem;
+}
+#contact-form textarea{
+    width: 100%;
+    height: 9rem;
+}
 
+#contact-form #send-button{
+    font-size: 1.5rem;
+    width: auto;
+    background-color: #222222;
+    color: #C78B08;
+    border: none;
+    margin-top: 1rem;
+}
 
+#hours{
+    width: 100%;
+    table-layout: fixed;
+}
+
+#hours th,
+#hours td{
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+#hours th{
+    background-color: #FFE6AC;
+}
+
+footer{
+    background-color: #222222;
+    color: #C78B08;
+    line-height: 2rem;
+    padding: 1rem 1rem 0.5rem 1rem;
+}
