@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-03-23 08:56:45
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-03-26 00:59:03
+ * @LastEditTime: 2021-03-27 01:35:41
  * @FilePath: /mtm6130-21w-010/final-project/index.html
 -->
 <!DOCTYPE html>
@@ -12,34 +12,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <!-- GOOGLE Font -->
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <title>Final Project</title>
 </head>
 
 <body>
     <header id="home">
-        <!-- NAVBAR -->
+        <!-- Navbar -->
         <nav>
-            <div class="logobar">
-                <img src="images/logo.png" alt="logo-image">
-            </div>
             <ul>
+                <li class="logobar"> <img src="images/logo.png" alt="logo-image"></li>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
-                    <div>
-                        <input class="search" type="text" placeholder="Search">
-                        <img class="search-img" src="images/search.png" alt="search-img">
+                    <div class="search">
+                        <input type="text" placeholder="Search">
+                        <img src="images/search.png" alt="search-img">
                     </div>
                 </li>
             </ul>
         </nav>
 
-        <!-- BANNER -->
+        <!-- Banner -->
         <div id="banner">
             <div class="banner-contents">
                 <h1>Welcome to Three Star Media</h1>
@@ -54,22 +52,20 @@
     </header>
 
     <main>
-        <!-- ABOUT US -->
+        <!-- About US -->
         <section id="about">
-            <div class="about-us-content">
-                <img class="content-main-image" src="images/about-us.jpg" alt="table-tennis">
-                <div class="about-us-text">
-                    <h1>About Us</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum vitae hic suscipit autem
-                        impedit blanditiis ducimus quas voluptatibus aliquam dolorum, quidem aut ut molestiae sed magnam
-                        magni voluptate sequi.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quidem perferendis, incidunt
-                        odio qui cupiditate corrupti quo. Culpa odio quas.</p>
-                </div>
+            <img class="content-main-image" src="images/about-us.jpg" alt="table-tennis">
+            <div class="about-us-text">
+                <h1>About Us</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum vitae hic suscipit autem
+                    impedit blanditiis ducimus quas voluptatibus aliquam dolorum, quidem aut ut molestiae sed magnam
+                    magni voluptate sequi.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quidem perferendis, incidunt
+                    odio qui cupiditate corrupti quo. Culpa odio quas.</p>
             </div>
         </section>
 
-        <!-- OUR SERVICES -->
+        <!-- Our SERVICES -->
         <section id="services">
             <h1>Our Services</h1>
 
@@ -106,6 +102,17 @@
                     </a></button>
             </div>
 
+            <!-- Web Development -->
+            <div class="secondary-content">
+                <img class="content-main-image" src="images/web.jpg" alt="a phone">
+                <h2>Video Production</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime
+                    labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae,
+                    accusamus minus vel!</p>
+                <button class="secondary-button"><a href="#">Web Plans<div class="triangle-right-white"> </div>
+                    </a></button>
+            </div>
+
             <!-- Print -->
             <div class="secondary-content">
                 <img class="content-main-image" src="images/print.jpg" alt="Newspaper vending machine">
@@ -128,32 +135,38 @@
             </div>
         </section>
 
-        <!-- TEAM -->
+        <!-- Team -->
         <section id="team">
             <h1>Our Team</h1>
 
             <!-- John Doe -->
             <div class="secondary-content">
                 <img class="content-main-image" src="images/john.jpg" alt="a laptop and a phone">
-                <h2>John Doe<p class="job-title">CEO and Co-owner</p>
-                </h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime
-                    labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae,
-                    accusamus minus vel!</p>
+                <div class="team-text">
+                    <h2>John Doe<p class="job-title">CEO and Co-owner</p></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim
+                        maxime
+                        labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae,
+                        accusamus minus vel!</p>
+                </div>
+
             </div>
 
             <!-- Bob Rite -->
             <div class="secondary-content">
                 <img class="content-main-image" src="images/bob.jpg" alt="a laptop and a phone">
-                <h2>Bob Rite<p class="job-title">CFO and Co-owner</p>
-                </h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim maxime
-                    labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae,
-                    accusamus minus vel!</p>
+                <div class="team-text cfo">
+                    <h2>Bob Rite<p class="job-title">CFO and Co-owner</p>
+                    </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, nobis optio. Laboriosam enim
+                        maxime
+                        labore officiis, sit nisi laborum totam atque temporibus maiores fuga ad nulla repudiandae,
+                        accusamus minus vel!</p>
+                </div>
             </div>
         </section>
 
-        <!-- CONTACT -->
+        <!-- Contact -->
         <section id="contact">
             <h1>Contact Us</h1>
 
@@ -173,7 +186,7 @@
             </form>
 
             <!-- Hours of operation -->
-            <div>
+            <div id="hours-of-operation">
                 <h2>Hours of operation</h2>
                 <table id="hours">
                     <tr>
@@ -192,7 +205,7 @@
             </div>
 
             <!-- Location -->
-            <div>
+            <div id="google-map">
                 <h2>Location</h2>
                 <!-- google map share -->
                 <iframe

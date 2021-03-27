@@ -1,11 +1,11 @@
 /*
  * @Date: 2021-03-09 09:32:40
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-03-26 01:02:45
+ * @LastEditTime: 2021-03-27 01:57:37
  * @FilePath: /mtm6130-21w-010/final-project/css/main.css
  */
 
-/* CSS RESET */
+/* CSS-RESET */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -56,7 +56,7 @@ table {
 	border-spacing: 0;
 }
 
-/* CUSTOM CSS -- Mobile Style */
+/* Custom CSS -- Mobile Style */
 html{
     box-sizing: border-box;
     font-size: 16px;
@@ -78,7 +78,7 @@ body{
 
 /* TEMP */
 
-/* NAVBAR */
+/* Nanbar */
 header{
     background-color: #222222;
 }
@@ -86,11 +86,12 @@ header{
 nav{
     background-color: #222222;
     /* Black board on the top of page */
-    padding: 1rem 0 0;
+    padding: 1rem 0 0 0;
 }
 
 .logobar{
-    margin: 0 1rem;
+    /* align left */
+    text-align: left;
     background-color: #C78B08;
 }
 
@@ -117,33 +118,43 @@ nav ul li a:focus{
     text-decoration: underline;
 }
 
-
-nav ul li:nth-child(1){
+/* Btn Home */
+nav ul li:nth-child(2){
     background-color: #C78B08;
 }
 
-nav ul li:nth-child(1)>a{
+nav ul li:nth-child(2)>a{
     color: #222222;
 }
 
-nav ul li:nth-child(n+2){
+/* Btns after Home */
+nav ul li:nth-child(n+3){
     background-color: #222222;
 }
 
 /* search bar */
+
+/* TODO(Ke Ren): Margin or Padding issues, need to be optimized */
 .search{
-    line-height: 2.3rem;
-    width: 90%;
+    margin:0 -2rem;
 }
 
-.search-img{
-    display: inline-block;
-    height: 2.8rem;
-    padding-top: 0.2rem;
+
+.search input{
+    line-height: 2.3rem;
+    width: 90%;
+    font-size: 1.1rem;
+}
+
+.search img{
+    display: inline;
+    height: 2.6rem;
+    padding-top: 1px;
+    margin-left: -5px;;
     vertical-align: middle;
 }
 
-/* BANNER */
+/* Banner */
 #banner{
     background-image: url("../images/main-banner.jpg");
     background-repeat: no-repeat;
@@ -158,7 +169,7 @@ nav ul li:nth-child(n+2){
 
 .banner-contents{
     background-color: rgba(0, 0, 0, 0.6);
-    padding-top: 2rem;
+    padding: 2rem 1rem 0;
 }
 
 .banner-contents h1{
@@ -232,7 +243,7 @@ h2{
     margin: 2rem 0 0 0;
 }
 
-/* ABOUT US */
+/* About US */
 #about{
     grid-area: about;
     background-color: #FFE6AC;
@@ -242,7 +253,7 @@ h2{
     width: 100%;
 }
 
-/* SERVICES */
+/* Services */
 #services{
     grid-area: services;
     background-color: #FFFFFF; 
@@ -305,6 +316,7 @@ h2{
     margin: 1rem 0 0 0;
 }
 
+/* Team */
 #team{
     grid-area: team;
 }
@@ -320,6 +332,7 @@ h2 .job-title{
     border-bottom: #C78B08 2px solid;
 }
 
+/* Contact */
 #contact{
     grid-area: contact;
 }
@@ -363,9 +376,179 @@ h2 .job-title{
     background-color: #FFE6AC;
 }
 
+/* Footer */
 footer{
     background-color: #222222;
     color: #C78B08;
-    line-height: 2rem;
-    padding: 1rem 1rem 0.5rem 1rem;
+    line-height: 2.6rem;
+    padding: 1.5rem 1rem 0.5rem 1rem;
+}
+
+/* Destop Style - 760px and above*/
+@media screen and (min-width:760px){
+
+    /* Navbar-Destop */
+    nav ul{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    nav ul li{
+        margin: 0 0.25rem;
+        padding: 1.25rem 1.5rem;
+    }
+
+    .logobar{
+        background-color: transparent;
+        margin: 0 2rem 0 0;
+    }
+
+    .search{
+        margin: 0;
+    }
+    
+    .search input{
+        width: 80%;
+    }
+
+    .banner-contents{
+        margin: 0 4rem;
+    }
+
+    .banner-contents h1{
+        font-size: 4.8rem;
+        line-height: 6rem;
+    }
+
+    /* About-Us-Destop */
+    #about{
+        display: flex;
+        justify-content: center;
+        padding: 1rem 4rem;
+    }
+    
+    #about .content-main-image{
+        width: 50%;
+        /* Keep the picture undistorted */
+        object-fit:cover;
+    }
+
+    #about .about-us-text{
+        padding: 0 1.5rem 0 1rem;
+    }
+
+    /* Services-Destop */
+    #services{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0 4rem;
+    }
+
+    #services h1{
+        flex-basis:calc(100%);
+    }
+
+    #services h2{
+        font-size: 1.75rem;
+    }
+
+    #services .secondary-content:nth-child(2){
+        width: 49%;
+        margin: 0 0.5rem 0 0;
+    }
+
+    #services .secondary-content:nth-child(3){
+        width: 49%;
+        margin: 0 0 0 0.5rem;
+    }
+
+    #services .secondary-content:nth-child(4){
+        width: 32.1%;
+        margin: 1rem 0.5rem 0 0;
+    }
+
+    #services .secondary-content:nth-child(5){
+        width: 32.1%;
+        margin: 1rem 0.5rem 0 0.5rem;
+    }
+
+    #services .secondary-content:nth-child(6){
+        width: 32.1%;
+        margin: 1rem 0 0 0.5rem;
+    }
+
+    /* Our-Vision-Destop */
+    .our-vision{
+        margin: 1rem -4rem 0 -4rem;
+        padding: 1rem 2rem;
+        background-size:100% 200%;
+    }
+
+    /* Team-Destop */
+    #team{
+        padding: 0 4rem;
+    }
+
+    #team .secondary-content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #team .secondary-content .content-main-image{
+        width: 50%;
+    }
+
+    #team .secondary-content .team-text{
+        width: 50%;
+    }
+    /* switch img and text */
+    #team .secondary-content .cfo{
+        order: -1;
+    }
+
+    /* Contact-Destop */
+    #contact{
+        padding: 0 4rem;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.01fr 1fr 0.5fr;
+        grid-template-areas: 
+        "title title"
+        "form map"
+        "hours hours"
+        ;
+        
+    }
+
+    #contact h1{
+        grid-area: title;
+        padding-top: 4rem;
+    }
+
+    #contact #contact-form{
+        grid-area:form;
+    }
+
+    #contact #hours-of-operation{
+        grid-area: hours;
+
+    }
+
+    #contact #google-map{
+        grid-area: map;
+    }
+
+    #contact-form input{
+    height: 2.5rem;
+    margin-bottom: 0.8rem;
+}   
+
+    #contact-form textarea{
+        height: 10rem;
+    }
 }
