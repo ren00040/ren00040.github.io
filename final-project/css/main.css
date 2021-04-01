@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-03-09 09:32:40
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-03-27 01:57:37
+ * @LastEditTime: 2021-04-01 01:48:06
  * @FilePath: /mtm6130-21w-010/final-project/css/main.css
  */
 
@@ -182,27 +182,30 @@ nav ul li:nth-child(n+3){
 }
 
 .banner-BTN{   
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     height: 6rem;
     width: 14rem;
-    background-color: #C78B08;
+    background-color: #c78b08;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .banner-BTN>a{
-    display: flex;
-    align-items:center;
-    justify-content: space-around;
+    /* display: flex; */
     text-decoration: none;
     color: #222222;
 }
 
 /* Draw a triangle */
 .triangle-right-black{
+    display: inline-block;
     width: 0;
     height: 0;
+    margin-left: 1rem;
     border-top: 10px solid transparent;
     border-left: 20px solid #222222;
     border-bottom: 10px solid transparent;
@@ -261,6 +264,7 @@ h2{
 
 .secondary-content{
     margin-top: 1rem;
+    padding-bottom: 1rem;
     background-color: #FFE6AC;
 }
 
@@ -270,24 +274,26 @@ h2{
 }
 
 .secondary-button{
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
     border: none;
     height: 6rem;
     width: 14rem;
     background-color: #222222;
-    margin: 0rem 1rem 1rem 1rem;
+    margin: 0rem 1rem;
     font-size: 1.3rem;
 }
 
 .secondary-button>a{
-    display: flex;
-    align-items:center;
-    justify-content: space-around;
     text-decoration: none;
     color: white;
     padding-left: 10px;
 }
 
 .triangle-right-white{
+    display: inline-block;
+    margin-left: 1rem;
     width: 0;
     height: 0;
     border-top: 10px solid transparent;
@@ -321,14 +327,15 @@ h2{
     grid-area: team;
 }
 
-
-#team h2{
+.team-text{
     margin: 1rem 0 0 0;
 }
 
-h2 .job-title{
+
+.secondary-content .job-title{
+    padding: 0 1rem;
+    font-weight: bold;
     font-size: 1rem;
-    padding: 1rem 0 0 0;
     border-bottom: #C78B08 2px solid;
 }
 
@@ -344,7 +351,7 @@ h2 .job-title{
 #contact-form .contact-label,
 #contact-form input{
     width: 100%;
-    height: 2rem;
+    height: 1rem;
     margin-bottom: 0.8rem;
 }
 #contact-form textarea{
@@ -374,6 +381,12 @@ h2 .job-title{
 
 #hours th{
     background-color: #FFE6AC;
+}
+
+#google-map iframe{
+    width: 100%;
+    height: 450px;
+    border: none;
 }
 
 /* Footer */
@@ -442,7 +455,8 @@ footer{
     /* Services-Destop */
     #services{
         display: flex;
-        justify-content: center;
+        /* justify-content: center; */
+        justify-content: space-around;
         flex-wrap: wrap;
         padding: 0 4rem;
     }
@@ -457,27 +471,27 @@ footer{
 
     #services .secondary-content:nth-child(2){
         width: 49%;
-        margin: 0 0.5rem 0 0;
+        min-width: 500px;
     }
 
     #services .secondary-content:nth-child(3){
         width: 49%;
-        margin: 0 0 0 0.5rem;
+        min-width: 500px;
     }
 
     #services .secondary-content:nth-child(4){
         width: 32.1%;
-        margin: 1rem 0.5rem 0 0;
+        min-width: 300px;
     }
 
     #services .secondary-content:nth-child(5){
         width: 32.1%;
-        margin: 1rem 0.5rem 0 0.5rem;
+        min-width: 300px;
     }
 
     #services .secondary-content:nth-child(6){
         width: 32.1%;
-        margin: 1rem 0 0 0.5rem;
+        min-width: 300px;
     }
 
     /* Our-Vision-Destop */
@@ -496,10 +510,13 @@ footer{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        padding-bottom: 0;
     }
 
     #team .secondary-content .content-main-image{
-        width: 50%;
+	    width: 50%;
+        object-fit:cover;
+
     }
 
     #team .secondary-content .team-text{
@@ -521,13 +538,12 @@ footer{
         "title title"
         "form map"
         "hours hours"
-        ;
-        
+        ;     
     }
 
     #contact h1{
         grid-area: title;
-        padding-top: 4rem;
+        padding-top: 2.8rem;
     }
 
     #contact #contact-form{
