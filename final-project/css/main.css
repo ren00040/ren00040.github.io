@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-03-09 09:32:40
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-04-01 01:48:06
+ * @LastEditTime: 2021-04-11 23:06:00
  * @FilePath: /mtm6130-21w-010/final-project/css/main.css
  */
 
@@ -60,7 +60,7 @@ table {
 html{
     box-sizing: border-box;
     font-size: 16px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Setting the box-sing for all elements */
@@ -92,7 +92,7 @@ nav{
 .logobar{
     /* align left */
     text-align: left;
-    background-color: #C78B08;
+    background-color: #C78C06;
 }
 
 nav ul{
@@ -110,7 +110,7 @@ nav ul li a,
 nav ul li link,
 nav ul li a:visited{
     text-decoration: none;
-    color: #C78B08;
+    color: #C78C06;
 }
 
 nav ul li a:hover,
@@ -120,7 +120,7 @@ nav ul li a:focus{
 
 /* Btn Home */
 nav ul li:nth-child(2){
-    background-color: #C78B08;
+    background-color: #C78C06;
 }
 
 nav ul li:nth-child(2)>a{
@@ -188,7 +188,7 @@ nav ul li:nth-child(n+3){
     border: none;
     height: 6rem;
     width: 14rem;
-    background-color: #c78b08;
+    background-color: #c78c06;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     font-size: 1.2rem;
@@ -318,7 +318,7 @@ h2{
 /* a speacial secondary button */
 .our-vision>.secondary-button{
     background-color: #162942;
-    border: 1px solid #C78B08;
+    border: 1px solid #C78C06;
     margin: 1rem 0 0 0;
 }
 
@@ -336,7 +336,7 @@ h2{
     padding: 0 1rem;
     font-weight: bold;
     font-size: 1rem;
-    border-bottom: #C78B08 2px solid;
+    border-bottom: #C78C06 2px solid;
 }
 
 /* Contact */
@@ -363,7 +363,7 @@ h2{
     font-size: 1.5rem;
     width: auto;
     background-color: #222222;
-    color: #C78B08;
+    color: #C78C06;
     border: none;
     margin-top: 1rem;
 }
@@ -392,7 +392,7 @@ h2{
 /* Footer */
 footer{
     background-color: #222222;
-    color: #C78B08;
+    color: #C78C06;
     line-height: 2.6rem;
     padding: 1.5rem 1rem 0.5rem 1rem;
 }
