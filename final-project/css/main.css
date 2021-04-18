@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-03-09 09:32:40
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-04-11 23:06:00
+ * @LastEditTime: 2021-04-17 20:13:57
  * @FilePath: /mtm6130-21w-010/final-project/css/main.css
  */
 
@@ -134,11 +134,9 @@ nav ul li:nth-child(n+3){
 
 /* search bar */
 
-/* TODO(Ke Ren): Margin or Padding issues, need to be optimized */
 .search{
     margin:0 -2rem;
 }
-
 
 .search input{
     line-height: 2.3rem;
@@ -148,8 +146,8 @@ nav ul li:nth-child(n+3){
 
 .search img{
     display: inline;
-    height: 2.6rem;
-    padding-top: 1px;
+    height: 2.5rem;
+    /* padding-top: 1px; */
     margin-left: -5px;;
     vertical-align: middle;
 }
@@ -198,6 +196,11 @@ nav ul li:nth-child(n+3){
     /* display: flex; */
     text-decoration: none;
     color: #222222;
+}
+
+.banner-BTN>a:hover,
+.banner-BTN>a:focus{
+    text-decoration: underline;
 }
 
 /* Draw a triangle */
@@ -291,6 +294,11 @@ h2{
     padding-left: 10px;
 }
 
+.secondary-button>a:focus,
+.secondary-button>a:hover{
+    text-decoration: underline;
+}
+
 .triangle-right-white{
     display: inline-block;
     margin-left: 1rem;
@@ -366,6 +374,11 @@ h2{
     color: #C78C06;
     border: none;
     margin-top: 1rem;
+}
+
+#contact-form #send-button:hover,
+#contact-form #send-button:focus{
+    text-decoration: underline;
 }
 
 #hours{
@@ -562,9 +575,13 @@ footer{
     #contact-form input{
     height: 2.5rem;
     margin-bottom: 0.8rem;
-}   
+    }   
 
     #contact-form textarea{
         height: 10rem;
+    }
+
+    footer p{
+        margin-left: 4rem;
     }
 }
