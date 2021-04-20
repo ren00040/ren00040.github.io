@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-03-09 09:32:40
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-04-17 20:13:57
+ * @LastEditTime: 2021-04-19 23:04:33
  * @FilePath: /mtm6130-21w-010/final-project/css/main.css
  */
 
@@ -411,7 +411,7 @@ footer{
 }
 
 /* Destop Style - 760px and above*/
-@media screen and (min-width:760px){
+@media screen and (min-width:761px){
 
     /* Navbar-Destop */
     nav ul{
