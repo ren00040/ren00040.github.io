@@ -1,6 +1,10 @@
 /* Mobile-first*/
 /* Mobile Phone Style, the maximum page width is 767px */
 
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Ruda:wght@400;500;700&display=swap');
+
+
 /* 
 Set the color of whole page #05192D.
 Uses scroll-behavior to smooth the scroll behavior.
@@ -12,6 +16,11 @@ html{
 
 body{
     max-width: none;
+    min-width: 300px;
+}
+
+h1,h2{
+    font-family: 'Ruda', sans-serif;
 }
 
 /* 
@@ -25,6 +34,7 @@ nav#nav{
     background-color: #05192D;
     border: none;
     color: #3190F0;
+    font-family: 'Ruda', sans-serif;
 }
 
 /* Set links' color when unvisited and visited */
@@ -40,6 +50,11 @@ nav#nav{
     color: #01456B;
 }
 
+/* Use flexlayout when mobile and pad style*/
+main#main{
+    display: flex;
+    flex-direction: column;
+}
 
 /* 
 Set the color of background and font for all sections.
@@ -50,7 +65,7 @@ Set the padding, font-family, font-size and line-height for all sections.
     color: aliceblue;
     border-bottom: 1px solid #354454;
     padding: 6rem 1rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:  'PT Sans', sans-serif;
     font-size: 1.25rem;
     line-height: 2.25rem;
 }
@@ -104,7 +119,6 @@ textarea{
 @media screen and (max-width:1023px) and (min-width:768px){
     #main section:hover{
         background: linear-gradient(180deg, rgba(5,25,45,1) 0%, rgba(4,4,77,1) 71%, rgba(4,4,77,1) 100%);
-
     }
 
     /* Scale image width to 250px */
@@ -115,20 +129,22 @@ textarea{
 
 /* Desktop Style, the min-width is 1024px */
 @media screen and (min-width:1024px){
+    /* Change flex-direction to row, */
     main#main{
+        flex-direction: row;
+        align-items: stretch;
+        flex-wrap: wrap;
         max-width: max-content;
     }
     /* Uses a gradient color when hover a section */
     #main section:hover{
         background: linear-gradient(180deg, rgba(5,25,45,1) 0%, rgba(4,4,77,1) 71%, rgba(4,4,77,1) 100%);
     }
-
-
-    /* Clearfix: correct the error caused by float*/
-    section#about{
-        content:'';
-        display:table;
-        clear: both;
+    
+    /* Set #about and #contact property make #about and #contact in one line */
+    section#about,
+    section#contact{
+        flex: 1 1 0;
     }
 
     /* Scale image width to 300px */
