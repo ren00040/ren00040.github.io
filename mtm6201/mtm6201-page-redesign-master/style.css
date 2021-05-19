@@ -1,0 +1,142 @@
+/* Mobile-first*/
+/* Mobile Phone Style, the maximum page width is 767px */
+
+/* 
+Set the color of whole page #05192D.
+Uses scroll-behavior to smooth the scroll behavior.
+*/
+html{
+    background-color: #05192D;
+    scroll-behavior: smooth;
+}
+
+body{
+    max-width: none;
+}
+
+/* 
+Keep nav width auto change with the page.
+Uses the same color of page background.
+Cancel the border.
+Set the menu color #3190F0.
+ */
+nav#nav{
+    width: auto;
+    background-color: #05192D;
+    border: none;
+    color: #3190F0;
+}
+
+/* Set links' color when unvisited and visited */
+.nav>a:link,
+.nav>a:visited{
+    color: #3190F0;
+}
+
+/* Set underline sytle when hover or focus */
+.nav>a:hover,
+.nav>a:focus{
+    text-decoration: underline;
+    color: #01456B;
+}
+
+
+/* 
+Set the color of background and font for all sections.
+Set the padding, font-family, font-size and line-height for all sections.
+*/
+#main section{
+    background-color: #05192D;
+    color: aliceblue;
+    border-bottom: 1px solid #354454;
+    padding: 6rem 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    line-height: 2.25rem;
+}
+
+/* Set the line-height, font-weight and color of h1 and h2 */
+h1.page-title,
+h2.section-title{
+    line-height: 4rem;
+    font-weight: bolder;
+    color: #01456B;
+}
+
+/* Scale image width to 200px */
+img.about-image{
+    width: 200px;
+}
+
+/* 
+Set background-color of contact-form #01456B.
+Keep the form width auto change with the page. 
+Set contact-form margin-top 2rem;
+*/
+form.contact-form{
+    background-color: #01456B;
+    width:auto;
+    margin-top: 2rem;
+}
+
+/* Set labe font-size */
+form label{
+    font-size: 1.25rem;
+}
+textarea.contact-form-input,
+input.contact-form-input{
+    padding: 10px 0;
+}
+
+/* Set the send BTN's font-size, margin-top and padding */
+form button{
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    padding: 14px;
+}
+
+/* Set form textarea height */
+textarea{
+    height: 5rem;
+}
+
+/* Tablet Style, the max-width is 1023px and the min-width is 768px  */
+@media screen and (max-width:1023px) and (min-width:768px){
+    #main section:hover{
+        background: linear-gradient(180deg, rgba(5,25,45,1) 0%, rgba(4,4,77,1) 71%, rgba(4,4,77,1) 100%);
+
+    }
+
+    /* Scale image width to 250px */
+    img.about-image{
+        width: 250px;
+    }
+}
+
+/* Desktop Style, the min-width is 1024px */
+@media screen and (min-width:1024px){
+    main#main{
+        max-width: max-content;
+    }
+    /* Uses a gradient color when hover a section */
+    #main section:hover{
+        background: linear-gradient(180deg, rgba(5,25,45,1) 0%, rgba(4,4,77,1) 71%, rgba(4,4,77,1) 100%);
+    }
+
+
+    /* Clearfix: correct the error caused by float*/
+    section#about{
+        content:'';
+        display:table;
+        clear: both;
+    }
+
+    /* Scale image width to 300px */
+    img.about-image{
+        width: 300px;
+    }
+
+    form.contact-form{
+        max-width: 1024px;
+    }
+}
