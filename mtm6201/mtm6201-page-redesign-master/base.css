@@ -1,0 +1,80 @@
+#nav {
+  width: 1200px;
+  margin: 0px auto;
+  padding: 30px;
+
+  border: 3px solid cadetblue;
+  background-color: burlywood;
+  text-align: center;
+}
+
+#main {
+  max-width: 1200px;
+  margin: 0px auto;
+
+  background-color: rebeccapurple;
+}
+
+.nav .nav-link {
+  margin: 1rem;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#home {
+  padding: 100px;
+  background-color: indianred;
+}
+
+section.home {
+  font-family: cursive;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.page-title,
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+#about {
+  padding: 100px 0px;
+  background-color: greenyellow;
+}
+
+.about {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.75rem;
+  color: lavender
+}
+
+.about-image {
+  float: left;
+
+  width: 300px;
+}
+
+#contact {
+  padding: 100px 0px;
+  background-color: f
+}
+
+.contact-form {
+  padding: 30px;
+  background-color: goldenrod;
+  width: 600px;
+  margin: 0px auto;
+}
+
+label {
+  font-size: 1.5rem;
+
+}
+
+.contact-form-input {
+  padding: 10px;
+  width: 100%;
+}
