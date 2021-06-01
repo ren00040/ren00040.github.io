@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-05-24 00:31:40
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-05-25 08:46:05
+ * @LastEditTime: 2021-05-25 11:48:02
  * @FilePath: /happyangels/css/main.css
  */
 
@@ -29,8 +29,14 @@
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* .carousel-inner .carousel-item {
-    max-height: 600px;
-} */
-
-/* TODO Sildshow */
+.bg-image-1 {
+    height: 600px;
+    width: auto;
+    background-image: url(../imgs/hands-2847508_1920.jpg);
+    background-size: cover;
+    /* object-fit: cover; */
+    /* font-family: 'object-fit: cover;'; */
+}
+.btn {
+    border-radius: 0;
+}
