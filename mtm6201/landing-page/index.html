@@ -1,6 +1,92 @@
 <!--
  * @Date: 2021-06-01 15:29:05
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-01 15:29:05
+ * @LastEditTime: 2021-06-01 16:05:31
  * @FilePath: /landing-page/index.html
 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Custom CSS links -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <title>Landing Page</title>
+    <!-- Set website favicon -->
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
+</head>
+<body>
+    <header>
+        <!-- Use svg draw logo -->
+        <!-- Generator: Adobe Illustrator 25.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg class="brand-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	    viewBox="0 0 151 107" style="enable-background:new 0 0 151 107;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:#353333;}
+                .st1{fill:#51F183;}
+            </style>
+            <path id="_x3C_Path-02_x3E_" class="st0" d="M151.35,35.32c0,9.26-3.21,19.05-9.64,29.38c-8.51,13.62-20.86,24.17-37.06,31.66
+                c-15.09,6.92-31.52,10.45-48.13,10.33H31.46l27.49-77.9h27.41L63.05,94.54c10,0,19.88-3.06,29.65-9.19s16.92-13.69,21.45-22.7
+                c4.04-7.94,6.06-14.57,6.07-19.89c0-8.7-2.43-14.95-7.29-18.75c-4.35-3.33-11.02-5-20-5l-73.26-0.27L31.2-0.01l73.49-0.12
+                c12.71,0,23.29,2.68,31.74,8.05C146.37,14.24,151.35,23.38,151.35,35.32z"/>
+            <path id="_x3C_Path-01_x3E_" class="st1" d="M131.85,35.32c0,9.26-3.21,19.05-9.64,29.38c-8.5,13.62-20.85,24.17-37.06,31.66
+                c-15.09,6.92-31.52,10.45-48.13,10.33H11.96l27.49-77.9h27.41L43.55,94.54c10,0,19.88-3.06,29.65-9.19
+                c9.77-6.13,16.92-13.69,21.45-22.7c4.04-7.94,6.06-14.57,6.07-19.89c0-8.7-2.43-14.95-7.29-18.75c-4.35-3.33-11.01-5-20-5
+                L0.17,18.74L11.7-0.01l73.49-0.12c12.71,0,23.29,2.68,31.74,8.05C126.88,14.24,131.85,23.38,131.85,35.32z"/>
+        </svg>
+    </header>
+    <main>
+        <section class="slogan">
+            <h1>Want to be your own boss?</h1>
+            <p>Start today and make up to $30/hr driving your own vehicle with Dash!</p>
+        </section>
+
+        <!-- Use background-img to show the scooter in CSS -->
+        <section class="scooter"></section>
+
+        <section class="landing-form">
+            <form>
+                <h2>Aplay Now</h2>
+                <p>Enter your info below.</p>
+                <input class="input-text input-1" type="text" placeholder="First name"><br>
+                <input class="input-text" type="text" placeholder="Last name"><br>
+                <input class="input-text" type="tel" placeholder="Phone number"><br>
+                <input class="input-text" type="email" placeholder="Email Address"><br>
+                <div class="checkbox-containter">
+                    <input type="checkbox" name="agree" id="agree">
+                    <label for="agree">I agree to dash terms</label><br>
+                </div>
+                <input type="button" value="DRIVE WITH US">
+                <p class="app-status">Alreay applied? <a href="#">Check your application status here</a></p>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="calculate">
+            <p class="footer-text-bold">See how much you can earn with Dash.</p>
+            <p class="footer-text">how many hours do you want to drive with us this week?</p>
+            <div class="hours-city">
+                <input type="number" id="hours" name="hours" min="1" max="5" placeholder="Hours">
+                <input type="text" id="city" name="city" placeholder="City">
+                <input type="button" value="CALCULATE">
+            </div>
+        </div>
+        <div class="icons">
+            <a href="#"><img src="images/icons/facebook.svg" alt="facebook icon"></a>
+            <a href="#"><img src="images/icons/instagram.svg" alt="instagram icon"></a>
+            <a href="#"><img src="images/icons/twitter.svg" alt="twitter icon"></a>
+            <a href="#"><img src="images/icons/linkedin.svg" alt="linkedin icon"></a>
+        </div>
+    </footer>
+</body>
+</html>
