@@ -1,13 +1,17 @@
 /*
  * @Date: 2021-06-01 15:29:23
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-01 16:28:42
+ * @LastEditTime: 2021-06-01 16:47:52
  * @FilePath: /landing-page/css/layout.css
  */
 
-/* Mobile Style max-width: 375px*/
-header,main {
-    padding: 1rem 2.25rem;
+/* Mobile Style max-width: 375px */
+header {
+    padding: 1.5rem 2.25rem;
+}
+
+main {
+    padding: 0 2.25rem;
 }
 
 /* Tablet Style min-width: 376px max-width: 768px */

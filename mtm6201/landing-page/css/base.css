@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-01 15:29:13
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-01 16:10:20
+ * @LastEditTime: 2021-06-07 02:09:43
  * @FilePath: /landing-page/css/base.css
  */
 
@@ -89,7 +89,7 @@ body {
 h1 {
     font-size: 3.75rem;
     font-weight: bold;
-    line-height: 4.6rem;
+    line-height: 4.8rem;
 }
 
 h2 {
@@ -98,6 +98,19 @@ h2 {
     font-weight: bold;
 }
 
+p {
+    font-size: 1rem;
+    line-height: 19px;
+}
+
 .brand-logo {
     width: 114px;
+}
+
+.landing-form {
+    background-color: white;
+}
+
+footer {
+    background-color: var(--canary);
 }

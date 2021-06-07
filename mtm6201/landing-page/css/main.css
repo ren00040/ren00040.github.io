@@ -1,0 +1,187 @@
+/*
+ * @Date: 2021-06-01 15:29:27
+ * @LastEditors: Ke Ren
+ * @LastEditTime: 2021-06-07 03:30:21
+ * @FilePath: /landing-page/css/main.css
+ */
+
+
+/* Mobile Style max-width: 375px */
+.slogan>p {
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+/* Use background-img to show the scooter */
+.scooter {
+    background-image: url(../images/bg-image/scooter.svg);
+    background-repeat: no-repeat;
+    height: 211px;
+}
+
+.landing-form {
+    border-radius: 26px;
+    background-color: white;
+    margin-top: 1rem;
+    margin-bottom: 45px;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    line-height: 19px;
+    box-shadow:5px 10px 15px rgba(51, 49, 49, 0.4);
+}
+
+form p {
+    padding-top: 8px;
+}
+
+form>input {
+    width: 100%;
+    height: 40px;
+    background-color: #f4f4f5;
+    border: none;
+    border-radius: 11px;
+    margin: 0.5rem 0;
+    padding: 0;
+}
+
+/* Set placeholder text */
+/* Why placeholder text cant be set in page tag? */
+form .input-text::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #9B9B9B;
+    line-height: 19px;
+    padding-left: 10px;
+}
+
+/* Opacity of the first input text */
+.input-1 {
+    opacity: 0.5;
+}
+
+/* Use flex layout keep text vertically centered */
+.checkbox-containter {
+    display: flex;
+    align-items: center;
+}
+
+/* TODO: Why radius does not work? */
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+form input[type="button"] {
+    margin-top: 1rem;
+    background-color: #57eeab;
+    border: none;
+    border-radius: 11px;
+    height: 55px;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0;
+}
+
+.app-status {
+    font-size: 14px;
+}
+
+.app-status>a {
+    color:#ff8480;
+}
+
+/* without underline */
+.app-status>a:link,
+.app-status>a:visited {
+    text-decoration: none;
+}
+
+.app-status>a:hover,
+.app-status>a:focus {
+    text-decoration: underline;
+}
+
+/* Use flex layout to control the elements' position */
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #fffd8c;
+    padding: 24px 36px;
+}
+
+.footer-text-bold {
+    padding-right: 38px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: bold;
+}
+
+.footer-text {
+    padding-top: 10px;
+}
+
+footer input {
+    background-color: #f7f7ff;
+    border-radius: 11px;
+    border: none;
+    height: 40px;
+}
+
+/* using float to make 'hours'&'city' input box align */
+.hours-city {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+footer input[id=hours] {
+    flex-basis: calc(25%);
+    /* width: 68px; */
+}
+
+footer input[id=city] {
+    flex-basis: calc(70%);
+    /* width: 55vmin; */
+}
+
+/* set placeholder fonts */
+footer input::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight:500;
+    color: #707070;
+    padding-left: 5px;
+}
+
+footer input[type=button] {
+    margin: 5px 0px;
+    background-color: #ff8480;
+    color: #f7f7ff;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+    padding: 0;
+}
+
+.icons {
+    margin: 5px 0px;
+    text-align: center;
+}
+
+.icons img {
+    display: inline;
+    padding: 0px 18px;
+    height: 32px;
+}
+
+.img-radius {
+    border-radius: 50%;
+}
+
+/* Tablet Style min-width: 376px max-width: 768px */
+
+
+
+/* Desktop Style min-width: 769px */
