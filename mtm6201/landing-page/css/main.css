@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-01 15:29:27
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-07 03:30:21
+ * @LastEditTime: 2021-06-07 04:05:56
  * @FilePath: /landing-page/css/main.css
  */
 
@@ -17,6 +17,7 @@
     background-image: url(../images/bg-image/scooter.svg);
     background-repeat: no-repeat;
     height: 211px;
+    background-position: center;
 }
 
 .landing-form {
@@ -83,11 +84,11 @@ form input[type="button"] {
     padding: 0;
 }
 
-.app-status {
+.landing-form .app-status {
     font-size: 14px;
 }
 
-.app-status>a {
+.landing-form .app-status>a {
     color:#ff8480;
 }
 
@@ -181,7 +182,99 @@ footer input[type=button] {
 }
 
 /* Tablet Style min-width: 376px max-width: 768px */
+@media screen and (max-width:1023px) and (min-width:768px){
+    h1 {
+        font-size: 5rem;
+        font-weight: bold;
+        line-height: 6rem;
+    }
 
+    .slogan>p {
+        padding-top: 20px;
+        font-size: 24px;
+        line-height: 29px;
+    }    
 
+    .scooter {
+        height: 308px;
+        margin-top: -20px;
+        margin-bottom: 1rem;
+    }
+
+    .section-form p {
+        font-size: 30px;
+        line-height: 37px;
+    }
+
+    .landing-form {
+        margin-top: 30px;
+    }
+
+    form>input {
+        height: 55px;
+    }
+
+    /* reset opacity of the first input text  */
+    .input-1 {
+        opacity: 1;
+    }
+
+    .landing-form p {
+        padding: 1rem 0;
+        font-size: 30px;
+    }
+
+    input[type="checkbox"] {
+        width: 29px;
+        height: 29px;
+    }
+    
+    form input[type="button"] {
+        height: 4rem;
+        font-size: 2rem;
+    }
+
+    .checkbox-containter label {
+        font-size: 20px;
+    }
+
+    .landing-form .app-status {
+        text-align: center;
+        font-size: 17px;
+    }
+    
+    footer {
+        padding: 24px 80px;
+    }
+
+    .footer-text {
+        font-size: 1rem;
+    }
+
+    .hours-city {
+        margin-top: 1rem;
+    }
+
+    footer input[id=hours] {
+        flex-basis: calc(15%);
+    }
+    
+    footer input[id=city] {
+        flex-basis: calc(50%);
+    }
+
+    footer input[type=button] {
+        flex-basis: calc(30%);
+    }
+
+    .icons {
+        margin-top: 1.5rem;
+    }
+
+    .icons img {
+        padding: 0px 21px;
+        width: 35px;
+    }
+}
 
 /* Desktop Style min-width: 769px */
