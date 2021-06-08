@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2020-02-02 08:12:34
+ * @LastEditors: Ke Ren
+ * @LastEditTime: 2021-06-08 11:17:16
+ * @FilePath: /mtm6201-picture-this-master/index.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +21,18 @@
       <h1>Picture This!</h1>
       <h4>My Really Cool Blog Post</h4>
     </div>
-    <img src="images/museum.jpg" alt="placeholder">
+    <picture>
+      <source srcset="images/museum-320.jpg 320w,
+                      images/museum-480.jpg 480w,
+                      images/museum-720.jpg 720w,
+                      images/museum-960.jpg 960w,"
+              media="(max-width: 959px)">
+      <source srcset="images/museum-square-480.jpg 480w,
+                      images/museum-square-640.jpg 640w,
+                      images/museum-square-800.jpg 800w,"
+              media="(min-width: 960px)"> 
+       <img src="images/museum-square-800.jpg" alt="placeholder">
+    </picture>
 
   </header>
 </body>
