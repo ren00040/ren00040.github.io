@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-01 15:29:27
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-07 04:05:56
+ * @LastEditTime: 2021-06-08 00:07:12
  * @FilePath: /landing-page/css/main.css
  */
 
@@ -182,7 +182,7 @@ footer input[type=button] {
 }
 
 /* Tablet Style min-width: 376px max-width: 768px */
-@media screen and (max-width:1023px) and (min-width:768px){
+@media screen and (min-width:768px){
     h1 {
         font-size: 5rem;
         font-weight: bold;
@@ -192,7 +192,7 @@ footer input[type=button] {
     .slogan>p {
         padding-top: 20px;
         font-size: 24px;
-        line-height: 29px;
+        line-height: 32px;
     }    
 
     .scooter {
@@ -278,3 +278,76 @@ footer input[type=button] {
 }
 
 /* Desktop Style min-width: 769px */
+@media screen and (min-width:1024px) {
+    main {
+        margin-top: 96px;
+        margin-bottom: 96px;
+    }
+
+    .slogan {
+        padding-top: 1rem;
+    }
+
+    .slogan>p {
+        padding-top: 40px;
+    }
+    /* Use height:auto fit height to the containter */
+    .scooter {
+        height: auto;
+        margin: 0 -10rem 0 -8rem;
+    }
+
+    .landing-form {
+        margin: 0;
+        padding: 35px 43px 45px 43px;
+    }
+
+    form input[type="button"] {
+        height: 57px;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 92px;
+        padding: 24px 140px;
+    }
+
+    .calculate {
+        display: block;
+        float: left;
+    }
+
+    .icons {
+        display: block;
+        margin: 0;
+        float: right;
+    }
+
+    .hours-city {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: start;
+        width: 615px;
+    }
+
+    .hours-city>input {
+        margin-right: 1rem;
+    }
+
+    footer input[id=hours] {
+        flex-basis: 122px;
+        /* width: 68px; */
+    }
+    
+    footer input[id=city] {
+        flex-basis: 260px;
+        /* width: 55vmin; */
+    }
+    
+    footer input[type=button] {
+        margin: 0;
+        flex-basis: 200px;
+    }
+}
