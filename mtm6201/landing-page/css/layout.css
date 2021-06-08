@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-01 15:29:23
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-08 00:04:00
+ * @LastEditTime: 2021-06-08 00:28:50
  * @FilePath: /landing-page/css/layout.css
  */
 
@@ -27,13 +27,15 @@ main {
 
 /* Desktop Style min-width: 769px */
 @media screen and (min-width:1024px) {
-    /* use flex layout for main part*/
+    /* use flex layout for main part */
     main {
         display: flex;
         flex-flow: row nowrap;
         padding: 0 140px;
     }
 
+    /* Set the width of each column */
+    /* TODO There should be a better way */
     .slogan {
         flex: 1.2 1 0;
     }
@@ -46,12 +48,13 @@ main {
     .landing-form {
         flex: 1 1 0;
     }
+    /* Set the width of each column */
 
     header {
         padding: 1.5rem 140px;
     }
 
-    /* use flex layout for footer part*/
+    /* use flex layout for footer part */
     footer {
         display: flex;
         flex-wrap: nowrap;

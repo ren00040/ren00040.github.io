@@ -1,10 +1,9 @@
 /*
  * @Date: 2021-06-01 15:29:27
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-08 00:07:12
+ * @LastEditTime: 2021-06-08 01:58:40
  * @FilePath: /landing-page/css/main.css
  */
-
 
 /* Mobile Style max-width: 375px */
 .slogan>p {
@@ -45,7 +44,7 @@ form>input {
 }
 
 /* Set placeholder text */
-/* Why placeholder text cant be set in page tag? */
+/* ISSUE Why placeholder text cant be set in page tag? */
 form .input-text::placeholder {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
@@ -72,9 +71,16 @@ input[type="checkbox"] {
     margin-right: 10px;
 }
 
+/* ISSUE how to change the checkbox background? */
+/* It does not work */
+input[type="checkbox"]:checked {
+    background-color: var(--aquamarine);
+    color: var(--aquamarine);
+}
+
 form input[type="button"] {
     margin-top: 1rem;
-    background-color: #57eeab;
+    background-color: var(--aquamarine);
     border: none;
     border-radius: 11px;
     height: 55px;
@@ -89,15 +95,16 @@ form input[type="button"] {
 }
 
 .landing-form .app-status>a {
-    color:#ff8480;
+    color:var(--pink);
 }
 
-/* without underline */
+/* Show links without underline */
 .app-status>a:link,
 .app-status>a:visited {
     text-decoration: none;
 }
 
+/* When hover & focus change text underline */
 .app-status>a:hover,
 .app-status>a:focus {
     text-decoration: underline;
@@ -107,7 +114,7 @@ form input[type="button"] {
 footer {
     display: flex;
     flex-direction: column;
-    background-color: #fffd8c;
+    background-color: var(--canary);
     padding: 24px 36px;
 }
 
@@ -123,13 +130,13 @@ footer {
 }
 
 footer input {
-    background-color: #f7f7ff;
+    background-color: var(--gost-white);
     border-radius: 11px;
     border: none;
     height: 40px;
 }
 
-/* using float to make 'hours'&'city' input box align */
+/* Using flex layout to make 'hours'&'city' adapt Tablet and Desktop */
 .hours-city {
     display: flex;
     flex-flow: row wrap;
@@ -158,8 +165,8 @@ footer input::placeholder {
 
 footer input[type=button] {
     margin: 5px 0px;
-    background-color: #ff8480;
-    color: #f7f7ff;
+    background-color: var(--pink);
+    color: var(--gost-white);
     font-size: 24px;
     font-weight: bold;
     width: 100%;
@@ -177,6 +184,7 @@ footer input[type=button] {
     height: 32px;
 }
 
+/* Facebook icon raduis */
 .img-radius {
     border-radius: 50%;
 }
@@ -255,6 +263,7 @@ footer input[type=button] {
         margin-top: 1rem;
     }
 
+    /* Adjust input width in footer*/
     footer input[id=hours] {
         flex-basis: calc(15%);
     }
@@ -273,7 +282,7 @@ footer input[type=button] {
 
     .icons img {
         padding: 0px 21px;
-        width: 35px;
+        height: 35px;
     }
 }
 
@@ -291,7 +300,9 @@ footer input[type=button] {
     .slogan>p {
         padding-top: 40px;
     }
+
     /* Use height:auto fit height to the containter */
+    /* Use negative margin to overlap text and background-img*/
     .scooter {
         height: auto;
         margin: 0 -10rem 0 -8rem;
@@ -306,6 +317,7 @@ footer input[type=button] {
         height: 57px;
     }
 
+    /* Change flex-direction: row; */
     footer {
         flex-direction: row;
         justify-content: space-between;
@@ -314,17 +326,29 @@ footer input[type=button] {
         padding: 24px 140px;
     }
 
+    /* Ues float to align calculate to the left side of the page */
     .calculate {
         display: block;
         float: left;
     }
 
+    /* Use flexlayout to change icons' order */
     .icons {
-        display: block;
+        display: flex;
         margin: 0;
         float: right;
     }
 
+    /* change icons' order */
+    .icons :nth-child(1){order:1;}
+    .icons :nth-child(4){order:2;}
+
+    /* cancel facebook icon's raduis */
+    .img-radius {
+        border-radius: 0;
+    }
+
+    /* Set inputs and button to the same line */
     .hours-city {
         flex-wrap: nowrap;
         flex-direction: row;
