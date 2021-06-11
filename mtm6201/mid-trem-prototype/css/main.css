@@ -1,0 +1,19 @@
+/*
+ * @Date: 2021-06-09 11:30:46
+ * @LastEditors: Ke Ren
+ * @LastEditTime: 2021-06-10 14:03:52
+ * @FilePath: /mid-trem-prototype/css/main.css
+ */
+
+/* Mobile first max-width:375px */
+/* menu is invisible when in the mobile style at first */
+.menu-container {
+    display: none;
+    position: absolute;
+    background-color: antiquewhite;
+}
+
+/* Show the dropdown menu on hover */
+.dropbtn-container:hover .menu-container {
+    display: block;
+}
