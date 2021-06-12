@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-09 11:30:46
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-10 14:03:52
+ * @LastEditTime: 2021-06-12 00:48:32
  * @FilePath: /mid-trem-prototype/css/main.css
  */
 
@@ -10,10 +10,37 @@
 .menu-container {
     display: none;
     position: absolute;
-    background-color: antiquewhite;
+    background-color: white;
 }
 
 /* Show the dropdown menu on hover */
 .dropbtn-container:hover .menu-container {
     display: block;
 }
+
+.dropbtn {
+    border: 1px solid var(--pink);
+}
+
+.dropbtn>img {
+    width: 25px;
+    height: 25px;
+    fill: var(--pink);
+}
+
+.banner {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.slogan>p {
+    text-align: start;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+

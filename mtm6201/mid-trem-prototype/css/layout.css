@@ -1,0 +1,20 @@
+/*
+ * @Date: 2021-06-09 11:30:43
+ * @LastEditors: Ke Ren
+ * @LastEditTime: 2021-06-11 12:02:09
+ * @FilePath: /mid-trem-prototype/css/layout.css
+ */
+
+ /* Mobile style max-width:375px */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+ /* Tablet style min-width:376px and max-width:1023px */
+
+
+ /* Desktop style min-width:1024px */

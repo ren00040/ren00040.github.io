@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-09 11:30:35
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-10 15:27:17
+ * @LastEditTime: 2021-06-11 10:40:13
  * @FilePath: /mid-trem-prototype/css/base.css
  */
 
@@ -66,6 +66,28 @@ table {
     content: "";
     display: table;
     clear: both;
+}
+
+:root {
+    --pink: #F564A9;
+}
+
+body {
+    padding: 11px 16px 0 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: var(--pink);
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 a {
