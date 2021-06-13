@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-01 15:29:27
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-08 01:58:40
+ * @LastEditTime: 2021-06-13 01:51:11
  * @FilePath: /landing-page/css/main.css
  */
 
@@ -29,11 +29,17 @@
     box-shadow:5px 10px 15px rgba(51, 49, 49, 0.4);
 }
 
+/* Use flexlayout to change order in Tablet mode */
+.form-input {
+    display: flex;
+    flex-direction: column;
+}
+
 form p {
     padding-top: 8px;
 }
 
-form>input {
+.form-input>input {
     width: 100%;
     height: 40px;
     background-color: #f4f4f5;
@@ -45,7 +51,7 @@ form>input {
 
 /* Set placeholder text */
 /* ISSUE Why placeholder text cant be set in page tag? */
-form .input-text::placeholder {
+.form-input .input-text::placeholder {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     color: #9B9B9B;
@@ -218,8 +224,12 @@ footer input[type=button] {
         margin-top: 30px;
     }
 
-    form>input {
+    .form-input>input {
         height: 55px;
+    }
+    /* change input order */
+    form input[type="tel"] {
+        order: 1;
     }
 
     /* reset opacity of the first input text  */
@@ -237,7 +247,7 @@ footer input[type=button] {
         height: 29px;
     }
     
-    form input[type="button"] {
+    .form-input input[type="button"] {
         height: 4rem;
         font-size: 2rem;
     }
