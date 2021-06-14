@@ -1,0 +1,83 @@
+/*
+ * @Date: 2021-06-14 00:48:29
+ * @LastEditors: Ke Ren
+ * @LastEditTime: 2021-06-14 02:23:57
+ * @FilePath: /mid-trem-prototype/css/sildeshow.css
+ */
+
+/* SLIDESHOW */
+/* References: https://codepen.io/Schepp/pen/WNbQByE?editors=1100 */
+ol, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel {
+    position: relative;
+    padding-top: 75%;
+}
+
+.carousel__viewport {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.carousel::before,
+.carousel::after,
+.carousel__prev,
+.carousel__next {
+    position: absolute;
+    top: 0;
+    margin-top: 37.5%;
+    width: 36px;
+    height: 36px;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    font-size: 0;
+    outline: 0;
+}
+
+.carousel::before,
+.carousel__prev {
+    left: 0rem;
+}
+
+.carousel::after,
+.carousel__next {
+    right: 0rem;
+}
+
+.carousel::before,
+.carousel::after {
+    content: '';
+    z-index: 1;
+    background-color: var(--pink);
+    background-size: 1rem 1rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    pointer-events: none;
+}
+
+.carousel::before {
+    background-image: url("/imgs/chevron-left.png");
+    background-size: auto;
+}
+  
+.carousel::after {
+    background-image: url("/imgs/chevron-right.png");
+    background-size: auto;
+}

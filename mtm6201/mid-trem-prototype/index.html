@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-06-09 11:30:26
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-12 00:51:07
+ * @LastEditTime: 2021-06-14 02:03:58
  * @FilePath: /mid-trem-prototype/index.html
 -->
 <!DOCTYPE html>
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sildeshow.css">
 
     <title>Toon Ice</title>
     <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
@@ -23,7 +24,7 @@
     <header>
         <div class="navbar">
             <div class="logo">
-                <img src="imgs/logo-64.png" alt="Brand-logo">
+                <a href="index.html"><img src="imgs/logo-64.png" alt="Brand-logo"></a>
             </div>
             <!-- Use a dropbtn when mobile style -->
             <div class="dropbtn-container">
@@ -48,25 +49,44 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim est neque labore? Ut est porro reprehenderit debitis quidem soluta voluptas ea expedita eligendi dicta modi sed, quod, eveniet recusandae saepe.</p>
             </div>
 
+            <!-- SLIDESHOW example form: https://www.w3schools.com/howto/howto_js_slideshow.asp -->
             <!-- Slideshow container -->
-            <div class="slideshow-container">
-                <div class="slide">
-                    <img src="imgs/slide-1-320.png" alt="Ice cream cone">
-                </div>
-                <div class="slide">
-                    <img src="imgs/slide-2-320.png" alt="Ice cream cone">
-                </div>
-                <div class="slide">
-                    <img src="imgs/slide-3-320.png" alt="Ice cream cone">
-                </div> 
-                <!-- The dots/circles -->
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
+            <section class="carousel" aria-label="Gallery">
+                <ol class="carousel__viewport">
+                  <li id="carousel__slide1"
+                      tabindex="0"
+                      class="carousel__slide">
+                      <div><img src="imgs/slide-1-320.png" alt="Ice cream cone"></div>
+                      <div class="carousel__snapper">
+                      <a href="#carousel__slide3"
+                         class="carousel__prev">Go to last slide</a>
+                      <a href="#carousel__slide2"
+                         class="carousel__next">Go to next slide</a>
+                    </div>
+                  </li>
+                  <li id="carousel__slide2"
+                      tabindex="0"
+                      class="carousel__slide">
+                      <div><img src="imgs/slide-2-320.png" alt="Ice cream cone"></div>
+                      <div class="carousel__snapper"></div>
+                      <a href="#carousel__slide1"
+                          class="carousel__prev">Go to previous slide</a>
+                      <a href="#carousel__slide3"
+                          class="carousel__next">Go to next slide</a>
+                  </li>
+                  <li id="carousel__slide3"
+                      tabindex="0"
+                      class="carousel__slide">
+                      <div><img src="imgs/slide-3-320.png" alt="Ice cream cone"></div>
+                      <div class="carousel__snapper"></div>
+                      <a href="#carousel__slide2"
+                          class="carousel__prev">Go to previous slide</a>
+                      <a href="#carousel__slide1"
+                          class="carousel__next">Go to next slide</a>
+                  </li>
+                </ol>
                 <button class="pink-btn"><a href="#">Read More</a></button>
-            </div>
+              </section>
     </header>
     <main>
         <section class="about">

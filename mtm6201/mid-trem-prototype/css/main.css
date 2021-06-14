@@ -1,11 +1,12 @@
 /*
  * @Date: 2021-06-09 11:30:46
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-12 00:48:32
+ * @LastEditTime: 2021-06-14 00:49:01
  * @FilePath: /mid-trem-prototype/css/main.css
  */
 
 /* Mobile first max-width:375px */
+/* HEADER */
 /* menu is invisible when in the mobile style at first */
 .menu-container {
     display: none;

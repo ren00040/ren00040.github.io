@@ -1,0 +1,60 @@
+<!--
+ * @Date: 2021-06-14 00:52:59
+ * @LastEditors: Ke Ren
+ * @LastEditTime: 2021-06-14 01:22:32
+ * @FilePath: /mid-trem-prototype/slideshow.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideshow test</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/sildeshow.css">
+
+</head>
+<body>
+    <h1>CSS-only Carousel</h1>
+
+<p>This carousel is created with HTML and CSS only.</p>
+
+<section class="carousel" aria-label="Gallery">
+  <ol class="carousel__viewport">
+    <li id="carousel__slide1"
+        tabindex="0"
+        class="carousel__slide">
+        <div><img src="imgs/slide-1-320.png" alt="Ice cream cone"></div>
+        <div class="carousel__snapper">
+        <a href="#carousel__slide3"
+           class="carousel__prev">Go to last slide</a>
+        <a href="#carousel__slide2"
+           class="carousel__next">Go to next slide</a>
+      </div>
+    </li>
+    <li id="carousel__slide2"
+        tabindex="0"
+        class="carousel__slide">
+        <div><img src="imgs/slide-2-320.png" alt="Ice cream cone"></div>
+        <div class="carousel__snapper"></div>
+        <a href="#carousel__slide1"
+            class="carousel__prev">Go to previous slide</a>
+        <a href="#carousel__slide3"
+            class="carousel__next">Go to next slide</a>
+    </li>
+    <li id="carousel__slide3"
+        tabindex="0"
+        class="carousel__slide">
+        <div><img src="imgs/slide-3-320.png" alt="Ice cream cone"></div>
+        <div class="carousel__snapper"></div>
+        <a href="#carousel__slide2"
+            class="carousel__prev">Go to previous slide</a>
+        <a href="#carousel__slide1"
+            class="carousel__next">Go to next slide</a>
+    </li>
+  </ol>
+</section>
+</body>
+</html>
