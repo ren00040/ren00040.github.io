@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-01 15:29:27
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-13 01:51:11
+ * @LastEditTime: 2021-06-14 22:48:34
  * @FilePath: /landing-page/css/main.css
  */
 
@@ -70,18 +70,56 @@ form p {
     align-items: center;
 }
 
-/* TODO: Why radius does not work? */
+/* ISSUE: Cannot change checkbox raduis and background */
+/* SOLUTION: Hide the checkbox and use a label to make a new one */
+/* REFERENCE: https://codepen.io/tutsplus/pen/bgqYJz?editors=1100 */
 input[type="checkbox"] {
-    width: 25px;
-    height: 25px;
-    margin-right: 10px;
+    display: none;
 }
 
-/* ISSUE how to change the checkbox background? */
-/* It does not work */
-input[type="checkbox"]:checked {
+/* use next label to draw a new checkbox */
+/* background-color is necessary, otherwise it will make it difficult to choose the box */
+input[type="checkbox"]+label {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: var(--gost-white);
+    position: relative;
+}
+
+/* When checked change the new checkbox background */
+input[type="checkbox"]:checked+label {
     background-color: var(--aquamarine);
-    color: var(--aquamarine);
+}
+
+input[type="checkbox"]+label::after {
+    cursor: pointer;
+    position: absolute;
+    content: '';
+    opacity: 0;
+}
+
+/* When checked draw a tick*/
+input[type="checkbox"]:checked+label::after {
+    border: 2px solid #000;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width:18px;
+    height:10px;
+    top:50%;
+    margin-top:-8px;
+    left:50%;
+    margin-left:-10px;
+    opacity: 1.0;
+}
+
+.agree {
+    padding-left: 10px;
 }
 
 form input[type="button"] {
