@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-01 15:29:27
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-14 22:48:34
+ * @LastEditTime: 2021-06-14 23:13:11
  * @FilePath: /landing-page/css/main.css
  */
 
@@ -65,10 +65,10 @@ form p {
 }
 
 /* Use flex layout keep text vertically centered */
-.checkbox-containter {
+/* .checkbox-containter {
     display: flex;
     align-items: center;
-}
+} */
 
 /* ISSUE: Cannot change checkbox raduis and background */
 /* SOLUTION: Hide the checkbox and use a label to make a new one */
@@ -77,24 +77,25 @@ input[type="checkbox"] {
     display: none;
 }
 
-/* use next label to draw a new checkbox */
-/* background-color is necessary, otherwise it will make it difficult to choose the box */
-input[type="checkbox"]+label {
+/* use next label>span to draw a new checkbox */
+/* vertical-align sets text align center */
+input[type="checkbox"]+label span{
     display: inline-block;
     width: 24px;
     height: 24px;
     border: 1px solid black;
+    margin-right: 10px;
     border-radius: 5px;
-    background-color: var(--gost-white);
+    vertical-align:middle;
     position: relative;
 }
 
 /* When checked change the new checkbox background */
-input[type="checkbox"]:checked+label {
+input[type="checkbox"]:checked+label span{
     background-color: var(--aquamarine);
 }
 
-input[type="checkbox"]+label::after {
+input[type="checkbox"]+label span::after {
     cursor: pointer;
     position: absolute;
     content: '';
@@ -102,7 +103,7 @@ input[type="checkbox"]+label::after {
 }
 
 /* When checked draw a tick*/
-input[type="checkbox"]:checked+label::after {
+input[type="checkbox"]:checked + label span::after {
     border: 2px solid #000;
     border-top: none;
     border-right: none;
@@ -116,10 +117,6 @@ input[type="checkbox"]:checked+label::after {
     left:50%;
     margin-left:-10px;
     opacity: 1.0;
-}
-
-.agree {
-    padding-left: 10px;
 }
 
 form input[type="button"] {
