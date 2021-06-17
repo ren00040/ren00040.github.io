@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-06-14 00:52:59
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-14 01:22:32
+ * @LastEditTime: 2021-06-17 01:10:47
  * @FilePath: /mid-trem-prototype/slideshow.html
 -->
 <!DOCTYPE html>
@@ -17,44 +17,39 @@
 
 </head>
 <body>
-    <h1>CSS-only Carousel</h1>
+    <div class="CSSgal">
 
-<p>This carousel is created with HTML and CSS only.</p>
-
-<section class="carousel" aria-label="Gallery">
-  <ol class="carousel__viewport">
-    <li id="carousel__slide1"
-        tabindex="0"
-        class="carousel__slide">
-        <div><img src="imgs/slide-1-320.png" alt="Ice cream cone"></div>
-        <div class="carousel__snapper">
-        <a href="#carousel__slide3"
-           class="carousel__prev">Go to last slide</a>
-        <a href="#carousel__slide2"
-           class="carousel__next">Go to next slide</a>
+        <!-- Don't wrap targets in parent -->
+        <s id="s1"></s> 
+        <s id="s2"></s>
+        <s id="s3"></s>
+        <s id="s4"></s>
+      
+        <div class="slider">
+            <div>
+                <img src="/imgs/slide-1-320.png" alt="cream cone">
+            </div>
+            <div>
+                <img src="/imgs/slide-2-320.png" alt="cream cone">
+            </div>
+            <div>
+                <img src="/imgs/slide-3-320.png" alt="cream cone">
+            </div>
+            
+        </div>
+        
+        <div class="prevNext">
+          <div><a href="#s3"></a><a href="#s2"></a></div>
+          <div><a href="#s1"></a><a href="#s3"></a></div>
+          <div><a href="#s2"></a><a href="#s1"></a></div>
+        </div>
+      
+        <div class="bullets">
+          <a href="#s1">1</a>
+          <a href="#s2">2</a>
+          <a href="#s3">3</a>
+        </div>
+      
       </div>
-    </li>
-    <li id="carousel__slide2"
-        tabindex="0"
-        class="carousel__slide">
-        <div><img src="imgs/slide-2-320.png" alt="Ice cream cone"></div>
-        <div class="carousel__snapper"></div>
-        <a href="#carousel__slide1"
-            class="carousel__prev">Go to previous slide</a>
-        <a href="#carousel__slide3"
-            class="carousel__next">Go to next slide</a>
-    </li>
-    <li id="carousel__slide3"
-        tabindex="0"
-        class="carousel__slide">
-        <div><img src="imgs/slide-3-320.png" alt="Ice cream cone"></div>
-        <div class="carousel__snapper"></div>
-        <a href="#carousel__slide2"
-            class="carousel__prev">Go to previous slide</a>
-        <a href="#carousel__slide1"
-            class="carousel__next">Go to next slide</a>
-    </li>
-  </ol>
-</section>
 </body>
 </html>
