@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-06-09 11:30:26
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-14 02:03:58
+ * @LastEditTime: 2021-06-25 01:30:05
  * @FilePath: /mid-trem-prototype/index.html
 -->
 <!DOCTYPE html>
@@ -14,13 +14,14 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sildeshow.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <title>Toon Ice</title>
     <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!-- HEADER -->
     <header>
         <div class="navbar">
             <div class="logo">
@@ -49,145 +50,218 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim est neque labore? Ut est porro reprehenderit debitis quidem soluta voluptas ea expedita eligendi dicta modi sed, quod, eveniet recusandae saepe.</p>
             </div>
 
-            <!-- SLIDESHOW example form: https://www.w3schools.com/howto/howto_js_slideshow.asp -->
+            <!-- SLIDESHOW example form: 
+                    PURE RESPONSIVE CSS3 SLIDESHOW GALLERY by Roko C. buljan
+                    http://stackoverflow.com/a/34696029/383904 -->
             <!-- Slideshow container -->
-            <section class="carousel" aria-label="Gallery">
-                <ol class="carousel__viewport">
-                  <li id="carousel__slide1"
-                      tabindex="0"
-                      class="carousel__slide">
-                      <div><img src="imgs/slide-1-320.png" alt="Ice cream cone"></div>
-                      <div class="carousel__snapper">
-                      <a href="#carousel__slide3"
-                         class="carousel__prev">Go to last slide</a>
-                      <a href="#carousel__slide2"
-                         class="carousel__next">Go to next slide</a>
+            <div class="CSSgal">
+
+                <!-- Don't wrap targets in parent -->
+                <s id="s1"></s> 
+                <s id="s2"></s>
+                <s id="s3"></s>
+              
+                <div class="slider">
+                    <div>
+                        <img src="/imgs/slide-1-320.png" alt="cream cone">
+                        <div class="readmore"><a href="">Read More</a></div>      
                     </div>
-                  </li>
-                  <li id="carousel__slide2"
-                      tabindex="0"
-                      class="carousel__slide">
-                      <div><img src="imgs/slide-2-320.png" alt="Ice cream cone"></div>
-                      <div class="carousel__snapper"></div>
-                      <a href="#carousel__slide1"
-                          class="carousel__prev">Go to previous slide</a>
-                      <a href="#carousel__slide3"
-                          class="carousel__next">Go to next slide</a>
-                  </li>
-                  <li id="carousel__slide3"
-                      tabindex="0"
-                      class="carousel__slide">
-                      <div><img src="imgs/slide-3-320.png" alt="Ice cream cone"></div>
-                      <div class="carousel__snapper"></div>
-                      <a href="#carousel__slide2"
-                          class="carousel__prev">Go to previous slide</a>
-                      <a href="#carousel__slide1"
-                          class="carousel__next">Go to next slide</a>
-                  </li>
-                </ol>
-                <button class="pink-btn"><a href="#">Read More</a></button>
-              </section>
+                    <div>
+                        <img src="/imgs/slide-2-320.png" alt="cream cone">
+                        <div class="readmore"><a href="">Read More</a></div>
+                    </div>
+                    <div>
+                        <img src="/imgs/slide-3-320.png" alt="cream cone">
+                        <div class="readmore"><a href="">Read More</a></div>
+                    </div>                    
+                </div>
+                
+                <div class="prevNext">
+                  <div><a href="#s3"></a><a href="#s2"></a></div>
+                  <div><a href="#s1"></a><a href="#s3"></a></div>
+                  <div><a href="#s2"></a><a href="#s1"></a></div>
+                </div>
+              
+                <div class="bullets">
+                  <a href="#s1">1</a>
+                  <a href="#s2">2</a>
+                  <a href="#s3">3</a>
+                </div>               
+            </div>              
     </header>
+    <!-- MAIN -->
     <main>
+        <!-- ABOUT -->
         <section class="about">
-            <h2>About <span>Toon Ice</span></h2><hr>
+            <div><h2>About <span>Toon Ice</span></h2></div>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium, fugiat corporis! Modi architecto ab aperiam! Eos nesciunt doloribus sunt illum maxime sapiente harum esse explicabo iste, debitis ipsum! Expedita, magnam?</p>
             <div>
                 <img src="imgs/slide-1-320.png" alt="Ice cream cone">
             </div>
-            <button class="pink-btn"><a href="#">Read More</a></button>
+            <div class="readmore"><a href="">Read More</a></div>
         </section>
+        <!-- PRODUCTS -->
         <section class="products">
-            <h2>Ice <span>Products</span></h2><hr>
+            <h2>Ice <span>Products</span></h2>
             <!-- Slideshow in mobile style with caption-->
-            <div class="slideshow-container">
-                <div class="slide">
-                    <img src="imgs/slide-1-320.png" alt="Ice cream cone">
-                    <caption>slide-1</caption>
+            <div class="CSSgal">
+
+                <!-- Don't wrap targets in parent -->
+                <s id="p1"></s> 
+                <s id="p2"></s>
+                <s id="p3"></s>
+              
+                <div class="slider">
+                    <div>
+                        <img src="/imgs/slide-1-320.png" alt="cream cone">
+                        <div class="caption">caption #1</div>
+                    </div>
+                    <div>
+                        <img src="/imgs/slide-2-320.png" alt="cream cone">
+                        <div class="caption">caption #2</div>
+                    </div>
+                    <div>
+                        <img src="/imgs/slide-3-320.png" alt="cream cone">
+                        <div class="caption">caption #3</div>
+                    </div>                    
                 </div>
-                <div class="slide">
-                    <img src="imgs/slide-2-320.png" alt="Ice cream cone">
-                    <caption>slide-2</caption>
+                
+                <div class="prevNext">
+                  <div><a href="#p3"></a><a href="#p2"></a></div>
+                  <div><a href="#p1"></a><a href="#p3"></a></div>
+                  <div><a href="#p2"></a><a href="#p1"></a></div>
                 </div>
-                <div class="slide">
-                    <img src="imgs/slide-3-320.png" alt="Ice cream cone">
-                    <caption>slide-3</caption>
-                </div> 
-                <!-- The dots/circles -->
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
-            </div>
+              
+                <div class="bullets">
+                  <a href="#p1">1</a>
+                  <a href="#p2">2</a>
+                  <a href="#p3">3</a>
+                </div>               
+              </div>
         </section>
+        <!-- GALLERY -->
         <section class="gallery">
-            <h2>Ice <span>Gallery</span></h2><hr>
+            <h2>Ice <span>Gallery</span></h2>
             <!-- Slideshow in mobile style without caption-->
-            <div class="slideshow-container">
-                <div class="slide group-pic">
-                    <img src="imgs/slide-1-320.png" alt="Ice cream cone">
-                    <img src="imgs/slide-1-320.png" alt="Ice cream cone">
-                    <img src="imgs/slide-1-320.png" alt="Ice cream cone">
-                    <img src="imgs/slide-1-320.png" alt="Ice cream cone">
+            <div class="CSSgal">
+
+                <!-- Don't wrap targets in parent -->
+                <s id="g1"></s> 
+                <s id="g2"></s>
+                <s id="g3"></s>                                              
+                
+                <div class="slider">
+                    <div>
+                        <div >
+                            <div class="photos">
+                                <img src="/imgs/slide-1-320.png" alt="cream cone">
+                                <img src="/imgs/slide-1-320.png" alt="cream cone">
+                                <img src="/imgs/slide-1-320.png" alt="cream cone">
+                                <img src="/imgs/slide-1-320.png" alt="cream cone">
+                            </div>  
+                        </div>
+                    </div>
+                    <div>
+                        <div >
+                            <div class="photos">
+                                <img src="/imgs/slide-2-320.png" alt="cream cone">
+                                <img src="/imgs/slide-2-320.png" alt="cream cone">
+                                <img src="/imgs/slide-2-320.png" alt="cream cone">
+                                <img src="/imgs/slide-2-320.png" alt="cream cone">
+                            </div>  
+                        </div>
+                    </div>
+                    <div>
+                        <div >
+                            <div class="photos">
+                                <img src="/imgs/slide-3-320.png" alt="cream cone">
+                                <img src="/imgs/slide-3-320.png" alt="cream cone">
+                                <img src="/imgs/slide-3-320.png" alt="cream cone">
+                                <img src="/imgs/slide-3-320.png" alt="cream cone">
+                            </div>  
+                        </div>
+                    </div>                    
+                </div>   
+
+                <div class="prevNext">
+                  <div><a href="#g3"></a><a href="#g2"></a></div>
+                  <div><a href="#g1"></a><a href="#g3"></a></div>
+                  <div><a href="#g2"></a><a href="#g1"></a></div>
                 </div>
-                <div class="slide group-pic">
-                    <img src="imgs/slide-2-320.png" alt="Ice cream cone">
-                    <img src="imgs/slide-2-320.png" alt="Ice cream cone">
-                    <img src="imgs/slide-2-320.png" alt="Ice cream cone">
-                    <img src="imgs/slide-2-320.png" alt="Ice cream cone">
-                </div>
-                <div class="slide group-pic">
-                    <img src="imgs/slide-3-320.png" alt="Ice cream cone">
-                    <img src="imgs/slide-2-320.png" alt="Ice cream cone">
-                    <img src="imgs/slide-2-320.png" alt="Ice cream cone">
-                    <img src="imgs/slide-2-320.png" alt="Ice cream cone">
-                </div> 
-                <!-- The dots/circles -->
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
-            </div>
+              
+                <div class="bullets">
+                  <a href="#g1">1</a>
+                  <a href="#g2">2</a>
+                  <a href="#g3">3</a>
+                </div>               
+              </div>
         </section>
+        <!-- TOUCH -->
         <section class="touch">
             <h2>Get in <span>Touch</span></h2><hr>
             <div class="form-container">
                 <!-- action: send the data to a file -->
                 <form action="">
-                    <input type="text" id="name"><br>
-                    <input type="email" id="email"><br>
-                    <input type="tel" id="phone"><br>
-                    <textarea name="massage" id="message" cols="30" rows="10"></textarea>
+                    <input type="text" id="name" placeholder="YOUR NAME"><br>
+                    <input type="email" id="email" placeholder="EMAIL"><br>
+                    <input type="tel" id="phone" placeholder="PHONE NUMBER"><br>
+                    <textarea name="massage" id="message" cols="30" rows="10" placeholder="MASSAGE"></textarea>
                 </form>
             </div>
+            <div>sent</div>
         </section>
-        <section class="said">
-            <div class="user-comment">
-                <div>
-                    <h2>What People Say</h2>
-                    <div class="slideshow-container">
-                        <div class="slide">
-                            <img src="imgs/slide-1-320.png" alt="Ice cream cone">
+        <!-- COMMENT -->
+        <section class="user-comment">
+            <div>
+                <h2>What People Say</h2>
+            </div>
+            <div class="CSSgal">
+                <!-- Don't wrap targets in parent -->
+                <s id="c1"></s> 
+                <s id="c2"></s>
+                <s id="c3"></s>
+              
+                <div class="slider">
+                    <div>
+                        <div >
+                            <div class="user">
+                                <img src="/imgs/slide-1-320.png" alt="cream cone">
+                                <p>111111 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorem a consectetur earum et adipisci asperiores aliquam. Fugiat laborum iure, impedit, quas, eaque alias illum rerum assumenda perspiciatis id quia.</p>
+                            </div>  
                         </div>
-                        <div class="slide">
-                            <img src="imgs/slide-2-320.png" alt="Ice cream cone">
-                        </div>
-                        <div class="slide">
-                            <img src="imgs/slide-3-320.png" alt="Ice cream cone">
-                        </div> 
-                        <!-- Next and previous buttons -->
-                        <div>
-                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                        </div>
-                        <button class="pink-btn"><a href="#">Read More</a></button>
                     </div>
+                    <div>
+                        <div >
+                            <div class="user">
+                                <img src="/imgs/slide-2-320.png" alt="cream cone">
+                                <p>222222 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorem a consectetur earum et adipisci asperiores aliquam. Fugiat laborum iure, impedit, quas, eaque alias illum rerum assumenda perspiciatis id quia.</p>
+                            </div>  
+                        </div>
+                    </div>
+                    <div>
+                        <div >
+                            <div class="user">
+                                <img src="/imgs/slide-3-320.png" alt="cream cone">
+                                <p>333333 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorem a consectetur earum et adipisci asperiores aliquam. Fugiat laborum iure, impedit, quas, eaque alias illum rerum assumenda perspiciatis id quia.</p>
+                            </div>  
+                        </div>
+                    </div>                
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quia vitae assumenda eos quidem velit quae minus, sapiente natus hic. Dicta laboriosam aliquam molestiae est illo, qui doloremque perspiciatis officia!</p>
+                
+                <div class="prevNext">
+                  <div><a href="#c3"></a><a href="#c2"></a></div>
+                  <div><a href="#c1"></a><a href="#c3"></a></div>
+                  <div><a href="#c2"></a><a href="#c1"></a></div>
+                </div>
+              
+                <div class="bullets">
+                  <a href="#c1">1</a>
+                  <a href="#c2">2</a>
+                  <a href="#c3">3</a>
+                </div>               
             </div>
         </section>
+        <!-- CONTACT -->
         <section class="contact">
             <h2>Contact Us</h2><hr>
             <h3>Address</h3>
@@ -213,6 +287,7 @@
             <div>Google Map</div>
         </section>
     </main>
+    <!-- FOOTER -->
     <footer>
         <div class="copyright">Copyright &#169 2021 Toonice</div>
         <div class="icons">
