@@ -1,7 +1,7 @@
 <!--
- * @Date: 2021-06-09 11:30:26
+ * @Date: 2021-06-27 00:21:27
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-25 01:30:05
+ * @LastEditTime: 2021-06-28 02:46:11
  * @FilePath: /mid-trem-prototype/index.html
 -->
 <!DOCTYPE html>
@@ -11,21 +11,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Normalize CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/sildeshow.css">
     <link rel="stylesheet" href="css/main.css">
 
     <title>Toon Ice</title>
     <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+
 </head>
 <body>
-    <!-- HEADER -->
     <header>
+        <!-- NAVIGATION -->
         <div class="navbar">
             <div class="logo">
                 <a href="index.html"><img src="imgs/logo-64.png" alt="Brand-logo"></a>
+            </div>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="#"></a>HOME</li>
+                        <li><a href="#"></a>ABOUT</li>
+                        <li><a href="#"></a>PRODUCTS</li>
+                        <li><a href="#"></a>GALLERY</li>
+                        <li><a href="#"></a>CONTACT</li>
+                    </ul>
+                </nav>
             </div>
             <!-- Use a dropbtn when mobile style -->
             <div class="dropbtn-container">
@@ -43,162 +57,72 @@
                 </div>
             </div>
         </div>
-        <!-- Banner with picture slideshow -->
+        <!-- BANNER -->
         <div class="banner">
             <div class="slogan">
                 <h1>We Only Make Real Ice Cream</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim est neque labore? Ut est porro reprehenderit debitis quidem soluta voluptas ea expedita eligendi dicta modi sed, quod, eveniet recusandae saepe.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim est neque labore? </p>
+                <div class="btn more more-tablet">Read More</div>
             </div>
-
-            <!-- SLIDESHOW example form: 
-                    PURE RESPONSIVE CSS3 SLIDESHOW GALLERY by Roko C. buljan
-                    http://stackoverflow.com/a/34696029/383904 -->
-            <!-- Slideshow container -->
-            <div class="CSSgal">
-
-                <!-- Don't wrap targets in parent -->
-                <s id="s1"></s> 
-                <s id="s2"></s>
-                <s id="s3"></s>
-              
-                <div class="slider">
-                    <div>
-                        <img src="/imgs/slide-1-320.png" alt="cream cone">
-                        <div class="readmore"><a href="">Read More</a></div>      
-                    </div>
-                    <div>
-                        <img src="/imgs/slide-2-320.png" alt="cream cone">
-                        <div class="readmore"><a href="">Read More</a></div>
-                    </div>
-                    <div>
-                        <img src="/imgs/slide-3-320.png" alt="cream cone">
-                        <div class="readmore"><a href="">Read More</a></div>
-                    </div>                    
-                </div>
-                
-                <div class="prevNext">
-                  <div><a href="#s3"></a><a href="#s2"></a></div>
-                  <div><a href="#s1"></a><a href="#s3"></a></div>
-                  <div><a href="#s2"></a><a href="#s1"></a></div>
-                </div>
-              
-                <div class="bullets">
-                  <a href="#s1">1</a>
-                  <a href="#s2">2</a>
-                  <a href="#s3">3</a>
-                </div>               
-            </div>              
+            <!-- molible first use 320px image -->
+            <div class="banner-img"><img src="imgs/slide-1-320.png" alt=""></div>
+            <div class="btn more more-banner">Read More</div>
+        </div>
     </header>
+    
     <!-- MAIN -->
     <main>
         <!-- ABOUT -->
-        <section class="about">
-            <div><h2>About <span>Toon Ice</span></h2></div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium, fugiat corporis! Modi architecto ab aperiam! Eos nesciunt doloribus sunt illum maxime sapiente harum esse explicabo iste, debitis ipsum! Expedita, magnam?</p>
+        <section class="about" id="about">
             <div>
-                <img src="imgs/slide-1-320.png" alt="Ice cream cone">
+                <h2>About <span>Toon Ice</span></h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo facere repudiandae delectus ab nam quidem numquam sed id. Tempore voluptate.</p>
+                <div class="btn more more-tablet">Read More</div>
             </div>
-            <div class="readmore"><a href="">Read More</a></div>
+            <!-- molible first use 320px image -->
+            <div class="about-img"><img src="imgs/about-320.png" alt=""></div>
+            <div class="btn more more-banner">Read More</div>
         </section>
+
         <!-- PRODUCTS -->
-        <section class="products">
-            <h2>Ice <span>Products</span></h2>
-            <!-- Slideshow in mobile style with caption-->
-            <div class="CSSgal">
-
-                <!-- Don't wrap targets in parent -->
-                <s id="p1"></s> 
-                <s id="p2"></s>
-                <s id="p3"></s>
-              
-                <div class="slider">
-                    <div>
-                        <img src="/imgs/slide-1-320.png" alt="cream cone">
-                        <div class="caption">caption #1</div>
-                    </div>
-                    <div>
-                        <img src="/imgs/slide-2-320.png" alt="cream cone">
-                        <div class="caption">caption #2</div>
-                    </div>
-                    <div>
-                        <img src="/imgs/slide-3-320.png" alt="cream cone">
-                        <div class="caption">caption #3</div>
-                    </div>                    
+        <section class="products" id="products">
+            <div>
+                <h2>Ice <span>Products</span></h2>
+            </div>
+            <div class="products-itmes">
+                <div>
+                    <img src="imgs/product-01-256.png" alt="">
+                    <div><p>Cone</p></div>
                 </div>
-                
-                <div class="prevNext">
-                  <div><a href="#p3"></a><a href="#p2"></a></div>
-                  <div><a href="#p1"></a><a href="#p3"></a></div>
-                  <div><a href="#p2"></a><a href="#p1"></a></div>
+                <div>
+                    <img src="imgs/product-02-256.png" alt="">
+                    <div><p>Cup Cake</p></div>
                 </div>
-              
-                <div class="bullets">
-                  <a href="#p1">1</a>
-                  <a href="#p2">2</a>
-                  <a href="#p3">3</a>
-                </div>               
-              </div>
+                <div>
+                    <img src="imgs/product-03-256.png" alt="">
+                    <div><p>Ball</p></div>
+                </div>
+            </div>
         </section>
+
         <!-- GALLERY -->
-        <section class="gallery">
-            <h2>Ice <span>Gallery</span></h2>
-            <!-- Slideshow in mobile style without caption-->
-            <div class="CSSgal">
-
-                <!-- Don't wrap targets in parent -->
-                <s id="g1"></s> 
-                <s id="g2"></s>
-                <s id="g3"></s>                                              
-                
-                <div class="slider">
-                    <div>
-                        <div >
-                            <div class="photos">
-                                <img src="/imgs/slide-1-320.png" alt="cream cone">
-                                <img src="/imgs/slide-1-320.png" alt="cream cone">
-                                <img src="/imgs/slide-1-320.png" alt="cream cone">
-                                <img src="/imgs/slide-1-320.png" alt="cream cone">
-                            </div>  
-                        </div>
-                    </div>
-                    <div>
-                        <div >
-                            <div class="photos">
-                                <img src="/imgs/slide-2-320.png" alt="cream cone">
-                                <img src="/imgs/slide-2-320.png" alt="cream cone">
-                                <img src="/imgs/slide-2-320.png" alt="cream cone">
-                                <img src="/imgs/slide-2-320.png" alt="cream cone">
-                            </div>  
-                        </div>
-                    </div>
-                    <div>
-                        <div >
-                            <div class="photos">
-                                <img src="/imgs/slide-3-320.png" alt="cream cone">
-                                <img src="/imgs/slide-3-320.png" alt="cream cone">
-                                <img src="/imgs/slide-3-320.png" alt="cream cone">
-                                <img src="/imgs/slide-3-320.png" alt="cream cone">
-                            </div>  
-                        </div>
-                    </div>                    
-                </div>   
-
-                <div class="prevNext">
-                  <div><a href="#g3"></a><a href="#g2"></a></div>
-                  <div><a href="#g1"></a><a href="#g3"></a></div>
-                  <div><a href="#g2"></a><a href="#g1"></a></div>
-                </div>
-              
-                <div class="bullets">
-                  <a href="#g1">1</a>
-                  <a href="#g2">2</a>
-                  <a href="#g3">3</a>
-                </div>               
-              </div>
+        <section class="gallery" id="gallery">
+            <div>
+                <h2>Ice <span>Gallery</span></h2>
+            </div>
+            <div class="gallery-imgs">
+                <img src="imgs/gallery-01-160.png" alt="">
+                <img src="imgs/gallery-02-160.png" alt="">
+                <img src="imgs/gallery-03-160.png" alt="">
+                <img src="imgs/gallery-04-160.png" alt="">
+            </div>
         </section>
+
         <!-- TOUCH -->
-        <section class="touch">
-            <h2>Get in <span>Touch</span></h2><hr>
+        <section class="touch" id="touch">
+            <div>
+                <h2>Get in <span>Touch</span></h2>
+            </div>
             <div class="form-container">
                 <!-- action: send the data to a file -->
                 <form action="">
@@ -210,84 +134,52 @@
             </div>
             <div>sent</div>
         </section>
-        <!-- COMMENT -->
-        <section class="user-comment">
-            <div>
-                <h2>What People Say</h2>
-            </div>
-            <div class="CSSgal">
-                <!-- Don't wrap targets in parent -->
-                <s id="c1"></s> 
-                <s id="c2"></s>
-                <s id="c3"></s>
-              
-                <div class="slider">
-                    <div>
-                        <div >
-                            <div class="user">
-                                <img src="/imgs/slide-1-320.png" alt="cream cone">
-                                <p>111111 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorem a consectetur earum et adipisci asperiores aliquam. Fugiat laborum iure, impedit, quas, eaque alias illum rerum assumenda perspiciatis id quia.</p>
-                            </div>  
-                        </div>
+
+        <div class="comment-and-contact">
+            <!-- COMMENTS -->
+            <section class="comments" id="comments">
+                <div>
+                    <h3>What People Say</h3>
+                </div>
+                <div class="comment-items">
+                    <div><img src="imgs/user.png" alt=""></div>
+                    <div class="comment-box">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde id sed aliquid neque ullam est aperiam sint quia quos molestiae repellendus dolorem, ipsa reprehenderit minus incidunt. Modi inventore molestias nostrum.</p>
                     </div>
+                </div>
+            </section>
+    
+            <!-- CONTACT -->
+            <section class="contact" id="contact">
+                <h2>Contact Us</h2>
+                <div class="address">
                     <div>
-                        <div >
-                            <div class="user">
-                                <img src="/imgs/slide-2-320.png" alt="cream cone">
-                                <p>222222 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorem a consectetur earum et adipisci asperiores aliquam. Fugiat laborum iure, impedit, quas, eaque alias illum rerum assumenda perspiciatis id quia.</p>
-                            </div>  
-                        </div>
+                        <h3>Address</h3>
+                        <div>
+                            <div>
+                                <img src="imgs/icon-location.png" alt="location icon">
+                                <p>238 Fairmont Ave, Ottawa</p>
+                            </div>
+                            <div>
+                                <img src="imgs/icon-phone.png" alt="phone icon">
+                                <p>+1(613)345 7890</p>
+                            </div>
+                            <div>
+                                <img src="imgs/icon-mail.png" alt="mail icon">
+                                <p>toonice@gmail.com</p>
+                            </div>
+                            <div>
+                                <img src="imgs/icon-web.png" alt="website icon">
+                                <p>http://toonice.com</p>
+                            </div>
+                        </div>   
                     </div>
-                    <div>
-                        <div >
-                            <div class="user">
-                                <img src="/imgs/slide-3-320.png" alt="cream cone">
-                                <p>333333 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorem a consectetur earum et adipisci asperiores aliquam. Fugiat laborum iure, impedit, quas, eaque alias illum rerum assumenda perspiciatis id quia.</p>
-                            </div>  
-                        </div>
-                    </div>                
+                    <!-- Google Map -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.493484538883!2d-75.7227980844447!3d45.3993874791002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce043a7f314b01%3A0xd1e63865efa54d5c!2s238%20Fairmont%20Ave%2C%20Ottawa%2C%20ON%20K1Y%201X9!5e0!3m2!1sen!2sca!4v1624860740667!5m2!1sen!2sca" width="600" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                
-                <div class="prevNext">
-                  <div><a href="#c3"></a><a href="#c2"></a></div>
-                  <div><a href="#c1"></a><a href="#c3"></a></div>
-                  <div><a href="#c2"></a><a href="#c1"></a></div>
-                </div>
-              
-                <div class="bullets">
-                  <a href="#c1">1</a>
-                  <a href="#c2">2</a>
-                  <a href="#c3">3</a>
-                </div>               
-            </div>
-        </section>
-        <!-- CONTACT -->
-        <section class="contact">
-            <h2>Contact Us</h2><hr>
-            <h3>Address</h3>
-            <div class="address">
-                <div>
-                    <img src="imgs/icon-location.png" alt="location icon">
-                    <p>238 Fairmont Ave, Ottawa</p>
-                </div>
-                <div>
-                    <img src="imgs/icon-phone.png" alt="phone icon">
-                    <p>+1(613)345 7890</p>
-                </div>
-                <div>
-                    <img src="imgs/icon-mail.png" alt="mail icon">
-                    <p>toonice@gmail.com</p>
-                </div>
-                <div>
-                    <img src="imgs/icon-web.png" alt="website icon">
-                    <p>http://toonice.com</p>
-                </div>
-            </div>
-            <!-- Google Map -->
-            <div>Google Map</div>
-        </section>
+            </section>
+        </div>
     </main>
-    <!-- FOOTER -->
     <footer>
         <div class="copyright">Copyright &#169 2021 Toonice</div>
         <div class="icons">

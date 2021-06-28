@@ -1,7 +1,7 @@
 /*
- * @Date: 2021-06-09 11:30:46
+ * @Date: 2021-06-27 00:21:04
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-25 01:13:46
+ * @LastEditTime: 2021-06-28 02:38:55
  * @FilePath: /mid-trem-prototype/css/main.css
  */
 
@@ -12,6 +12,28 @@
     display: none;
     position: absolute;
     background-color: white;
+}
+
+.menu {
+    font-size: 22px;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.menu ul>li {
+    padding: 1rem;
+}
+
+/* Home Link Style */
+.menu ul>li:first-child {
+    background-color: var(--pink);
+    color: white;
+}
+
+.menu ul>li>a {
+    font-weight: bold;
 }
 
 /* Show the dropdown menu on hover */
@@ -29,29 +51,49 @@
     fill: var(--pink);
 }
 
-.banner {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-h1 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
+/* BANNER */
 .slogan>p {
-    text-align: start;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    font-weight: bold;
+}
+.banner-img>img {
+    width: 100%;
 }
 
-.banner .bullets {
-    display: none;
+/* ABOUT */
+.about-img>img {
+    width: 100%;
 }
 
-/* MAIN */
-h2 {
-    width: max-content;
-    padding: 0.5rem 0;
-    border-bottom: 3px solid black;
+/* COMMENTS */
+.comment-box>p {
+    margin: 0;
+}
+
+/* CONTACT */
+iframe {
+    width: 100%;
+}
+
+/* FOOTER */
+footer {
+    color: white;
+    background-color: black;
+}
+
+ /* Tablet style min-width:376px and max-width:1023px */
+@media screen and (min-width:376px) {
+    .products-itmes>div:nth-child(2n) {
+        margin: 0 5px;
+    }
+
+    .products-itmes>div>img {
+        width: 100%;
+    } 
+}
+
+/* Desktop style min-width:1024px */
+@media screen and (min-width:1024px) {
+    h1,h2 {
+        font-size: 80px;
+    }
 }
