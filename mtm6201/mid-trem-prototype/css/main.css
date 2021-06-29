@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-27 00:21:04
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-28 02:38:55
+ * @LastEditTime: 2021-06-29 00:30:43
  * @FilePath: /mid-trem-prototype/css/main.css
  */
 
@@ -11,7 +11,26 @@
 .menu-container {
     display: none;
     position: absolute;
+    background-color: var(--pink);
+    color: white;
+    z-index: 1;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    margin:auto;
+}
+
+.menu-container ul {
+    margin: 0;
+}
+
+.menu-container li {
+    line-height: 1.5;
+}
+
+.menu-container li:hover {
     background-color: white;
+    color: black;
 }
 
 .menu {
@@ -26,8 +45,8 @@
     padding: 1rem;
 }
 
-/* Home Link Style */
-.menu ul>li:first-child {
+/* Current Page Link Style */
+.current-page {
     background-color: var(--pink);
     color: white;
 }
