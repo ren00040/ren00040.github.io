@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-27 00:20:51
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-28 02:16:51
+ * @LastEditTime: 2021-06-29 02:19:21
  * @FilePath: /mid-trem-prototype/css/base.css
  */
 
@@ -38,6 +38,10 @@ h1 {
 h2 {
     color: var(--pink);
     margin-top: 0;
+    font-size: 38px;
+    border-bottom: 5px solid black;
+    width: fit-content;
+    margin: 1rem auto;
 }
 
 h2>span {

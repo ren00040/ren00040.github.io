@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-27 00:20:59
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-28 02:47:15
+ * @LastEditTime: 2021-06-29 03:23:43
  * @FilePath: /mid-trem-prototype/css/layout.css
  */
 
@@ -36,6 +36,21 @@ body {
 }
 
 .products-itmes img {
+    width: 100%;
+}
+
+/* GALLERY */
+.gallery-imgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery-imgs>div {
+    width: 45vw;
+}
+
+.gallery-imgs img {
     width: 100%;
 }
 
@@ -130,6 +145,10 @@ footer {
         flex-direction: column;
     }
 
+    .touch-form {
+        width: 100%;
+    }
+
     /* COMMENTS */
     .comments {
         flex-direction: column;
@@ -140,15 +159,22 @@ footer {
         align-items: center;
     }
 
+    .comment-items>div {
+        flex: 1;
+    }
+
     /* CONTACT */
     .contact {
+        padding: 0 2rem;
         flex-direction: column;
+        align-items: stretch;
     }
 
     .address {
+        width: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        width: 90%;
+        align-items: flex-end;
     }
 
 }
@@ -172,9 +198,17 @@ footer {
         grid-template-columns: 1fr 1fr;
     }
 
-    .comments,.contact {
+    .comments .contact {
         margin: 0;
         padding: 0 1rem;
+    }
+
+    .touch-form {
+        display: flex; 
+    }
+
+    .touch-form>div {
+        flex: 1;
     }
 
     footer {

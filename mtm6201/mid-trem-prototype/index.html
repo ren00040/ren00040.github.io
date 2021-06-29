@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-06-27 00:21:27
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-28 02:46:11
+ * @LastEditTime: 2021-06-29 03:23:05
  * @FilePath: /mid-trem-prototype/index.html
 -->
 <!DOCTYPE html>
@@ -111,10 +111,10 @@
                 <h2>Ice <span>Gallery</span></h2>
             </div>
             <div class="gallery-imgs">
-                <img src="imgs/gallery-01-160.png" alt="">
-                <img src="imgs/gallery-02-160.png" alt="">
-                <img src="imgs/gallery-03-160.png" alt="">
-                <img src="imgs/gallery-04-160.png" alt="">
+                <div><img src="imgs/gallery-01-160.png" alt=""></div>
+                <div><img src="imgs/gallery-02-160.png" alt=""></div>
+                <div><img src="imgs/gallery-03-160.png" alt=""></div>
+                <div><img src="imgs/gallery-04-160.png" alt=""></div>
             </div>
         </section>
 
@@ -123,16 +123,21 @@
             <div>
                 <h2>Get in <span>Touch</span></h2>
             </div>
-            <div class="form-container">
-                <!-- action: send the data to a file -->
-                <form action="">
-                    <input type="text" id="name" placeholder="YOUR NAME"><br>
-                    <input type="email" id="email" placeholder="EMAIL"><br>
-                    <input type="tel" id="phone" placeholder="PHONE NUMBER"><br>
-                    <textarea name="massage" id="message" cols="30" rows="10" placeholder="MASSAGE"></textarea>
-                </form>
+            <div class="touch-form">
+                <div>
+                    <div class="form-container">
+                        <!-- action: send the data to a file -->
+                        <form action="">
+                            <input type="text" id="name" placeholder="YOUR NAME"><br>
+                            <input type="email" id="email" placeholder="EMAIL"><br>
+                            <input type="tel" id="phone" placeholder="PHONE NUMBER"><br>
+                            <textarea name="massage" id="message" cols="30" rows="10" placeholder="MASSAGE"></textarea>
+                        </form>
+                    </div>
+                    <div class="btn send">SEND</div>
+                </div>
+                <div class="touch-img"><img src="imgs/touch-img.png" alt=""></div>
             </div>
-            <div>sent</div>
         </section>
 
         <div class="comment-and-contact">
@@ -155,27 +160,27 @@
                 <div class="address">
                     <div>
                         <h3>Address</h3>
-                        <div>
+                        <div class="contact-items">
                             <div>
-                                <img src="imgs/icon-location.png" alt="location icon">
+                                <div class="add-icon add"><img src="imgs/icon-location.png" alt="location icon"></div>
                                 <p>238 Fairmont Ave, Ottawa</p>
                             </div>
                             <div>
-                                <img src="imgs/icon-phone.png" alt="phone icon">
+                                <div class="add-icon"><img src="imgs/icon-phone.png" alt="phone icon"></div>
                                 <p>+1(613)345 7890</p>
                             </div>
                             <div>
-                                <img src="imgs/icon-mail.png" alt="mail icon">
+                                <div class="add-icon mail"><img src="imgs/icon-mail.png" alt="mail icon"></div>
                                 <p>toonice@gmail.com</p>
                             </div>
                             <div>
-                                <img src="imgs/icon-web.png" alt="website icon">
+                                <div class="add-icon"><img src="imgs/icon-web.png" alt="website icon"></div>
                                 <p>http://toonice.com</p>
                             </div>
                         </div>   
                     </div>
                     <!-- Google Map -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.493484538883!2d-75.7227980844447!3d45.3993874791002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce043a7f314b01%3A0xd1e63865efa54d5c!2s238%20Fairmont%20Ave%2C%20Ottawa%2C%20ON%20K1Y%201X9!5e0!3m2!1sen!2sca!4v1624860740667!5m2!1sen!2sca" width="600" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.493484538883!2d-75.7227980844447!3d45.3993874791002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce043a7f314b01%3A0xd1e63865efa54d5c!2s238%20Fairmont%20Ave%2C%20Ottawa%2C%20ON%20K1Y%201X9!5e0!3m2!1sen!2sca!4v1624860740667!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </section>
         </div>
