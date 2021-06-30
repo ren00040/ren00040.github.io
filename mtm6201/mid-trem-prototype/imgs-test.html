@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-06-29 23:32:51
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-29 23:51:05
+ * @LastEditTime: 2021-06-30 00:40:47
  * @FilePath: /mid-trem-prototype/imgs-test.html
 -->
 <!DOCTYPE html>
@@ -17,15 +17,18 @@
     <div>
         <img 
         srcset="imgs/test-320.png 320w,
-                imgs/test-640.png 640w,
+                imgs/test-640.png 640w
                 imgs/test-800.png 800w"
-         src="imgs/test-320.png"
-         alt="responsive imgs test">
+        sizes= "(min-width: 800px) 100vw,
+                (min-width: 640px) 100vw,
+                100vw"
+        src="imgs/test-320.png"
+        alt="responsive imgs test">
     </div>
+    
     <picture>
-        <source media="(max-width: 320px)" srcset="imgs/test-320.png">
-        <source media="(min-width: 640px)" srcset="imgs/test-640.png">
         <source media="(min-width: 800px)" srcset="imgs/test-800.png">
+        <source media="(min-width: 640px)" srcset="imgs/test-640.png">
         <img src="imgs/test-320.png" alt="responsive imgs test">
     </picture>      
 </body>

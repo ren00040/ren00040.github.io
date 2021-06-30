@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-27 00:20:59
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-29 22:58:51
+ * @LastEditTime: 2021-06-30 01:30:47
  * @FilePath: /mid-trem-prototype/css/layout.css
  */
 
@@ -46,7 +46,7 @@ body {
     justify-content: space-between;
 }
 
-.gallery-imgs>div {
+.gallery-imgs>* {
     width: 45vw;
 }
 
@@ -115,11 +115,13 @@ footer {
     .about-img {order:-1}  
 
     /* PRODUCTS */
+    /* stretch makes images align both ends of the page width*/
     .products {
         flex-direction: column;
-        justify-content: space-between;  
+        align-items: stretch;
     }
 
+    /* use flex layout to set products in a row */
     .products-itmes {
         display: flex;
     }
@@ -129,10 +131,13 @@ footer {
         flex-direction: column;
     }
 
+    /* Divide into two even columns */
     .gallery-imgs {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+        width: 100%;
+        justify-items: stretch;
     }
 
     /* TODO change imgs */
@@ -154,6 +159,7 @@ footer {
         flex-direction: column;
     }
 
+    /* Divide photo and comment into two even columns */
     .comment-items {
         display: flex;
         align-items: center;
@@ -179,7 +185,7 @@ footer {
 
 }
 
-/* min-width: 800px menu breakpoint */
+/* when min-width: 800px, hide the Dropmenu*/
 @media screen and (min-width: 800px){   
     .menu {
         display: block;
@@ -192,9 +198,10 @@ footer {
 
 /* Desktop style min-width:1024px */
 @media screen and (min-width:1024px) {
+    /* put comments and contact in a row */
     .comment-and-contact {
-        margin: 0 -32px;
-        display: grid;
+        margin: 0 -32px; /* Align both ends of the page */
+        display: grid; 
         grid-template-columns: 1fr 1fr;
     }
 
@@ -203,14 +210,17 @@ footer {
         padding: 0 1rem;
     }
 
+    /* Make form and image in a row */
     .touch-form {
-        display: flex; 
+        display: flex;
     }
 
-    .touch-form>div {
+    /* Divide form and image into two even columns */
+    .touch-form>* {
         flex: 1;
     }
 
+    /* Align both ends of the page width */
     footer {
         margin: 0 -32px;
     }

@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-27 00:21:04
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-29 22:46:19
+ * @LastEditTime: 2021-06-30 01:10:48
  * @FilePath: /mid-trem-prototype/css/main.css
  */
 
@@ -11,7 +11,7 @@
 .menu-container {
     display: none;
     position: absolute;
-    background-color: var(--pink);
+    /* background-color: var(--pink); */
     color: white;
     z-index: 1;
     top: 5rem;
@@ -25,6 +25,7 @@
 }
 
 .menu-container li {
+    background-color: var(--pink);
     line-height: 1.5;
 }
 
@@ -251,6 +252,10 @@ footer {
 
  /* Tablet style min-width:376px and max-width:1023px */
 @media screen and (min-width:376px) {
+    .menu-container li {
+        line-height: 2rem;
+    }
+
     .products-itmes>div:nth-child(2n) {
         margin: 0 5px;
     }

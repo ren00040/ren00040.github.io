@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-06-27 00:21:27
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-29 23:28:40
+ * @LastEditTime: 2021-06-30 01:33:01
  * @FilePath: /mid-trem-prototype/index.html
 -->
 <!DOCTYPE html>
@@ -28,7 +28,12 @@
         <!-- NAVIGATION -->
         <div class="navbar">
             <div class="logo">
-                <a href="index.html"><img src="imgs/logo-64.png" alt="Brand-logo"></a>
+                <a href="index.html">
+                    <picture>
+                        <source media="(min-width: 800px)" srcset="imgs/logo-128.png">
+                        <img src="imgs/logo-64.png" alt="Brand-logo">
+                    </picture>
+                </a>
             </div>
             <div class="menu">
                 <nav>
@@ -66,10 +71,9 @@
             </div>
             <!-- molible first use 320px image -->
             <picture class="banner-img">
-                <source media="(min-width:800)" srcset="imgs/test-800.png">
-                <source media="(min-width:640)" srcset="imgs/test-640.png">
-                <source media="(min-width:320)" srcset="imgs/test-320.png">
-                <img src="imgs/test-320.png" alt="slide">
+                <source media="(min-width: 800px)" srcset="imgs/slide-1-800.png">
+                <source media="(min-width: 640px)" srcset="imgs/slide-1-640.png">
+                <img src="imgs/slide-1-320.png" alt="responsive imgs test">
             </picture>
             <div class="btn more more-banner">Read More</div>
         </div>
@@ -86,10 +90,9 @@
             </div>
             <!-- molible first use 320px image -->
             <picture class="about-img">
-                <source srcset="imgs/about-320.png 320w,
-                                imgs/about-640.png 640w,
-                                imgs/about-800.png 800w">
-                <img src="imgs/about-320.png" alt="">
+                <source media="(min-width: 800px)" srcset="imgs/about-800.png">
+                <source media="(min-width: 640px)" srcset="imgs/about-640.png">
+                <img src="imgs/about-320.png" alt="Ice Cream">
             </picture>
             <div class="btn more more-banner">Read More</div>
         </section>
@@ -101,15 +104,18 @@
             </div>
             <div class="products-itmes">
                 <div>
-                    <img src="imgs/product-01-256.png" alt="">
+                    <source media="(min-width: 640px)" srcset="imgs/product-01-640.png">
+                    <img src="imgs/product-01-320.png" alt="">
                     <div><p>Cone</p></div>
                 </div>
                 <div>
-                    <img src="imgs/product-02-256.png" alt="">
+                    <source media="(min-width: 640px)" srcset="imgs/product-02-640.png">
+                    <img src="imgs/product-02-320.png" alt="">
                     <div><p>Cup Cake</p></div>
                 </div>
                 <div>
-                    <img src="imgs/product-03-256.png" alt="">
+                    <source media="(min-width: 640px)" srcset="imgs/product-03-640.png">
+                    <img src="imgs/product-03-320.png" alt="">
                     <div><p>Ball</p></div>
                 </div>
             </div>
@@ -121,10 +127,22 @@
                 <h2>Ice <span>Gallery</span></h2>
             </div>
             <div class="gallery-imgs">
-                <div><img src="imgs/gallery-01-160.png" alt=""></div>
-                <div><img src="imgs/gallery-02-160.png" alt=""></div>
-                <div><img src="imgs/gallery-03-160.png" alt=""></div>
-                <div><img src="imgs/gallery-04-160.png" alt=""></div>
+                <picture>
+                    <source media="(min-width: 640px)" srcset="imgs/gallery-01-640.png">
+                    <img src="imgs/gallery-01-320.png" alt="">
+                </picture>
+                <picture>
+                    <source media="(min-width: 640px)" srcset="imgs/gallery-02-640.png">
+                    <img src="imgs/gallery-02-320.png" alt="">
+                </picture>
+                <picture>
+                    <source media="(min-width: 640px)" srcset="imgs/gallery-03-640.png">
+                    <img src="imgs/gallery-03-320.png" alt="">
+                </picture>
+                <picture>
+                    <source media="(min-width: 640px)" srcset="imgs/gallery-04-640.png">
+                    <img src="imgs/gallery-04-320.png" alt="">
+                </picture>
             </div>
         </section>
 
