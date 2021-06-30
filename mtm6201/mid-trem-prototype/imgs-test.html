@@ -1,0 +1,32 @@
+<!--
+ * @Date: 2021-06-29 23:32:51
+ * @LastEditors: Ke Ren
+ * @LastEditTime: 2021-06-29 23:51:05
+ * @FilePath: /mid-trem-prototype/imgs-test.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/temp.css">
+    <title>imgs-test</title>
+</head>
+<body>
+    <div>
+        <img 
+        srcset="imgs/test-320.png 320w,
+                imgs/test-640.png 640w,
+                imgs/test-800.png 800w"
+         src="imgs/test-320.png"
+         alt="responsive imgs test">
+    </div>
+    <picture>
+        <source media="(max-width: 320px)" srcset="imgs/test-320.png">
+        <source media="(min-width: 640px)" srcset="imgs/test-640.png">
+        <source media="(min-width: 800px)" srcset="imgs/test-800.png">
+        <img src="imgs/test-320.png" alt="responsive imgs test">
+    </picture>      
+</body>
+</html>

@@ -1,14 +1,14 @@
 /*
  * @Date: 2021-06-27 00:20:59
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-29 03:23:43
+ * @LastEditTime: 2021-06-29 22:58:51
  * @FilePath: /mid-trem-prototype/css/layout.css
  */
 
 /* Mobile style max-width:375px */
 body {
     padding: 8px 16px 0px 16px;
-    min-width: 300px;
+    min-width: 320px;
 }
 
 .navbar {
@@ -97,7 +97,7 @@ footer {
         align-items: center;
     }
 
-    .banner>div {
+    .banner>* {
         flex: 1;
     }
 
@@ -107,7 +107,7 @@ footer {
     .more-banner { display: none;}
 
     /* ABOUT */
-    .about>div {
+    .about>* {
         flex: 1;
     }
 

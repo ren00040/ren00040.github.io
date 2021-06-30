@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-27 00:21:04
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-29 03:34:11
+ * @LastEditTime: 2021-06-29 22:46:19
  * @FilePath: /mid-trem-prototype/css/main.css
  */
 
@@ -56,6 +56,7 @@
     cursor: pointer;
 }
 
+/* DROPDOWN */
 /* Show the dropdown menu on hover */
 .dropbtn-container:hover .menu-container {
     display: block;
@@ -79,6 +80,7 @@
 .slogan>p {
     font-weight: bold;
 }
+
 .banner-img>img {
     margin: 0.5rem 0;
     width: 100%;
