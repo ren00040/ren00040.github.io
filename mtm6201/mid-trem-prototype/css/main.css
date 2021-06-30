@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-27 00:21:04
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-30 01:10:48
+ * @LastEditTime: 2021-06-30 01:42:44
  * @FilePath: /mid-trem-prototype/css/main.css
  */
 
@@ -259,7 +259,7 @@ footer {
     .products-itmes>div:nth-child(2n) {
         margin: 0 5px;
     }
-
+    
     .products-itmes>div>img {
         width: 100%;
     } 
