@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-27 00:20:51
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-29 02:19:21
+ * @LastEditTime: 2021-07-01 02:58:23
  * @FilePath: /mid-trem-prototype/css/base.css
  */
 
@@ -55,6 +55,11 @@ p {
 
 a {
     text-decoration: none;
+}
+
+a:visited,
+a:link {
+    color: black;
 }
 
 /* Clear list style */

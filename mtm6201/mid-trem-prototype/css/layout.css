@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-27 00:20:59
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-06-30 01:42:59
+ * @LastEditTime: 2021-07-04 03:25:00
  * @FilePath: /mid-trem-prototype/css/layout.css
  */
 
@@ -76,6 +76,23 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* PAGE Products */
+.shop-item>picture>img {
+    width: 100%;
+}
+
+.ice-name {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--pink);
+    border-bottom: 1px dashed black;
+}
+
+.rate {
+    color: var(--pink);
 }
 
  /* Tablet style min-width:376px and max-width:1023px */
@@ -156,6 +173,7 @@ footer {
 
     /* COMMENTS */
     .comments {
+        margin: 0 -32px;
         flex-direction: column;
     }
 
@@ -171,6 +189,7 @@ footer {
 
     /* CONTACT */
     .contact {
+        margin: 0 -32px;
         padding: 0 2rem;
         flex-direction: column;
         align-items: stretch;
@@ -183,6 +202,43 @@ footer {
         align-items: flex-end;
     }
 
+    footer {
+        margin: 0 -32px;
+    }
+
+    /* PAGE Products */
+    .products-shop {
+        flex-direction: column;
+    }
+
+    .shop-item {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px dashed black;
+    }
+
+    /* last product has not border */
+    .shop-item:last-child {
+        border: none;
+    }
+
+    .shop-item>* {
+        flex: 1;
+    }
+
+    /* PAGE About*/
+    .page-about>section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .page-about>section>picture>img {
+        width: 100%;
+    }
+
+    .service>picture {
+        order: 1;
+    }
 }
 
 /* when min-width: 800px, hide the Dropmenu*/
@@ -198,14 +254,16 @@ footer {
 
 /* Desktop style min-width:1024px */
 @media screen and (min-width:1024px) {
+    body { padding: 8px 64px 0px 64px;}
+
     /* put comments and contact in a row */
     .comment-and-contact {
-        margin: 0 -32px; /* Align both ends of the page */
+        margin: 0 -64px; /* Align both ends of the page */
         display: grid; 
         grid-template-columns: 1fr 1fr;
     }
 
-    .comments .contact {
+    .comments, .contact {
         margin: 0;
         padding: 0 1rem;
     }
@@ -222,6 +280,13 @@ footer {
 
     /* Align both ends of the page width */
     footer {
-        margin: 0 -32px;
+        margin: 0 -64px;
+    }
+
+    /* PAGE Products */
+    .products-shop {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 2rem;
     }
 }
