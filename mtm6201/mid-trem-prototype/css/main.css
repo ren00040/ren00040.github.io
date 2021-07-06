@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-27 00:21:04
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-04 03:15:37
+ * @LastEditTime: 2021-07-06 01:49:30
  * @FilePath: /mid-trem-prototype/css/main.css
  */
 
@@ -54,12 +54,14 @@
 .menu ul>li>a:focus {
     background-color: var(--pink);
     color: white;
+    animation: menu-hover 0.8s;
 }
 
 /* DROPDOWN */
 /* Show the dropdown menu on hover */
 .dropbtn-container:hover .menu-container {
     display: block;
+    animation: mobile-menu-down 0.8s;
 }
 
 .dropbtn {
@@ -99,6 +101,12 @@
     line-height: 21px;
 }
 
+/* pointer cursor and underline when more btn hover */
+.more:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 /* ABOUT */
 .about {
     margin-bottom: 1rem;
@@ -121,6 +129,42 @@
 /* GALLERY */
 .gallery {
     margin-bottom: 1rem;
+}
+
+.gallery-imgs>picture {
+    position: relative;
+}
+
+/* hover change opacity */
+.gallery-imgs>picture:hover img {
+    opacity: 0.6;
+}
+
+/* use absolute position and top&left 50% put text in the middle*/
+.gallery-text {
+    transition: 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+}
+
+/* the more BTN */
+.gallery-text>p {
+    padding: 0.5rem 1rem;
+    background-color: var(--pink);
+    font-size: 1.5rem;
+}
+
+.gallery-text>p>a {
+    color: white;
+}
+
+/* hover show text */
+.gallery-imgs>picture:hover .gallery-text {
+    opacity: 1;
 }
 
 /* TOUCH */
@@ -328,3 +372,27 @@ footer {
         width: fit-content;
     }
 }
+
+
+/* ANIMATION */
+@-webkit-keyframes mobile-menu-down {
+    0% {-webkit-transform: translateY(-20px);}
+    100% {-webkit-transform: translateY(0);}
+}
+
+@keyframes mobile-menu-down {
+    0% {transform: translateY(-20px);}
+    100% {transform: translateY(0);}
+}
+
+@keyframes menu-hover { 
+    from {
+        background-color: rgba(245,100,169,0);
+        color: black;
+    }
+    to {
+        background-color: rgba(245,100,169,1);
+        color: white;
+    }
+}
+

@@ -1,4 +1,19 @@
-img {
-    display: block;
-    width: 100%;
+body {
+    text-align: center;
+}
+
+
+.banner-img {
+    transition: content 10s;
+}
+
+.banner-img img {
+    content: url(/imgs/slide-2-320.png);
+}
+
+
+@keyframes slide-02 {
+    0% { content: url("/imgs/slide-1-320.png");}
+    33% { content: url("/imgs/slide-2-320.png");}
+    67% { content: url("/imgs/slide-3-320.png");}
 }
