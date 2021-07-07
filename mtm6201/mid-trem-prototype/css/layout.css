@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-27 00:20:59
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-04 03:25:00
+ * @LastEditTime: 2021-07-07 00:10:45
  * @FilePath: /mid-trem-prototype/css/layout.css
  */
 
@@ -31,7 +31,7 @@ body {
     justify-content: space-between;
 }
 
-.products-itmes>div {
+.products-itmes>.product-item {
     width: 32%;
 }
 
@@ -157,8 +157,7 @@ footer {
         justify-items: stretch;
     }
 
-    /* TODO change imgs */
-    .gallery-imgs>img {
+    .gallery-imgs img {
         width: 100%;
     }
 

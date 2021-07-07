@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-27 00:21:04
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-06 01:56:35
+ * @LastEditTime: 2021-07-07 00:10:05
  * @FilePath: /mid-trem-prototype/css/main.css
  */
 
@@ -122,6 +122,12 @@
     margin-bottom: 1rem;
 }
 
+.product-item:hover img{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+
 .products-itmes p {
     margin: 0;
 }
@@ -131,13 +137,16 @@
     margin-bottom: 1rem;
 }
 
-.gallery-imgs>picture {
+.gallery-item{
     position: relative;
 }
 
 /* hover change opacity */
-.gallery-imgs>picture:hover img {
+.gallery-item:hover img {
+    cursor: pointer;
     opacity: 0.6;
+    background-color: black;
+
 }
 
 /* use absolute position and top&left 50% put text in the middle*/
@@ -163,7 +172,7 @@
 }
 
 /* hover show text */
-.gallery-imgs>picture:hover .gallery-text {
+.gallery-item:hover .gallery-text {
     opacity: 1;
 }
 
@@ -289,7 +298,7 @@ footer {
     background-color: black;
 }
 
-.icons>img {
+.icons img {
     margin-left: 10px;
 }
 

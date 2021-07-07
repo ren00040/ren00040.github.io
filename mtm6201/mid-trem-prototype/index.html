@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-06-27 00:21:27
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-06 01:49:46
+ * @LastEditTime: 2021-07-06 23:58:02
  * @FilePath: /mid-trem-prototype/index.html
 -->
 <!DOCTYPE html>
@@ -103,19 +103,25 @@
                 <h2>Ice <span>Products</span></h2>
             </div>
             <div class="products-itmes">
-                <div>
-                    <source media="(min-width: 640px)" srcset="imgs/product-01-640.png">
-                    <img src="imgs/product-01-320.png" alt="">
+                <div class="product-item">
+                    <picture>
+                        <source media="(min-width: 640px)" srcset="imgs/product-01-640.png">
+                        <img src="imgs/product-01-320.png" alt="">
+                    </picture>
                     <div><p>Cone</p></div>
                 </div>
-                <div>
-                    <source media="(min-width: 640px)" srcset="imgs/product-02-640.png">
-                    <img src="imgs/product-02-320.png" alt="">
+                <div class="product-item">
+                    <picture>
+                        <source media="(min-width: 640px)" srcset="imgs/product-02-640.png">
+                        <img src="imgs/product-02-320.png" alt="">
+                    </picture>
                     <div><p>Cup Cake</p></div>
                 </div>
-                <div>
-                    <source media="(min-width: 640px)" srcset="imgs/product-03-640.png">
-                    <img src="imgs/product-03-320.png" alt="">
+                <div class="product-item">
+                    <picture>
+                        <source media="(min-width: 640px)" srcset="imgs/product-03-640.png">
+                        <img src="imgs/product-03-320.png" alt="">
+                    </picture>
                     <div><p>Ball</p></div>
                 </div>
             </div>
@@ -127,34 +133,41 @@
                 <h2>Ice <span>Gallery</span></h2>
             </div>
             <div class="gallery-imgs">
-                <picture>
-                    <source media="(min-width: 640px)" srcset="imgs/gallery-01-640.jpg">
-                    <img src="imgs/gallery-01-320.jpg" alt="">
+                <div class="gallery-item">
+                    <picture>
+                        <source media="(min-width: 640px)" srcset="imgs/gallery-01-640.jpg">
+                        <img src="imgs/gallery-01-320.jpg" alt="">
+                    </picture>
                     <div class="gallery-text">
                         <p><a href="">more</a></p>
                     </div>
-                </picture>
-                <picture>
-                    <source media="(min-width: 640px)" srcset="imgs/gallery-02-640.jpg">
-                    <img src="imgs/gallery-02-320.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <picture>
+                        <source media="(min-width: 640px)" srcset="imgs/gallery-02-640.jpg">
+                        <img src="imgs/gallery-02-320.jpg" alt="">
+                    </picture>
                     <div class="gallery-text">
                         <p><a href="">more</a></p>
                     </div>
-                </picture>
-                <picture>
-                    <source media="(min-width: 640px)" srcset="imgs/gallery-03-640.jpg">
-                    <img src="imgs/gallery-03-320.jpg" alt="">
+                </div><div class="gallery-item">
+                    <picture>
+                        <source media="(min-width: 640px)" srcset="imgs/gallery-03-640.jpg">
+                        <img src="imgs/gallery-03-320.jpg" alt="">
+                    </picture>
                     <div class="gallery-text">
                         <p><a href="">more</a></p>
                     </div>
-                </picture>
-                <picture>
-                    <source media="(min-width: 640px)" srcset="imgs/gallery-04-640.jpg">
-                    <img src="imgs/gallery-04-320.jpg" alt="">
+                </div>
+                <div class="gallery-item">
+                    <picture>
+                        <source media="(min-width: 640px)" srcset="imgs/gallery-04-640.jpg">
+                        <img src="imgs/gallery-04-320.jpg" alt="">
+                    </picture>
                     <div class="gallery-text">
                         <p><a href="">more</a></p>
                     </div>
-                </picture>
+                </div>
             </div>
         </section>
 
@@ -167,7 +180,7 @@
                 <div>
                     <div class="form-container">
                         <!-- action: send the data to a file -->
-                        <form action="">
+                        <form action="#">
                             <input type="text" id="name" placeholder="YOUR NAME"><br>
                             <input type="email" id="email" placeholder="EMAIL"><br>
                             <input type="tel" id="phone" placeholder="PHONE NUMBER"><br>
@@ -226,12 +239,12 @@
         </div>
     </main>
     <footer>
-        <div class="copyright">Copyright &#169 2021 Toonice</div>
+        <div class="copyright">Copyright &#169; 2021 Toonice</div>
         <div class="icons">
-            <img src="imgs/facebook.png" alt="facebook icon">
-            <img src="imgs/instagram.png" alt="instagram icon">
-            <img src="imgs/tiktok.png" alt="tiktok icon">
-            <img src="imgs/twitter-bird.png" alt="twitter-bird icon">
+            <a href="#"><img src="imgs/facebook.png" alt="facebook icon"></a>
+            <a href="#"><img src="imgs/instagram.png" alt="instagram icon"></a>
+            <a href="#"><img src="imgs/tiktok.png" alt="tiktok icon"></a>
+            <a href="#"><img src="imgs/twitter-bird.png" alt="twitter-bird icon"></a>           
         </div>
     </footer>
 </body>
