@@ -1,0 +1,67 @@
+/*
+ * @Date: 2021-07-24 16:56:52
+ * @LastEditors: Ke Ren
+ * @LastEditTime: 2021-07-24 22:16:38
+ * @FilePath: /mtm6130-21w-010/css/style.css
+ */
+ 
+/* BASE */
+:root {
+    --icon-grey: #999999;
+    --text-white: #FBFBFB;
+}
+
+ /* MOBILE */
+
+ /* Hide Header-Top-Bar in Mobile sytle */
+.header-description {
+    display: none;
+    background-color: black;
+    color: var(--text-white);
+    font-size: .8rem;
+}
+
+.header-description-item {
+    padding: 0 1rem;
+}
+
+.header-description-item>p {
+    margin: 0.5rem 0;
+}
+
+.header-description-item>p>a:link,
+.header-description-item>p>a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    width: 58px;
+}
+
+.logo>img {
+    width: 100%;
+}
+
+.menu-btn {
+    padding: 0;
+    width: 32px;
+    height: 32px;    
+}
+
+.menu-icon {
+    width: 22px;
+    height: 22px;
+}
+.dropdown-dark {
+    background-color: black;
+}
+
+.dropdown-dark-item {
+    color: rgba(255,255,255,.55);
+}
+
+.dropdown-dark-item:hover,
+.dropdown-dark-item:focus {
+    color: rgba(255,255,255,.75);
+}
