@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-07-20 10:51:29
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-27 08:45:13
+ * @LastEditTime: 2021-07-27 11:25:24
  * @FilePath: /mtm6130-21w-010/index.html
 -->
 <!DOCTYPE html>
@@ -61,17 +61,17 @@
             </div>
         </div>
         <!-- NAVIGATION -->
-        <nav class="navbar navbar-dark bg-transparent" aria-label="First navbar example">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-transparent" aria-label="navbar">
+            <div class="container-fluid navbar-container">
                 <a class="navbar-brand logo" href="#"><img src="imgs/logo-x1.png" alt="Fossil Studio Logo"></a>
-                <button class="navbar-toggler menu-btn rounded-circle d-flex justify-content-center align-items-center"
+                <button class="navbar-toggler menu-btn rounded-circle d-flex d-sm-none justify-content-center align-items-center"
                     type="button" data-bs-toggle="collapse" data-bs-target="#side-navbar" aria-controls="side-navbar"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon menu-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="side-navbar">
-                    <ul class="navbar-nav me-auto mb-2">
+                    <ul class="navbar-nav ms-auto mb-2">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
@@ -103,6 +103,7 @@
                 </div>
             </div>
         </nav>
+        <!-- BANNER -->
         <div class="header-content text-white pt-4 pb-2 text-center">
             <div class="display-1">Fossil Studio</div>
             <div class="pt-2">
@@ -157,51 +158,53 @@
             <hr>
         </section>
         <!-- SERVICES -->
-        <section id="services">
+        <section id="services" class="services">
             <h2>What We Do</h2>
-            <div class="services-item pb-5">
-                <h3>Virtual Reality</h3>
-                <img src="imgs/vr-300x225.png" alt="A man wears a VR helmet">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
-                    accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
-                    ipsum eos nam!</p>
-                <button class="more-btn">MORE</button>
-            </div>
-            <div class="services-item  pb-5">
-                <h3>Data Visualization</h3>
-                <img src="imgs/3d-data-300x225.png" alt="3D Data Visualization">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
-                    accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
-                    ipsum eos nam!</p>
-                <button class="more-btn">MORE</button>
-            </div>
-            <div class="services-item  pb-5">
-                <h3>Interactive Exhibition</h3>
-                <img src="imgs/interactive-exhibition-300x225.png" alt="Exhibition">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
-                    accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
-                    ipsum eos nam!</p>
-                <button class="more-btn">MORE</button>
-            </div>
-            <div class="services-item  pb-5">
-                <h3>CG Animation</h3>
-                <img src="imgs/cg-300x225.png" alt="Relics">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
-                    accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
-                    ipsum eos nam!</p>
-                <button class="more-btn">MORE</button>
-            </div>
-            <div class="services-item  mb-1">
-                <h3>Web Development</h3>
-                <img src="imgs/web-300x225.png" alt="Web Development">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
-                    accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
-                    ipsum eos nam!</p>
-                <button class="more-btn">MORE</button>
+            <div class="services-container">
+                <div class="services-item pb-5">
+                    <h3>Virtual Reality</h3>
+                    <img src="imgs/vr-300x225.png" alt="A man wears a VR helmet">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
+                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
+                        ipsum eos nam!</p>
+                    <button class="more-btn">MORE</button>
+                </div>
+                <div class="services-item  pb-5">
+                    <h3>Data Visualization</h3>
+                    <img src="imgs/3d-data-300x225.png" alt="3D Data Visualization">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
+                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
+                        ipsum eos nam!</p>
+                    <button class="more-btn">MORE</button>
+                </div>
+                <div class="services-item  pb-5">
+                    <h3>Interactive Exhibition</h3>
+                    <img src="imgs/interactive-exhibition-300x225.png" alt="Exhibition">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
+                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
+                        ipsum eos nam!</p>
+                    <button class="more-btn">MORE</button>
+                </div>
+                <div class="services-item  pb-5">
+                    <h3>CG Animation</h3>
+                    <img src="imgs/cg-300x225.png" alt="Relics">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
+                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
+                        ipsum eos nam!</p>
+                    <button class="more-btn">MORE</button>
+                </div>
+                <div class="services-item  mb-1">
+                    <h3>Web Development</h3>
+                    <img src="imgs/web-300x225.png" alt="Web Development">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
+                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
+                        ipsum eos nam!</p>
+                    <button class="more-btn">MORE</button>
+                </div>
             </div>
             <hr>
         </section>
-        <section id="clients">
+        <section id="clients" class="mb-4">
             <h2>Our Clients</h2>
             <div class="clients-container">
                 <div class="clients-item"><img src="imgs/lg-logo.png" alt="lg logo"></div>
@@ -210,9 +213,9 @@
                 <div class="clients-item"><img src="imgs/bjev-logo.png" alt="lg logo"></div>
                 <div class="clients-item"><img src="imgs/crrc-logo.png" alt="lg logo"></div>
             </div>
-            <hr>
         </section>
     </main>
+    <!-- FOOTER -->
     <footer class="py-3">
         <div class="container footer-widget">
             <div id="contact">
@@ -228,15 +231,15 @@
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="bi bi-search"></i></button>
             </div>
-            <div id="subscribe">
+            <div id="subscribe" class="subscribe">
                <p class="widget-heading">Subscribe To The Newsletter</p>
                <input type="email" name="subscribe-email" id="subscribe-email" placeholder="you@email.com">
                <button type="submit">Submit</button>
             </div>
-        </div>
-        <div class="container copyright">
-            <p class="footer-logo">Fossil Studio</p>
-            <p>©&nbsp;&nbsp;2021&nbsp;Fossil Studio.</p>
+            <div class="copyright">
+                <p class="footer-logo">Fossil Studio</p>
+                <p>©&nbsp;&nbsp;2021&nbsp;Fossil Studio.</p>
+            </div>
         </div>
     </footer>
 

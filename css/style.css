@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-07-24 16:56:52
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-27 08:45:39
+ * @LastEditTime: 2021-07-27 12:06:10
  * @FilePath: /mtm6130-21w-010/css/style.css
  */
  
@@ -79,6 +79,11 @@ h3 {
     width: 22px;
     height: 22px;
 }
+
+.main-menu {
+    float: right;
+}
+
 .dropdown-dark {
     background-color: black;
 }
@@ -127,6 +132,7 @@ h3 {
 }
 
 /* FOOTER */
+/* Use flex to control widget layout */
 footer {
     display: flex;
     flex-direction: column;
@@ -142,6 +148,7 @@ footer {
 }
 
 /* CONTACT */
+/* reset link style */
 .contact-item a,
 .contact-item a:link,
 .contact-item a:visited {
@@ -168,4 +175,71 @@ footer {
     font-size: xx-large;
     color: var(--main-text);
     margin-bottom: 0;
+}
+
+/* TABLET min-width:768px*/
+@media screen and (min-width:768px){
+/* NAVIGATION */
+.dropdown-dark {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+/* SERVICES */
+/* Change all widget in a row */
+.services-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.services-item {
+    width: 30%;
+}
+ 
+/* FOOTER */
+/* Change all widget in a row */
+.footer-widget {
+    display: flex;
+    gap: 2%;
+}
+
+/* Set every column has a same size */
+.footer-widget>div {
+    flex: 1 1 0;
+}
+
+.contact-item {
+    text-align: start;
+}
+
+.search input {
+    width: 80%;
+}
+
+.subscribe>button {
+    margin-top: 0.25rem;
+}
+
+.copyright {
+    margin: 0;
+}
+
+}
+
+/* DESKTOP min-width:1024px*/
+@media screen and (min-width:1024px){
+    .services-item {
+        width: 30%;
+    }
+    
+}
+
+/* DESKTOP min-width:1440px*/
+@media screen and (min-width:1440px){
+    .subscribe>button {
+        margin-top: 0;
+    }
 }
