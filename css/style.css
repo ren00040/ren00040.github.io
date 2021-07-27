@@ -1,19 +1,45 @@
 /*
  * @Date: 2021-07-24 16:56:52
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-24 22:16:38
+ * @LastEditTime: 2021-07-27 08:45:39
  * @FilePath: /mtm6130-21w-010/css/style.css
  */
  
 /* BASE */
+/* set custom color */
 :root {
+    --main-color: #F5FAFD;
+    --main-text: #e39578;
     --icon-grey: #999999;
     --text-white: #FBFBFB;
 }
 
- /* MOBILE */
+* {box-sizing:border-box}
 
- /* Hide Header-Top-Bar in Mobile sytle */
+/* set default page color, font-family, font-size  */
+body {
+    background-color: var(--main-color);
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 14px;
+}
+
+h2,h3 {
+    color: var(--main-text);
+}
+
+h3 {
+    font-size: 18px;
+}
+
+ /* MOBILE */
+.header-wrapper {
+    background-image: url(../imgs/meseum-01-1920-1024x576.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* HEADER */
+/* Hide Header-Top-Bar in Mobile sytle */
 .header-description {
     display: none;
     background-color: black;
@@ -64,4 +90,82 @@
 .dropdown-dark-item:hover,
 .dropdown-dark-item:focus {
     color: rgba(255,255,255,.75);
+}
+
+/* MAIN */
+.grey-text {
+    color: var(--icon-grey);
+}
+
+/* Slideshow */
+
+/* SERVICES */
+.services-item>img {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.more-btn {
+    background-color: var(--main-text);
+    color: white;
+    border: none;
+    font-weight: bold;
+    width: 78px;
+    height: 33px;
+    box-shadow: 2px 2px 2px rgb(184, 184, 184);
+}
+
+/* CLIENTS */
+.clients-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.clients-item>img {
+    width: 100%;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.widget-heading {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* CONTACT */
+.contact-item a,
+.contact-item a:link,
+.contact-item a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+/* SEARCH */
+.footer-widget input {
+    border: none;
+}
+
+.footer-widget button {
+    color: white;
+    border: none;
+    background-color: var(--main-text);
+}
+
+.copyright {
+    margin-top: 1rem;
+}
+
+.footer-logo {
+    font-size: xx-large;
+    color: var(--main-text);
+    margin-bottom: 0;
 }
