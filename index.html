@@ -1,36 +1,41 @@
 <!--
  * @Date: 2021-07-20 10:51:29
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-27 11:25:24
+ * @LastEditTime: 2021-07-28 00:08:53
  * @FilePath: /mtm6130-21w-010/index.html
 -->
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <!-- Cutstom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/slideshow.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="imgs/favicon.png">
-    <title>Fossil Studio</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+        <!-- Bootstrap Icons -->
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+        <!-- Cutstom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+    
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500;700&display=swap"
+            rel="stylesheet">
+    
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="../imgs/favicon.png">
+        <title>Fossil Studio</title>
+    </head>
 
 <body>
     <!-- HEARDER -->
@@ -61,40 +66,41 @@
             </div>
         </div>
         <!-- NAVIGATION -->
-        <nav class="navbar navbar-expand-sm navbar-dark bg-transparent" aria-label="navbar">
+        <nav class="navbar navbar-expand-md navbar-dark bg-transparent" aria-label="navbar">
             <div class="container-fluid navbar-container">
                 <a class="navbar-brand logo" href="#"><img src="imgs/logo-x1.png" alt="Fossil Studio Logo"></a>
-                <button class="navbar-toggler menu-btn rounded-circle d-flex d-sm-none justify-content-center align-items-center"
+                <button class="menu-btn navbar-toggler rounded-circle d-flex d-md-none justify-content-center align-items-center"
                     type="button" data-bs-toggle="collapse" data-bs-target="#side-navbar" aria-controls="side-navbar"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon menu-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="side-navbar">
-                    <ul class="navbar-nav ms-auto mb-2">
+                    <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link menu-active" aria-current="page" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="/about/about.html" id="dropdown01" data-bs-toggle="dropdown"
                                 aria-expanded="false">About</a>
-                            <ul class="dropdown-menu dropdown-dark" aria-labelledby="dropdown01">
-                                <li><a class="dropdown-item dropdown-dark-item" href="#">Meet the Team</a></li>
+                            <ul class="dropdown-menu dropdown-light" aria-labelledby="dropdown01">
+                                <li><a class="dropdown-item dropdown-light-item" href="/about/about.html">About Fossil Studio</a></li>
+                                <li><a class="dropdown-item dropdown-light-item" href="/about/team.html">Meet the Team</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-bs-toggle="dropdown"
-                                aria-expanded="false">Products</a>
-                            <ul class="dropdown-menu dropdown-dark" aria-labelledby="dropdown02">
-                                <li><a class="dropdown-item dropdown-dark-item" href="#">Virtual Reality</a></li>
-                                <li><a class="dropdown-item dropdown-dark-item" href="#">3D Data Visulization</a></li>
-                                <li><a class="dropdown-item dropdown-dark-item" href="#">Interactive Exhibition</a></li>
-                                <li><a class="dropdown-item dropdown-dark-item" href="#">CG Animation</a></li>
-                                <li><a class="dropdown-item dropdown-dark-item" href="#">Web Development</a></li>
+                                aria-expanded="false">Service</a>
+                            <ul class="dropdown-menu dropdown-light" aria-labelledby="dropdown02">
+                                <li><a class="dropdown-item dropdown-light-item" href="#">Virtual Reality</a></li>
+                                <li><a class="dropdown-item dropdown-light-item" href="#">3D Data Visulization</a></li>
+                                <li><a class="dropdown-item dropdown-light-item" href="#">Interactive Exhibition</a></li>
+                                <li><a class="dropdown-item dropdown-light-item" href="#">CG Animation</a></li>
+                                <li><a class="dropdown-item dropdown-light-item" href="#">Web Development</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="blog.html">Blog</a>
+                            <a class="nav-link" href="blog/blog.html">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>

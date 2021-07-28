@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-07-24 16:56:52
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-27 12:06:10
+ * @LastEditTime: 2021-07-28 00:26:01
  * @FilePath: /mtm6130-21w-010/css/style.css
  */
  
@@ -31,6 +31,10 @@ h3 {
     font-size: 18px;
 }
 
+img {
+    width: 100%;
+}
+
  /* MOBILE */
 .header-wrapper {
     background-image: url(../imgs/meseum-01-1920-1024x576.jpeg);
@@ -57,7 +61,7 @@ h3 {
 
 .header-description-item>p>a:link,
 .header-description-item>p>a:visited {
-    color: white;
+    color: var(--text-white);
     text-decoration: none;
 }
 
@@ -72,7 +76,9 @@ h3 {
 .menu-btn {
     padding: 0;
     width: 32px;
-    height: 32px;    
+    height: 32px;
+    /* border-color: var(--main-text)!important; */
+    background-color: #454545;
 }
 
 .menu-icon {
@@ -80,21 +86,25 @@ h3 {
     height: 22px;
 }
 
-.main-menu {
-    float: right;
+.menu-active {
+    background-color: var(--main-text);
 }
 
-.dropdown-dark {
-    background-color: black;
+
+/* Mobile dropdown background color */
+.dropdown-light {
+    background-color: rgba(255,255,255,.05);
 }
 
-.dropdown-dark-item {
-    color: rgba(255,255,255,.55);
-}
-
-.dropdown-dark-item:hover,
-.dropdown-dark-item:focus {
+/* Mobile dropdown font color and size */
+.dropdown-light-item {
     color: rgba(255,255,255,.75);
+    font-size: 14px;
+}
+
+.dropdown-light-item:hover,
+.dropdown-light-item:focus{
+    color: var(--main-text);
 }
 
 /* MAIN */
@@ -103,6 +113,56 @@ h3 {
 }
 
 /* Slideshow */
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: var(--main-text);
+  }
+  
+  /* Fading animation */
+  .slide-fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
 
 /* SERVICES */
 .services-item>img {
@@ -112,7 +172,7 @@ h3 {
 
 .more-btn {
     background-color: var(--main-text);
-    color: white;
+    color: var(--text-white);
     border: none;
     font-weight: bold;
     width: 78px;
@@ -138,7 +198,7 @@ footer {
     flex-direction: column;
     align-items: center;
     background-color: black;
-    color: white;
+    color: var(--text-white);
     text-align: center;
 }
 
@@ -152,7 +212,7 @@ footer {
 .contact-item a,
 .contact-item a:link,
 .contact-item a:visited {
-    color: white;
+    color: var(--text-white);
     text-decoration: none;
 }
 
@@ -162,7 +222,7 @@ footer {
 }
 
 .footer-widget button {
-    color: white;
+    color: var(--text-white);
     border: none;
     background-color: var(--main-text);
 }
@@ -177,15 +237,53 @@ footer {
     margin-bottom: 0;
 }
 
+/* TEAM */
+.staff {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.staff>img {
+    width: 166px;
+    border-radius: 50%;
+}
+
+.team-text {
+    font-family: 'Poppins', serif;
+    font-size: 16px;
+}
+
+.personal-social-media a {
+    font-size: 32px;
+    padding: 0 0.5rem;
+    color: var(--main-text);
+}
+
 /* TABLET min-width:768px*/
 @media screen and (min-width:768px){
 /* NAVIGATION */
-.dropdown-dark {
+.dropdown-light {
     background-color: transparent;
     border: none;
     margin: 0;
     padding: 0;
 }
+
+.dropdown-light:active {
+    color: var(--main-text);
+}
+
+.nav-item>a:hover,
+.nav-item>a:focus {
+    color: var(--main-text);
+}
+
+.menu-active {
+    border-bottom: 5px solid var(--main-text);
+    background-color: transparent;
+}
+
 /* SERVICES */
 /* Change all widget in a row */
 .services-container {
@@ -234,7 +332,14 @@ footer {
     .services-item {
         width: 30%;
     }
-    
+
+    /* TEAM */
+    /* Use flex to set all staff in a row */
+    .team-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 2%;
+    }
 }
 
 /* DESKTOP min-width:1440px*/
@@ -242,4 +347,9 @@ footer {
     .subscribe>button {
         margin-top: 0;
     }
+
+    /* slideshow fits desktop width */
+    .slideshow-container {
+        max-width: 1440px;
+      }
 }
