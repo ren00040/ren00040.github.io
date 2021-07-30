@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-07-24 17:15:27
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-30 00:35:27
+ * @LastEditTime: 2021-07-30 14:00:33
  * @FilePath: /mtm6130-21w-010/text.html
 -->
 <!doctype html>
@@ -13,50 +13,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="css/slideshow.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <title>test page</title>
 </head>
 
 <body>
-  <div class="slideshow-container">
-    <div class="sp-slideshow">
-
-      <input type="radio" id="button-1" name="radio-set" class="sp-selector-1" checked="checked" />
-      <label for="button-1" class="button-label-1"></label>
-
-      <input type="radio" id="button-2" name="radio-set" class="sp-selector-2" />
-      <label for="button-2" class="button-label-2"></label>
-
-      <input type="radio" id="button-3" name="radio-set" class="sp-selector-3" />
-      <label for="button-3" class="button-label-3"></label>
-
-      <input type="radio" id="button-4" name="radio-set" class="sp-selector-4" />
-      <label for="button-4" class="button-label-4"></label>
-
-      <input type="radio" id="button-5" name="radio-set" class="sp-selector-5" />
-      <label for="button-5" class="button-label-5"></label>
-
-      <label for="button-1" class="sp-arrow sp-a1"></label>
-      <label for="button-2" class="sp-arrow sp-a2"></label>
-      <label for="button-3" class="sp-arrow sp-a3"></label>
-      <label for="button-4" class="sp-arrow sp-a4"></label>
-      <label for="button-5" class="sp-arrow sp-a5"></label>
-
-      <!-- sp-content -->
-      <div class="sp-content">
-        <div class="sp-parallax-bg"></div>
-        <ul class="sp-slider clearfix">
-          <li><img src="imgs/chinese-temple-1024_x_426.jpeg" alt="chinese temple" /></li>
-          <li><img src="imgs/cg-relics-1024_x_426.jpeg" alt="Relics" /></li>
-          <li><img src="imgs/hyudai-exhibition-1024_x_426.jpeg" alt="Hyudai exhibition" /></li>
-          <li><img src="imgs/3d-data-1024x768.png" alt="Data" /></li>
-          <li><img src="imgs/Animation-1024_x_372.png" alt="CG Animation" /></li>
-        </ul>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/imgs/cg-relics-1024_x_426.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/imgs/slide5-1024-426.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/imgs/hyudai-exhibition-1024_x_426.jpeg" class="d-block w-100" alt="...">
       </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 
   <!-- Optional JavaScript; choose one of the two! -->

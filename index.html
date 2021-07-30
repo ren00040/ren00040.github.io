@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-07-20 10:51:29
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-30 01:08:32
+ * @LastEditTime: 2021-07-30 15:37:03
  * @FilePath: /mtm6130-21w-010/index.html
 -->
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
 
     <!-- Cutstom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/slideshow.css">
+    <!-- <link rel="stylesheet" href="css/slideshow.css"> -->
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -143,9 +143,40 @@
         </section>
         <!-- PROJECTS -->
         <section id="projects">
-            <h2>Projects</h2>
+            <h2>Success Cases</h2>
             <p class="fst-italic">Take a peek inside our Wonderworld</p>
-            <div class="slideshow-container">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/imgs/chinese-temple-320_x_133.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/imgs/cg-relics-320_x_133.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/imgs/hyudai-exhibition-320_x_133.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- <div class="slideshow-container">
                 <div class="sp-slideshow">
 
                     <input type="radio" id="button-1" name="radio-set" class="sp-selector-1" checked="checked" />
@@ -169,7 +200,7 @@
                     <label for="button-4" class="sp-arrow sp-a4"></label>
                     <label for="button-5" class="sp-arrow sp-a5"></label>
 
-                    <!-- sp-content -->
+                    sp-content
                     <div class="sp-content">
                         <div class="sp-parallax-bg"></div>
                         <ul class="sp-slider clearfix">
@@ -181,13 +212,94 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <hr>
         </section>
         <!-- SERVICES -->
         <section id="services" class="services">
             <h2>What We Do</h2>
-            <div class="services-container">
+            <!-- Use Bootstrap carousel to make a slideshow -->
+            <!-- Link: https://getbootstrap.com/docs/5.0/components/carousel/ -->
+            <div id="services-slideshow" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="services-item d-block w-100">
+                            <h3>Virtual Reality</h3>
+                            <img src="/imgs/vr-300x225.png" class="d-block w-100" alt="...">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates
+                                non? Vitae
+                                accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui
+                                perferendis
+                                tenetur
+                                ipsum eos nam!</p>
+                            <button class="more-btn">MORE</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="services-item d-block w-100">
+                            <h3>Data Visualization</h3>
+                            <img src="/imgs/3d-data-300x225.png" class="d-block w-100" alt="...">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates
+                                non? Vitae
+                                accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui
+                                perferendis
+                                tenetur
+                                ipsum eos nam!</p>
+                            <button class="more-btn">MORE</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="services-item d-block w-100">
+                            <h3>Interactive Exhibition</h3>
+                            <img src="/imgs/interactive-exhibition-300x225.png" class="d-block w-100" alt="...">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates
+                                non? Vitae
+                                accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui
+                                perferendis
+                                tenetur
+                                ipsum eos nam!</p>
+                            <button class="more-btn">MORE</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="services-item d-block w-100">
+                            <h3>CG Animation</h3>
+                            <img src="/imgs/cg-300x225.png" class="d-block w-100" alt="...">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates
+                                non? Vitae
+                                accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui
+                                perferendis
+                                tenetur
+                                ipsum eos nam!</p>
+                            <button class="more-btn">MORE</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="services-item d-block w-100">
+                            <h3>Web Development</h3>
+                            <img src="/imgs/web-300x225.png" class="d-block w-100" alt="...">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates
+                                non? Vitae
+                                accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui
+                                perferendis
+                                tenetur
+                                ipsum eos nam!</p>
+                            <button class="more-btn">MORE</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#services-slideshow"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#services-slideshow"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- <div class="services-container">
                 <div class="services-item pb-5">
                     <h3>Virtual Reality</h3>
                     <img src="imgs/vr-300x225.png" alt="A man wears a VR helmet">
@@ -232,7 +344,7 @@
                         ipsum eos nam!</p>
                     <button class="more-btn">MORE</button>
                 </div>
-            </div>
+            </div> -->
             <hr>
         </section>
         <section id="clients" class="mb-4">
