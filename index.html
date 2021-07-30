@@ -1,41 +1,42 @@
 <!--
  * @Date: 2021-07-20 10:51:29
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-28 00:08:53
+ * @LastEditTime: 2021-07-30 01:08:32
  * @FilePath: /mtm6130-21w-010/index.html
 -->
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-        <!-- Bootstrap Icons -->
-         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    
-        <!-- Cutstom CSS -->
-        <link rel="stylesheet" href="css/style.css">
-    
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500;700&display=swap"
-            rel="stylesheet">
-    
-         <link rel="preconnect" href="https://fonts.googleapis.com">
-         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="../imgs/favicon.png">
-        <title>Fossil Studio</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- Cutstom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slideshow.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../imgs/favicon.png">
+    <title>Fossil Studio</title>
+</head>
 
 <body>
     <!-- HEARDER -->
@@ -69,7 +70,8 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-transparent" aria-label="navbar">
             <div class="container-fluid navbar-container">
                 <a class="navbar-brand logo" href="#"><img src="imgs/logo-x1.png" alt="Fossil Studio Logo"></a>
-                <button class="menu-btn navbar-toggler rounded-circle d-flex d-md-none justify-content-center align-items-center"
+                <button
+                    class="menu-btn navbar-toggler rounded-circle d-flex d-md-none justify-content-center align-items-center"
                     type="button" data-bs-toggle="collapse" data-bs-target="#side-navbar" aria-controls="side-navbar"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon menu-icon"></span>
@@ -78,29 +80,36 @@
                 <div class="collapse navbar-collapse" id="side-navbar">
                     <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link menu-active" aria-current="page" href="../index.html">Home</a>
+                            <a class="nav-link menu-active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="/about/about.html" id="dropdown01" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
                                 aria-expanded="false">About</a>
                             <ul class="dropdown-menu dropdown-light" aria-labelledby="dropdown01">
-                                <li><a class="dropdown-item dropdown-light-item" href="/about/about.html">About Fossil Studio</a></li>
-                                <li><a class="dropdown-item dropdown-light-item" href="/about/team.html">Meet the Team</a></li>
+                                <li><a class="dropdown-item dropdown-light-item" href="page/about.html">About Us</a>
+                                </li>
+                                <li><a class="dropdown-item dropdown-light-item"
+                                        href="page/protfolio.html">Protfolio</a></li>
                             </ul>
-                        </li>
+                        </li>>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-bs-toggle="dropdown"
                                 aria-expanded="false">Service</a>
                             <ul class="dropdown-menu dropdown-light" aria-labelledby="dropdown02">
-                                <li><a class="dropdown-item dropdown-light-item" href="#">Virtual Reality</a></li>
-                                <li><a class="dropdown-item dropdown-light-item" href="#">3D Data Visulization</a></li>
-                                <li><a class="dropdown-item dropdown-light-item" href="#">Interactive Exhibition</a></li>
-                                <li><a class="dropdown-item dropdown-light-item" href="#">CG Animation</a></li>
-                                <li><a class="dropdown-item dropdown-light-item" href="#">Web Development</a></li>
+                                <li><a class="dropdown-item dropdown-light-item" href="page/virtual.html">Virtual
+                                        Reality</a></li>
+                                <li><a class="dropdown-item dropdown-light-item" href="page/data-visulization.html">3D
+                                        Data Visulization</a></li>
+                                <li><a class="dropdown-item dropdown-light-item" href="page/exhibition.html">Interactive
+                                        Exhibition</a></li>
+                                <li><a class="dropdown-item dropdown-light-item" href="page/animation.html">CG
+                                        Animation</a></li>
+                                <li><a class="dropdown-item dropdown-light-item" href="page/web-development.html">Web
+                                        Development</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="blog/blog.html">Blog</a>
+                            <a class="nav-link" href="blog/blogs.html">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
@@ -136,29 +145,41 @@
         <section id="projects">
             <h2>Projects</h2>
             <p class="fst-italic">Take a peek inside our Wonderworld</p>
-            <div class="slideshow">
-                <!-- Slideshow container -->
-                <div class="slideshow-container">
+            <div class="slideshow-container">
+                <div class="sp-slideshow">
 
-                    <!-- Full-width images with number and caption text -->
-                    <div class="mySlides slide-fade">
-                        <img src="imgs/chinese-temple-1024_x_426.jpeg" alt="Chinese temple" style="width:100%">
-                    </div>
+                    <input type="radio" id="button-1" name="radio-set" class="sp-selector-1" checked="checked" />
+                    <label for="button-1" class="button-label-1"></label>
 
-                    <div class="mySlides slide-fade">
-                        <img src="imgs/cg-relics-1024_x_426.jpeg" alt="Relics" style="width:100%">
-                    </div>
+                    <input type="radio" id="button-2" name="radio-set" class="sp-selector-2" />
+                    <label for="button-2" class="button-label-2"></label>
 
-                    <div class="mySlides slide-fade">
-                        <img src="imgs/hyudai-exhibition-1024_x_426.jpeg" alt="Hyudai Exhibition" style="width:100%">
+                    <input type="radio" id="button-3" name="radio-set" class="sp-selector-3" />
+                    <label for="button-3" class="button-label-3"></label>
+
+                    <input type="radio" id="button-4" name="radio-set" class="sp-selector-4" />
+                    <label for="button-4" class="button-label-4"></label>
+
+                    <input type="radio" id="button-5" name="radio-set" class="sp-selector-5" />
+                    <label for="button-5" class="button-label-5"></label>
+
+                    <label for="button-1" class="sp-arrow sp-a1"></label>
+                    <label for="button-2" class="sp-arrow sp-a2"></label>
+                    <label for="button-3" class="sp-arrow sp-a3"></label>
+                    <label for="button-4" class="sp-arrow sp-a4"></label>
+                    <label for="button-5" class="sp-arrow sp-a5"></label>
+
+                    <!-- sp-content -->
+                    <div class="sp-content">
+                        <div class="sp-parallax-bg"></div>
+                        <ul class="sp-slider clearfix">
+                            <li><img src="imgs/chinese-temple-1024_x_426.jpeg" alt="chinese temple" /></li>
+                            <li><img src="imgs/cg-relics-1024_x_426.jpeg" alt="Relics" /></li>
+                            <li><img src="imgs/hyudai-exhibition-1024_x_426.jpeg" alt="Hyudai exhibition" /></li>
+                            <li><img src="imgs/slide5-1024-426.jpeg" alt="tree and stone carving" /></li>
+                            <li><img src="imgs/animation-1024_x_426.png" alt="CG Animation" /></li>
+                        </ul>
                     </div>
-                </div>
-                <br>
-                <!-- The dots/circles -->
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
                 </div>
             </div>
             <hr>
@@ -171,15 +192,16 @@
                     <h3>Virtual Reality</h3>
                     <img src="imgs/vr-300x225.png" alt="A man wears a VR helmet">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
-                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
-                        ipsum eos nam!</p>
+                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis
+                        tenetur ipsum eos nam!</p>
                     <button class="more-btn">MORE</button>
                 </div>
                 <div class="services-item  pb-5">
                     <h3>Data Visualization</h3>
                     <img src="imgs/3d-data-300x225.png" alt="3D Data Visualization">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
-                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
+                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis
+                        tenetur
                         ipsum eos nam!</p>
                     <button class="more-btn">MORE</button>
                 </div>
@@ -187,7 +209,8 @@
                     <h3>Interactive Exhibition</h3>
                     <img src="imgs/interactive-exhibition-300x225.png" alt="Exhibition">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
-                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
+                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis
+                        tenetur
                         ipsum eos nam!</p>
                     <button class="more-btn">MORE</button>
                 </div>
@@ -195,7 +218,8 @@
                     <h3>CG Animation</h3>
                     <img src="imgs/cg-300x225.png" alt="Relics">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
-                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
+                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis
+                        tenetur
                         ipsum eos nam!</p>
                     <button class="more-btn">MORE</button>
                 </div>
@@ -203,7 +227,8 @@
                     <h3>Web Development</h3>
                     <img src="imgs/web-300x225.png" alt="Web Development">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odio maiores voluptates non? Vitae
-                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis tenetur
+                        accusamus asperiores illo id modi itaque sed quo! Aspernatur exercitationem qui perferendis
+                        tenetur
                         ipsum eos nam!</p>
                     <button class="more-btn">MORE</button>
                 </div>
@@ -230,7 +255,7 @@
                     <p>Location: 23 Upminster Way, Nepean, ON K2J 5H1</p>
                     <p>Phone: +1 343-551-0300</p>
                     <p>Email: <a href="mailto:kylerenke.on@gmail.com">kylerenke.on@gmail.com</a></p>
-                </div> 
+                </div>
             </div>
             <div id="search" class="search">
                 <p class="widget-heading">Quick search</p>
@@ -238,9 +263,9 @@
                 <button type="submit"><i class="bi bi-search"></i></button>
             </div>
             <div id="subscribe" class="subscribe">
-               <p class="widget-heading">Subscribe To The Newsletter</p>
-               <input type="email" name="subscribe-email" id="subscribe-email" placeholder="you@email.com">
-               <button type="submit">Submit</button>
+                <p class="widget-heading">Subscribe To The Newsletter</p>
+                <input type="email" name="subscribe-email" id="subscribe-email" placeholder="you@email.com">
+                <button type="submit">Submit</button>
             </div>
             <div class="copyright">
                 <p class="footer-logo">Fossil Studio</p>
@@ -263,6 +288,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
 
+    <!-- External JS -->
     <script src="js/slideshow.js"></script>
 
 </body>
