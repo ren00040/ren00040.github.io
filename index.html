@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-07-20 10:51:29
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-31 01:56:35
+ * @LastEditTime: 2021-07-31 02:41:17
  * @FilePath: /mtm6130-21w-010/index.html
 -->
 <!DOCTYPE html>
@@ -145,6 +145,8 @@
         <section id="projects">
             <h2>Success Cases</h2>
             <p class="fst-italic">Take a peek inside our Wonderworld</p>
+            <!-- Use Bootstrap carousel to make a slideshow -->
+            <!-- Link: https://getbootstrap.com/docs/5.0/components/carousel/ -->
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -156,15 +158,32 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="/imgs/chinese-temple-320_x_133.jpeg" class="d-block w-100" alt="...">
+                        <!-- <img src="/imgs/chinese-temple-320_x_133.jpeg" class="d-block w-100" alt="chinese temple"> -->
+                        <picture class="d-block w-100">
+                            <source media="(min-width: 1024px)" srcset="/imgs/chinese-temple-1920_x_1080.jpeg">
+                            <source media="(min-width: 768px)" srcset="/imgs/chinese-temple-1024_x_426.jpeg">
+                            <source media="(min-width: 375px)" srcset="/imgs/chinese-temple-768_x_320.jpeg">
+                            <img src="/imgs/chinese-temple-320_x_133.jpeg" alt="chinese temple">
+                        </picture>
                     </div>
                     <div class="carousel-item">
-                        <img src="/imgs/cg-relics-320_x_133.jpeg" class="d-block w-100" alt="...">
+                        <picture class="d-block w-100">
+                            <source media="(min-width: 1024px)" srcset="/imgs/cg-relics-1920_x_1080.jpeg">
+                            <source media="(min-width: 768px)" srcset="/imgs/cg-relics-1024_x_426.jpeg">
+                            <source media="(min-width: 375px)" srcset="/imgs/cg-relics-768_x_320.jpeg">
+                            <img src="/imgs/cg-relics-320_x_133.jpeg" alt="relics">
+                        </picture>
                     </div>
                     <div class="carousel-item">
-                        <img src="/imgs/hyudai-exhibition-320_x_133.jpeg" class="d-block w-100" alt="...">
+                        <picture class="d-block w-100">
+                            <source media="(min-width: 1024px)" srcset="imgs/hyudai-exhibition-1920_x_1080.jpeg">
+                            <source media="(min-width: 768px)" srcset="/imgs/hyudai-exhibition-1024_x_426.jpeg">
+                            <source media="(min-width: 375px)" srcset="/imgs/hyudai-exhibition-768_x_320.jpeg">
+                            <img src="/imgs/hyudai-exhibition-320_x_133.jpeg" alt="relics">
+                        </picture>
                     </div>
                 </div>
+                <!-- prev & next button -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
                     <span class="bi bi-arrow-left-circle-fill controler-arrow" aria-hidden="true"></span>
@@ -183,6 +202,7 @@
             <h2>What We Do</h2>
             <!-- Use Bootstrap carousel to make a slideshow -->
             <!-- Link: https://getbootstrap.com/docs/5.0/components/carousel/ -->
+            <!-- Only display in mobile style -->
             <div id="services-slideshow" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner slideshow-inner">
                     <div class="carousel-item active">
@@ -190,7 +210,7 @@
                             <h3>Virtual Reality</h3>
                             <img src="/imgs/vr-300x225.png" class="d-block w-100" alt="...">
                             <p>Virtual reality technology turns our imaginations and fantasies into ‘reality’.</p>
-                            <button class="more-btn">MORE</button>
+                            <button class="more-btn"><a href="page/virtual.html">MORE</a></button>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -198,7 +218,7 @@
                             <h3>Data Visualization</h3>
                             <img src="/imgs/3d-data-300x225.png" class="d-block w-100" alt="...">
                             <p>Virtual reality technology turns our imaginations and fantasies into ‘reality’.</p>
-                            <button class="more-btn">MORE</button>
+                            <button class="more-btn"><a href="page/data-visulization.html">MORE</a></button>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -206,7 +226,7 @@
                             <h3>Interactive Exhibition</h3>
                             <img src="/imgs/interactive-exhibition-300x225.png" class="d-block w-100" alt="...">
                             <p>Virtual reality technology turns our imaginations and fantasies into ‘reality’.</p>
-                            <button class="more-btn">MORE</button>
+                            <button class="more-btn"><a href="page/exhibition.html">MORE</a></button>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -214,7 +234,7 @@
                             <h3>CG Animation</h3>
                             <img src="/imgs/cg-300x225.png" class="d-block w-100" alt="...">
                             <p>Virtual reality technology turns our imaginations and fantasies into ‘reality’.</p>
-                            <button class="more-btn">MORE</button>
+                            <button class="more-btn"><a href="page/animation.html">MORE</a></button>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -222,7 +242,7 @@
                             <h3>Web Development</h3>
                             <img src="/imgs/web-300x225.png" class="d-block w-100" alt="...">
                             <p>Virtual reality technology turns our imaginations and fantasies into ‘reality’.</p>
-                            <button class="more-btn">MORE</button>
+                            <button class="more-btn"><a href="page/web-development.html">MORE</a></button>
                         </div>
                     </div>
                 </div>
@@ -237,40 +257,42 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <!-- Another service list hide in mobile style -->
             <div class="services-container">
                 <div class="services-item">
                     <h3>Virtual Reality</h3>
                     <img src="/imgs/vr-300x225.png" class="d-block w-100" alt="...">
                     <p>Virtual reality technology turns our imaginations and fantasies into ‘reality’.</p>
-                    <button class="more-btn">MORE</button>
+                    <button class="more-btn"><a href="page/virtual.html">MORE</a></button>
                 </div>
                 <div class="services-item">
                     <h3>Data Visualization</h3>
                     <img src="/imgs/3d-data-300x225.png" class="d-block w-100" alt="...">
-                    <p>Virtual reality technology turns our imaginations and fantasies into ‘reality’.</p>
-                    <button class="more-btn">MORE</button>
+                    <p>Visual data makes it easier to identify real-time trends, outliers, and new insights.</p>
+                    <button class="more-btn"><a href="page/data-visulization.html">MORE</a></button>
                 </div>
                 <div class="services-item">
                     <h3>Interactive Exhibition</h3>
                     <img src="/imgs/interactive-exhibition-300x225.png" class="d-block w-100" alt="...">
-                    <p>Virtual reality technology turns our imaginations and fantasies into ‘reality’.</p>
-                    <button class="more-btn">MORE</button>
+                    <p>Interaction between visitors and collections is a new form of exhibition. </p>
+                    <button class="more-btn"><a href="page/exhibition.html">MORE</a></button>
                 </div>
                 <div class="services-item">
                     <h3>CG Animation</h3>
                     <img src="/imgs/cg-300x225.png" class="d-block w-100" alt="...">
-                    <p>Virtual reality technology turns our imaginations and fantasies into ‘reality’.</p>
-                    <button class="more-btn">MORE</button>
+                    <p>Computer graphics animation brings you unparalleled visual enjoyment.</p>
+                    <button class="more-btn"><a href="page/animation.html">MORE</a></button>
                 </div>
                 <div class="services-item">
                     <h3>Web Development</h3>
                     <img src="/imgs/web-300x225.png" class="d-block w-100" alt="...">
-                    <p>Virtual reality technology turns our imaginations and fantasies into ‘reality’.</p>
-                    <button class="more-btn">MORE</button>
+                    <p>Internet connects you to the world. The website is the first door.</p>
+                    <button class="more-btn"><a href="page/web-development.html">MORE</a></button>
                 </div>
             </div>
             <hr>
         </section>
+        <!-- CLIENTS -->
         <section id="clients" class="mb-4">
             <h2>Our Clients</h2>
             <div class="clients-container">
@@ -295,12 +317,12 @@
             </div>
             <div id="search" class="search">
                 <p class="widget-heading">Quick search</p>
-                <input type="text" placeholder="Search.." name="search">
+                <input type="text" placeholder=" Search.." name="search">
                 <button type="submit"><i class="bi bi-search"></i></button>
             </div>
             <div id="subscribe" class="subscribe">
                 <p class="widget-heading">Subscribe To The Newsletter</p>
-                <input type="email" name="subscribe-email" id="subscribe-email" placeholder="you@email.com">
+                <input type="email" name="subscribe-email" id="subscribe-email" placeholder=" you@email.com">
                 <button type="submit">Submit</button>
             </div>
             <div class="copyright">

@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-07-24 16:56:52
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-31 01:54:17
+ * @LastEditTime: 2021-07-31 02:27:49
  * @FilePath: /mtm6130-21w-010/css/style.css
  */
  
@@ -123,13 +123,25 @@ img {
 
 .more-btn {
     background-color: var(--main-text);
-    color: var(--text-white);
     border: none;
     font-weight: bold;
     width: 78px;
     height: 33px;
     box-shadow: 2px 2px 2px rgb(184, 184, 184);
 }
+
+.more-btn>a,
+.more-btn>a:visited {
+    color: var(--text-white);
+    text-decoration: none;
+
+}
+
+.more-btn>a:hover,
+.more-btn>a:focus {
+    text-decoration: underline;
+}
+
 
 /* Adjust slideshow's prev & next button */
 .controler {
@@ -267,6 +279,7 @@ footer {
 }
 
 .services-item {
+    padding: 1rem 0;
     width: 30%;
 }
 
