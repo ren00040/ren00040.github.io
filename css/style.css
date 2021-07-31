@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-07-24 16:56:52
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-30 15:38:36
+ * @LastEditTime: 2021-07-31 01:54:17
  * @FilePath: /mtm6130-21w-010/css/style.css
  */
  
@@ -77,7 +77,6 @@ img {
     padding: 0;
     width: 32px;
     height: 32px;
-    /* border-color: var(--main-text)!important; */
     background-color: #454545;
 }
 
@@ -131,6 +130,23 @@ img {
     height: 33px;
     box-shadow: 2px 2px 2px rgb(184, 184, 184);
 }
+
+/* Adjust slideshow's prev & next button */
+.controler {
+    top: 29px;
+    bottom: 86px;
+}
+
+/* Change controler-arrow size */
+.controler-arrow {
+    font-size: 32px;
+}
+
+/* Hide .services-container in mobile style */
+.services-container {
+    display: none;
+}
+
 
 /* CLIENTS */
 .clients-container {
@@ -237,7 +253,12 @@ footer {
 }
 
 /* SERVICES */
-/* Change all widget in a row */
+/* change service slideshow to columns */
+#services-slideshow {
+    display: none;
+}
+
+/* Change all services in a row */
 .services-container {
     display: flex;
     flex-direction: row;
