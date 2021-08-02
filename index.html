@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-07-20 10:51:29
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-07-31 02:41:17
+ * @LastEditTime: 2021-08-02 02:05:36
  * @FilePath: /mtm6130-21w-010/index.html
 -->
 <!DOCTYPE html>
@@ -82,16 +82,12 @@
                         <li class="nav-item">
                             <a class="nav-link menu-active" aria-current="page" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
-                                aria-expanded="false">About</a>
-                            <ul class="dropdown-menu dropdown-light" aria-labelledby="dropdown01">
-                                <li><a class="dropdown-item dropdown-light-item" href="page/about.html">About Us</a>
-                                </li>
-                                <li><a class="dropdown-item dropdown-light-item"
-                                        href="page/protfolio.html">Protfolio</a></li>
-                            </ul>
-                        </li>>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page/about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page/protfolio.html">Protfolio</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-bs-toggle="dropdown"
                                 aria-expanded="false">Service</a>
@@ -147,13 +143,13 @@
             <p class="fst-italic">Take a peek inside our Wonderworld</p>
             <!-- Use Bootstrap carousel to make a slideshow -->
             <!-- Link: https://getbootstrap.com/docs/5.0/components/carousel/ -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div id="project-slideshow" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                    <button type="button" data-bs-target="#project-slideshow" data-bs-slide-to="0"
                         class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    <button type="button" data-bs-target="#project-slideshow" data-bs-slide-to="1"
                         aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    <button type="button" data-bs-target="#project-slideshow" data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
@@ -184,12 +180,12 @@
                     </div>
                 </div>
                 <!-- prev & next button -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                <button class="carousel-control-prev" type="button" data-bs-target="#project-slideshow"
                     data-bs-slide="prev">
                     <span class="bi bi-arrow-left-circle-fill controler-arrow" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                <button class="carousel-control-next" type="button" data-bs-target="#project-slideshow"
                     data-bs-slide="next">
                     <span class="bi bi-arrow-right-circle-fill controler-arrow" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
