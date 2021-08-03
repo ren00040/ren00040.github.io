@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-07-24 16:56:52
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-08-03 01:06:20
+ * @LastEditTime: 2021-08-03 02:01:24
  * @FilePath: /mtm6130-21w-010/css/style.css
  */
 
@@ -307,6 +307,13 @@ footer {
     left: 0px;
 }
 
+/* Interactive Exhibition */
+.vr-exhibition {
+    width: 100%;
+    height: 50vw;
+}
+
+
 /* TABLET min-width:768px*/
 @media screen and (min-width:768px) {
 
@@ -439,6 +446,12 @@ footer {
     max-height: 400px;
 }
 
+/* Breakpoint 1400 increase .img-gallery-magnific height */
+@media screen and (min-width:1400px) {
+    .img-gallery-magnific {
+        max-height: 500px;
+    }
+}
 .magnific-img {
     width: 33%;
     margin-bottom: 5px;
