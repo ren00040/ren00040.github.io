@@ -1,10 +1,10 @@
 /*
  * @Date: 2021-07-24 16:56:52
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-08-02 16:31:54
+ * @LastEditTime: 2021-08-03 01:06:20
  * @FilePath: /mtm6130-21w-010/css/style.css
  */
- 
+
 /* BASE */
 /* set custom color */
 :root {
@@ -14,7 +14,9 @@
     --text-white: #FBFBFB;
 }
 
-* {box-sizing:border-box}
+* {
+    box-sizing: border-box
+}
 
 /* set default page color, font-family, font-size  */
 body {
@@ -23,7 +25,8 @@ body {
     font-size: 14px;
 }
 
-h2,h3 {
+h2,
+h3 {
     color: var(--main-text);
 }
 
@@ -35,7 +38,7 @@ img {
     width: 100%;
 }
 
- /* MOBILE */
+/* MOBILE */
 .header-wrapper {
     background-image: url(../imgs/meseum-01-1920-1024x576.jpeg);
     background-repeat: no-repeat;
@@ -92,17 +95,17 @@ img {
 
 /* Mobile dropdown background color */
 .dropdown-light {
-    background-color: rgba(255,255,255,.05);
+    background-color: rgba(255, 255, 255, .05);
 }
 
 /* Mobile dropdown font color and size */
 .dropdown-light-item {
-    color: rgba(255,255,255,.75);
+    color: rgba(255, 255, 255, .75);
     font-size: 14px;
 }
 
 .dropdown-light-item:hover,
-.dropdown-light-item:focus{
+.dropdown-light-item:focus {
     color: var(--main-text);
 }
 
@@ -201,7 +204,7 @@ img {
 .protfolio-imgs {
     display: flex;
     justify-content: space-between;
-    gap:10px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
@@ -278,92 +281,120 @@ footer {
     color: var(--main-text);
 }
 
+/* VIRTUAL */
+.video {
+    max-width: 1000px;
+    background-color: #666;
+    margin: 32px auto;
+    width: 100%;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 15px 20px -20px;
+}
+
+.cont-iframe {
+    height: 0px;
+    width: 100%;
+    max-width: 1000px; /* So we set the maximum width */  
+    padding-top: 56.25%; /* Relacion: 16/9 = 56.25% */
+    position: relative;
+}
+
+.cont-iframe iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
 /* TABLET min-width:768px*/
-@media screen and (min-width:768px){
-/* NAVIGATION TABLET */
-.dropdown-light {
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    padding: 0;
-}
+@media screen and (min-width:768px) {
 
-.dropdown-light:active {
-    color: var(--main-text);
-}
+    /* NAVIGATION TABLET */
+    .dropdown-light {
+        background-color: transparent;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
 
-.nav-item>a:hover,
-.nav-item>a:focus {
-    color: var(--main-text);
-}
+    .dropdown-light:active {
+        color: var(--main-text);
+    }
 
-.menu-active {
-    border-bottom: 5px solid var(--main-text);
-    background-color: transparent;
-}
+    .nav-item>a:hover,
+    .nav-item>a:focus {
+        color: var(--main-text);
+    }
 
-/* SERVICES TABLET */
-/* change service slideshow to columns */
-#services-slideshow {
-    display: none;
-}
+    .menu-active {
+        border-bottom: 5px solid var(--main-text);
+        background-color: transparent;
+    }
 
-/* Change all services in a row */
-.services-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+    /* SERVICES TABLET */
+    /* change service slideshow to columns */
+    #services-slideshow {
+        display: none;
+    }
 
-.services-item {
-    padding: 1rem 0;
-    width: 30%;
-}
+    /* Change all services in a row */
+    .services-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 
-/* TEAM TABLET */
-.team-container {
-    display: flex;
-}
+    .services-item {
+        padding: 1rem 0;
+        width: 30%;
+    }
 
-/* FOOTER TABLET */
-/* Change all widget in a row */
-.footer-widget {
-    display: flex;
-    gap: 2%;
-}
+    /* TEAM TABLET */
+    .team-container {
+        display: flex;
+    }
 
-/* Set every column has a same size */
-.footer-widget>div {
-    flex: 1 1 0;
-}
+    /* FOOTER TABLET */
+    /* Change all widget in a row */
+    .footer-widget {
+        display: flex;
+        gap: 2%;
+    }
 
-.contact-item {
-    text-align: start;
-}
+    /* Set every column has a same size */
+    .footer-widget>div {
+        flex: 1 1 0;
+    }
 
-.search input {
-    width: 80%;
-}
+    .contact-item {
+        text-align: start;
+    }
 
-.subscribe>button {
-    margin-top: 0.25rem;
-}
+    .search input {
+        width: 80%;
+    }
 
-.copyright {
-    margin: 0;
-}
+    .subscribe>button {
+        margin-top: 0.25rem;
+    }
 
-/* Add logo in footer */
-.footer-logo::before {
-    content: url(../imgs/logo-x1.png);
-    display: block;
-}
+    .copyright {
+        margin: 0;
+    }
+
+    /* Add logo in footer */
+    .footer-logo::before {
+        content: url(../imgs/logo-x1.png);
+        display: block;
+    }
 
 }
 
 /* DESKTOP min-width:1024px*/
-@media screen and (min-width:1024px){
+@media screen and (min-width:1024px) {
+
     /* SERVICES DESKTOP */
     .services-item {
         width: 30%;
@@ -379,7 +410,7 @@ footer {
 }
 
 /* DESKTOP min-width:1440px*/
-@media screen and (min-width:1440px){
+@media screen and (min-width:1440px) {
     .subscribe>button {
         margin-top: 0;
     }
@@ -387,7 +418,7 @@ footer {
     /* slideshow fits desktop width */
     .slideshow-container {
         max-width: 1440px;
-      }
+    }
 }
 
 
@@ -416,8 +447,9 @@ footer {
 /* Adjust height with page width */
 .protolio-web-img img {
     height: 40vw;
-    object-fit:cover;
-    object-position: 100% 0; /* change the point of focus. */
+    object-fit: cover;
+    object-position: 100% 0;
+    /* change the point of focus. */
 }
 
 a.image-popup-vertical-fit {
@@ -919,4 +951,5 @@ screen and (max-height: 300px) {
         padding-right: 6px;
     }
 }
+
 /* IMAGES POPUP END */
