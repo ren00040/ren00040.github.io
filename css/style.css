@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-07-24 16:56:52
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-08-03 02:01:24
+ * @LastEditTime: 2021-08-04 00:51:53
  * @FilePath: /mtm6130-21w-010/css/style.css
  */
 
@@ -174,16 +174,16 @@ img {
     width: 100%;
 }
 
-/* PROTFOLIO */
+/* PORTFOLIO */
 /* Put indicators in the top position */
-.protfolio-container {
+.portfolio-container {
     top: -36px;
     bottom: auto;
 }
 
 /* set indicators' style */
-.protfolio-container .protfolio-indicator-item,
-.protfolio-container p {
+.portfolio-container .portfolio-indicator-item,
+.portfolio-container p {
     width: auto;
     padding: 0;
     height: 20px;
@@ -197,18 +197,18 @@ img {
 }
 
 /* set indicators' active color */
-.protfolio-indicator-item.active {
+.portfolio-indicator-item.active {
     color: var(--main-text);
 }
 
-.protfolio-imgs {
+.portfolio-imgs {
     display: flex;
     justify-content: space-between;
     gap: 10px;
     flex-wrap: wrap;
 }
 
-.protfolio-imgs>div {
+.portfolio-imgs>div {
     width: 20vw;
 }
 
@@ -313,6 +313,21 @@ footer {
     height: 50vw;
 }
 
+/* Web Development */
+.web-develop-container {
+    display: flex;
+}
+
+.web-develop-container>div {
+    flex: 1 1 0;
+    /* max-height: 500px; */
+}
+
+.web-develop-container>div>img {
+    max-height: 700px;
+    object-fit: cover;
+    object-position: 100% 0; /* change the point of focus. */
+}
 
 /* TABLET min-width:768px*/
 @media screen and (min-width:768px) {
@@ -461,8 +476,7 @@ footer {
 .protolio-web-img img {
     height: 40vw;
     object-fit: cover;
-    object-position: 100% 0;
-    /* change the point of focus. */
+    object-position: 100% 0; /* change the point of focus. */
 }
 
 a.image-popup-vertical-fit {
