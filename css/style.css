@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-07-24 16:56:52
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-08-05 12:15:29
+ * @LastEditTime: 2021-08-05 15:56:55
  * @FilePath: /mtm6130-21w-010/css/style.css
  */
 
@@ -18,11 +18,13 @@
     box-sizing: border-box
 }
 
-/* set default page color, font-family, font-size  */
+/* set default page color, font-family, font-size, page width  */
 body {
     background-color: var(--main-color);
     font-family: 'IBM Plex Serif', serif;
     font-size: 14px;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 h2,
@@ -371,6 +373,12 @@ input[type=email] {
     box-shadow: 2px 2px 5px  rgba(0, 0, 0, .05);
 }
 
+.featured-image>img {
+    height: calc(20vw + 150px);
+    max-height: 400px;
+    object-fit: cover;
+}
+
 .blog-title {
     font-size: 20px;
     margin-bottom: 0;
@@ -380,6 +388,16 @@ input[type=email] {
     font-size: 12px;
     font-style: italic;
     margin-bottom: 0.2rem;
+}
+
+/* set the limit line of the text */
+.words-limit {
+    text-align: start;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* how many lines to show text */
+    -webkit-box-orient: vertical;
 }
 
 .read-more>a {
@@ -451,7 +469,7 @@ input[type=email] {
 /* CONTACT */
 .google-map {
     width: 100%;
-    height: calc(300px+10vw);
+    height: calc(300px + 10vw);
     padding: 1rem;
 }
 
@@ -478,6 +496,8 @@ input[type=email] {
 
 form {
     padding: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 form input,
@@ -485,6 +505,7 @@ form textarea {
     width: 100%;
     border: 1px solid rgba(0, 0, 0, .1);
     margin-bottom: 0.5rem;
+    padding: 0.25rem 0;
 }
 
 button[type="submit"] {
