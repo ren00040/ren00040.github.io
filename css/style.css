@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-07-24 16:56:52
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-08-05 01:10:43
+ * @LastEditTime: 2021-08-05 12:15:29
  * @FilePath: /mtm6130-21w-010/css/style.css
  */
 
@@ -448,6 +448,52 @@ input[type=email] {
     }
 }
 
+/* CONTACT */
+.google-map {
+    width: 100%;
+    height: calc(300px+10vw);
+    padding: 1rem;
+}
+
+.contact-title {
+    font-size: 1.2rem;
+}
+
+.social-icon-container{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.social-icon {
+    font-size: 20px;
+    color: var(--main-text);
+}
+
+.contact-email>a {
+    text-decoration: none;
+    color: #212529;
+}
+
+form {
+    padding: 1rem;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, .1);
+    margin-bottom: 0.5rem;
+}
+
+button[type="submit"] {
+    background-color: var(--main-text);
+    color: var(--main-color);
+    border: 1px solid rgba(0, 0, 0, .05);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
+}
+
 /* TABLET min-width:768px*/
 @media screen and (min-width:768px) {
 
@@ -531,6 +577,23 @@ input[type=email] {
         display: block;
     }
 
+    /* CONTACT PAGE */
+    /* set all contents in a row */
+    .contact-content {
+        padding: 1rem;
+        display: flex;
+        gap:2rem;
+        justify-content: center;
+    }
+    /* every column has same width */
+    .contact-content>div {
+        flex: 1 1 0;
+        max-width: 220px;
+    }
+
+    form label {
+        text-align: start;
+    }
 }
 
 /* DESKTOP min-width:1024px*/
