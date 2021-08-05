@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-07-24 17:54:21
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-08-04 01:26:25
+ * @LastEditTime: 2021-08-05 01:10:01
  * @FilePath: /mtm6130-21w-010/blog/blogs.html
 -->
 <!DOCTYPE html>
@@ -126,7 +126,78 @@
     </header>
 
     <main class="page-content container text-center">
-        
+        <div class="blog-container">
+            <div id="blog-main-content" class="blog-main-content">
+                <div class="blog-article">
+                    <div class="featured-image">
+                        <img src="../imgs/featured-001.jpeg" alt="css book">
+                        <!-- https://unsplash.com/photos/ipARHaxETRk -->
+                    </div>
+                    <p class="blog-title">Blog Title - 1</p>
+                    <p class="blog-date">Aug 4, 2021</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione mollitia, nesciunt itaque sunt voluptatem minus inventore cumque ipsam nihil, rem harum reiciendis explicabo doloribus veritatis consequuntur, quibusdam voluptates vitae eum!</p>
+                    <div class="read-more"><a href="#">Read more <i class="bi bi-chevron-double-right"></i></a></div>
+                </div>
+                <div class="blog-article">
+                    <div class="featured-image">
+                        <img src="../imgs/featured-002.jpeg" alt="css book">
+                        <!-- https://unsplash.com/photos/4UGmm3WRUoQ -->
+                    </div>
+                    <p class="blog-title">Blog Title - 2</p>
+                    <p class="blog-date">Aug 1, 2021</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione mollitia, nesciunt itaque sunt voluptatem minus inventore cumque ipsam nihil, rem harum reiciendis explicabo doloribus veritatis consequuntur, quibusdam voluptates vitae eum!</p>
+                    <div class="read-more"><a href="#">Read more <i class="bi bi-chevron-double-right"></i></a></div>
+                </div>
+            </div>
+            <div id="blog-more-content" class="blog-more-content">
+                <div class="blog-article">
+                    <a href="#">
+                        <p class="blog-title">Blog Title - 3</p>
+                        <p class="blog-date">July 20, 2021</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione mollitia, nesciunt itaque sunt voluptatem minus inventore cumque ipsam nihil, rem harum reiciendis explicabo doloribus veritatis consequuntur, quibusdam voluptates vitae eum!</p>
+                    </a>
+                </div>
+                <div class="blog-article">
+                    <a href="#">
+                        <p class="blog-title">Blog Title - 4</p>
+                        <p class="blog-date">July 20, 2021</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione mollitia, nesciunt itaque sunt voluptatem minus inventore cumque ipsam nihil, rem harum reiciendis explicabo doloribus veritatis consequuntur, quibusdam voluptates vitae eum!</p>
+                    </a>
+                </div>
+                <div class="blog-article">
+                    <a href="#">
+                        <p class="blog-title">Blog Title - 5</p>
+                        <p class="blog-date">July 20, 2021</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione mollitia, nesciunt itaque sunt voluptatem minus inventore cumque ipsam nihil, rem harum reiciendis explicabo doloribus veritatis consequuntur, quibusdam voluptates vitae eum!</p>                       
+                    </a>
+                </div>
+            </div>
+            <div id="sidebar" class="sidebar">
+                <div class="sidebar-search">
+                    <input class="search-bar" type="search" placeholder="Search.." name="side-search" id="side-search">
+                </div>
+                <div class="recent">
+                    <p class="sidebar-title">Recent Posts</p>
+                    <ul>
+                        <li><a href="#">Blog-1<span>&nbsp;&nbsp;&nbsp;Aug 4, 2021</span></a></li>
+                        <li><a href="#">Blog-2<span>&nbsp;&nbsp;&nbsp;Aug 1, 2021</span></a></li>
+                        <li><a href="#">Blog-3<span>&nbsp;&nbsp;&nbsp;July 20, 2021</span></a></li>
+                        <li><a href="#">Blog-4<span>&nbsp;&nbsp;&nbsp;July 20, 2021</span></a></li>
+                        <li><a href="#">Blog-5<span>&nbsp;&nbsp;&nbsp;July 20, 2021</span></a></li>
+                    </ul>
+                </div>
+                <div class="categories">
+                    <p class="sidebar-title">Categories</p>
+                    <select>
+                        <option value ="code">Coding</option>
+                        <option value ="modelling">3D Modelling</option>
+                        <option value="vr">VR</option>
+                        <option value="drawing">Drawing</option>
+                        <option value="ux">UX</option>
+                      </select>
+                </div>
+            </div>
+        </div>
     </main>
     <!-- FOOTER -->
     <footer class="py-3">
@@ -141,7 +212,7 @@
             </div>
             <div id="search" class="search">
                 <p class="widget-heading">Quick search</p>
-                <input type="text" placeholder="Search.." name="search">
+                <input type="search" placeholder="Search.." name="search">
                 <button type="submit"><i class="bi bi-search"></i></button>
             </div>
             <div id="subscribe" class="subscribe">
