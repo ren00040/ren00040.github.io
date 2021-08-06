@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-07-24 16:56:52
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-08-05 15:56:55
+ * @LastEditTime: 2021-08-05 16:03:02
  * @FilePath: /mtm6130-21w-010/css/style.css
  */
 
@@ -390,6 +390,16 @@ input[type=email] {
     margin-bottom: 0.2rem;
 }
 
+.blog-article>a {
+    text-decoration: none;
+    color: #212529;
+}
+
+.blog-article>a:hover,
+.blog-article>a:focus {
+    color: var(--main-text);
+}
+
 /* set the limit line of the text */
 .words-limit {
     text-align: start;
@@ -449,16 +459,6 @@ input[type=email] {
         grid-area: blog-more-content;
         display: flex;
         gap: 2%;
-    }
-
-    .blog-article>a {
-        text-decoration: none;
-        color: #212529;
-    }
-
-    .blog-article>a:hover,
-    .blog-article>a:focus {
-        color: var(--main-text);
     }
 
     .sidebar {
