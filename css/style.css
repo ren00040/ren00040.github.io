@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-07-24 16:56:52
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-08-06 15:02:06
+ * @LastEditTime: 2021-08-07 18:41:02
  * @FilePath: /mtm6130-21w-010/css/style.css
  */
 
@@ -202,15 +202,12 @@ img {
     color: var(--main-text);
 }
 
-.portfolio-imgs {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
+.portfolio-img a {
+    height: 170px;
 }
 
-.portfolio-imgs>div {
-    width: 20vw;
+.portfolio-img a img {
+    height: 170px;
 }
 
 /* FOOTER */
@@ -660,6 +657,7 @@ button[type="submit"] {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     max-height: 400px;
 }
 

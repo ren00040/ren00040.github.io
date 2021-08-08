@@ -1,0 +1,24 @@
+<!--
+ * @Date: 2021-08-08 00:29:15
+ * @LastEditors: Ke Ren
+ * @LastEditTime: 2021-08-08 00:38:14
+ * @FilePath: /mtm6130-21w-010/page/panorama.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panorama</title>
+</head>
+<body>
+  <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+  <a-scene>
+    <a-assets>
+      <img id="panorama" src="../imgs/panorama-01.jpg" crossorigin />
+    </a-assets>
+    <a-sky src="#panorama" rotation="0 -90 0"></a-sky>
+  </a-scene>
+</body>
+</html>
