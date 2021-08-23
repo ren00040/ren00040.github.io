@@ -1,8 +1,8 @@
 /*
  * @Date: 2021-07-24 16:56:52
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-08-07 18:41:02
- * @FilePath: /mtm6130-21w-010/css/style.css
+ * @LastEditTime: 2021-08-22 23:49:43
+ * @FilePath: /portfolio/css/style.css
  */
 
 /* BASE */
@@ -277,6 +277,7 @@ input[type=email] {
     background-color: white;
     padding: 1rem;
     margin-bottom: 1rem;
+    flex: 1 1 0;
 }
 
 .staff>img {
