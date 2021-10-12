@@ -1,19 +1,9 @@
 /*
  * @Date: 2021-10-09 23:51:20
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-10 22:02:56
+ * @LastEditTime: 2021-10-11 23:39:51
  * @FilePath: /myTowerDefenseGame/js/ui.js
  */
-
-// Convert the browser coordinates to the canvs coordinates
-function positionFix(x,y) {
-    let offset= [innerWidth/2,innerHeight/2];
-
-    offset[0] = offset[0] - 350 + x;
-    offset[1] = offset[1] - 300 + y;
-
-    return offset;
-}
 
 // Create towerSelectPanel
 const towerSelectPanel = document.createElement("div");
@@ -39,27 +29,48 @@ document.querySelector("body").append(towerSelectPanel);
 
 // tower select buttion event 
 const towerSelectBTN = towerSelectPanel.querySelectorAll("button");
-towerSelectBTN.forEach(element => {
-    element.value = false;
 
-    element.onclick = function() {
-        SettleTower(element);
-        // TODO highlight the places which can be settled
-        
+
+/* 
+ * tower type (key): 0-archer, 1-warior
+ */
+for (const [key , btnValue] of towerSelectBTN.entries()) {
+    btnValue.value = false;
+    btnValue.setAttribute("class","towerType"+key);
+    btnValue.onclick = function() {
+        SelectTower(btnValue);
+        // Change the cursor to the selected tower 
+        switch(key){
+            case 0:
+            document.querySelector("body").style.cursor = "url(./resource/archer/archer1.png) 32 32,pointer";
+            break;
+
+            case 1:
+            document.querySelector("body").style.cursor = "url(./resource/warior/warior1.png) 32 32,pointer";
+            break;
+        }
+        // TODO highlight the places which can be settled    
+        HightlightFlag();
     }
-});
+}
 
 // Click button to select a tower to settle
-function SettleTower(btn) {
-    if(btn.value) {
-        // unSelect all buttons
-        towerSelectBTN.forEach(element => {
-            element.value = false;
-            element.style.background = "green";
-        })
+function SelectTower(btn) {
+    // unSelect all buttons
+    towerSelectBTN.forEach(element => {
+        element.value = false;
+        element.style.background = "green";
+    });
 
-        // select this button
-        btn.value = true;
-        btn.style.background = "red";
-    }    
+    // select this button
+    btn.value = true;
+    btn.style.background = "red";
+}
+
+function HightlightFlag() {
+    console.log("HightlightFlag");
+    const flags = document.querySelectorAll(".flag");
+    flags.forEach(element => {
+        element.src = "./resource/settlement-highlight.png";
+    });
 }

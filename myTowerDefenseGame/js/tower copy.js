@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-06 23:05:22
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-11 23:34:04
+ * @LastEditTime: 2021-10-09 23:47:34
  * @FilePath: /myTowerDefenseGame/js/tower.js
  */
 
@@ -25,26 +25,51 @@ class Tower {
     }
 }
 
-// Create a flag img and container
-const flag = [];
-const flagContainer = document.createElement("div");
-flagContainer.setAttribute("id","flag-Container");
+// Initialize the tower map canvas
+const towerCanvas = document.querySelector("#canvas02");
+const towerCTX = towerCanvas.getContext("2d");
 
-document.querySelector("body").append(flagContainer);
+// set the size of towerCanvas
+towerCanvas.width = 700;
+towerCanvas.height = 600;
 
-// draw the flags use the positon from data.js --> settlementPostion
-for (const [key , value] of settlementPosition.entries()) {
-    flag[key] = new Image();
-    flag[key].setAttribute("id","flag"+key);
-    flag[key].setAttribute("class","flag");
-    flag[key].style.position = "absolute";
-    flag[key].src = "./resource/settlement.png";
-    // use positionFix() to set the flag's position
-    flag[key].style.left = positionFix(value[0], value[1])[0] + "px";
-    flag[key].style.top = positionFix(value[0], value[1])[1] + "px";
-    // draw the flag
-    flagContainer.append(flag[key]);
+// set tower's font
+towerCTX.font = "bold 12px serif";
+towerCTX.fillStyle = "red";
+
+
+function drawFlags() {
+    // Create a flage img container
+    const settlementFlag = [];
+    
+    // uns entries returen a new array iterator obj which contains the key/value pairs for each index in settlementPosition
+    for (const [key , value] of settlementPosition.entries()) {
+    
+        settlementFlag[key] = new Image();
+        settlementFlag[key].src = "./resource/settlement.png";
+    
+        settlementFlag[key].onload = function() {
+            towerCTX.drawImage(settlementFlag[key], value[0], value[1]);
+        }
+    }
 }
+
+
+// Draw a tower by name and position x/y 
+function drawTower(name,x,y) {
+    // create a tower and set the parameter
+    const tower = new Tower(name, "single", 40, 3, 5, 1, new Image());
+    tower.img.src = "./resource/"+name+"/"+name+"1.png";
+    
+    // draw the tower's sprite
+    tower.img.onload = function() {
+        towerCTX.drawImage(tower.img, x, y);
+    }
+    
+    // draw the tower's name
+    towerCTX.fillText(tower.name, x+2, y+32);
+}
+
 
 // test create a tower by html
 const testTower = new Tower("archer", "single", 40, 3, 5, 1, new Image());
