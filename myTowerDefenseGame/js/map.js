@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-07 00:20:13
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-10 23:01:34
+ * @LastEditTime: 2021-10-12 22:39:08
  * @FilePath: /myTowerDefenseGame/js/map.js
  */
 
@@ -25,3 +25,4 @@ function drawBattleMap() {
         battleMapCTX.drawImage(mapSprite, 0, 0, battleCanvas.width, battleCanvas.height);
     }
 }
+

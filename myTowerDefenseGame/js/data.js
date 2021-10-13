@@ -1,14 +1,15 @@
 /*
  * @Date: 2021-10-07 00:32:05
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-09 23:49:48
+ * @LastEditTime: 2021-10-12 22:40:26
  * @FilePath: /myTowerDefenseGame/js/data.js
  */
 
 // game base data
 const game = {
     gems : 0,
-    stage : "001"
+    stage : "001",
+    timer : 30
 }
 
 const stageData = {

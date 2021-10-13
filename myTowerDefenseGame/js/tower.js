@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-06 23:05:22
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-11 23:34:04
+ * @LastEditTime: 2021-10-12 23:28:34
  * @FilePath: /myTowerDefenseGame/js/tower.js
  */
 
@@ -37,14 +37,30 @@ for (const [key , value] of settlementPosition.entries()) {
     flag[key] = new Image();
     flag[key].setAttribute("id","flag"+key);
     flag[key].setAttribute("class","flag");
+
+    // Set the parameter "placeable" to determine whether the tower can be placed
+    flag[key].dataset.placeable = true;
+    flag[key].dataset.isHighlight = false;
+
+    // Style the flag
     flag[key].style.position = "absolute";
     flag[key].src = "./resource/settlement.png";
+
     // use positionFix() to set the flag's position
     flag[key].style.left = positionFix(value[0], value[1])[0] + "px";
     flag[key].style.top = positionFix(value[0], value[1])[1] + "px";
+
     // draw the flag
     flagContainer.append(flag[key]);
+
+    flag[key].addEventListener(
+        "click",
+        function(){
+            SettleTower(flag[key])
+        }
+    );
 }
+
 
 // test create a tower by html
 const testTower = new Tower("archer", "single", 40, 3, 5, 1, new Image());
