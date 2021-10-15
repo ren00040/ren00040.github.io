@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-05 22:32:53
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-10 21:14:16
+ * @LastEditTime: 2021-10-14 22:59:09
  * @FilePath: /myTowerDefenseGame/css/style.css
  */
 
@@ -25,4 +25,11 @@
 .tower-select-panel {
     background-color: rgb(139, 122, 122);
     padding: 4px 4px;
+}
+
+.player-panel {
+    position: absolute;
+    top:5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

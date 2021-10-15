@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-06 23:05:22
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-12 23:28:34
+ * @LastEditTime: 2021-10-14 23:31:35
  * @FilePath: /myTowerDefenseGame/js/tower.js
  */
 
@@ -61,36 +61,96 @@ for (const [key , value] of settlementPosition.entries()) {
     );
 }
 
+function DrawTower(theFlag,towerType) {
+    // fix the tower's position base on the flag
+    // issue fixed https://app.gitbook.com/s/-MR93ctAFfSCsQwng6wL/js/operator
+    let fixY = Number(theFlag.style.top.replace('px','')) + Number(40);
+    let positionX = theFlag.style.left;
+    let positionY = fixY + "px";
 
-// test create a tower by html
-const testTower = new Tower("archer", "single", 40, 3, 5, 1, new Image());
-const testTowerContent = `
-    <img src = "./resource/archer/archer1.png">
-    <div>${testTower.name}</div>
-`;
+    // set the tower's default attack type 
+    let attackType;
+    let range;
 
-/* 
- * initial the tower style
- * put the tower in the center of the map
- */
-const towerElement = document.createElement("div");
-towerElement.classList.add("tower","archer");
-towerElement.style.position = "absolute";
-towerElement.style.top = "50%";
-towerElement.style.left = "50%";
-
-// draw the tower
-towerElement.innerHTML = testTowerContent;
-
-// click the tower
-towerElement.addEventListener(
-    "click",
-    function(){
-        Upgrade(this);
+    // set all the parameters based on the tower type
+    switch(towerType) {
+        case "archer":
+            attackType = "single";
+            range = 80;
+            break;
+        case "warior":
+            attackType = "aoe";
+            range = 40;
+            break;
     }
-);
 
-document.querySelector("body").append(towerElement);
+    // create a tower by html
+    const newTower = new Tower(towerType, attackType, range, 3, 5, 1, new Image());
+    const newTowerContent = `
+        <img src = "./resource/${towerType}/${towerType}1.png">
+        <div>${newTower.name}</div>
+    `;
+    
+    /* 
+     * initial the tower style
+     * put the tower in the center of the map
+     */
+    const towerElement = document.createElement("div");
+    towerElement.classList.add("tower",towerType);
+    towerElement.style.position = "absolute";
+    towerElement.style.top = positionY;
+    towerElement.style.left = positionX;
+    
+    // click the tower
+    towerElement.addEventListener(
+        "click",
+        function(){
+            Upgrade(this);
+        }
+    );
+    
+    // draw the tower
+    towerElement.innerHTML = newTowerContent;
+    document.querySelector("body").append(towerElement);
+
+    DrawTowerRange(newTower, positionX, positionY);
+}
+
+/*
+ * Initialize the battle canvas
+ * Get CTX(battle canvas) and set canvas's width and height
+ */
+const battleCanvas = document.querySelector("#canvas02");
+// get CTX(battle canvas)
+var battleCTX = battleCanvas.getContext('2d'); // Create a CanvasRenderingContext 2D Object
+
+battleCanvas.width = 700;
+battleCanvas.height = 600;
+
+// Draw the tower's range
+function DrawTowerRange(newTower, positionX, positionY) {
+
+    // change the positon to numbers
+    let offestX = positionX.replace("px","");
+    offestX = Number(offestX);
+    let offestY = positionY.replace("px","")
+    offestY = Number(offestY);
+
+    // coordinate conversion: change the position to the canvas coordination
+    // fix the circle center
+    let x = positionFixBack(offestX,offestY)[0] + 18;
+    let y = positionFixBack(offestX,offestY)[1] + 14;
+    
+    // set battleMap alpha
+    battleCTX.globalAlpha = 0.5;
+
+    // draw the tower range
+    battleCTX.beginPath();
+    battleCTX.arc(x, y, newTower.range, 0, 2 * Math.PI);
+    battleCTX.stroke();
+
+    console.log(x, y);
+}
 
 /*
  * If the gold enough to upgrade shows the upgrade icon
@@ -98,7 +158,7 @@ document.querySelector("body").append(towerElement);
 function Upgrade(elemnet) {
     if(elemnet.classList.contains("archer")){
         if(stageData.gold >= towerUpgradeGold[1][1]) {
-            console.log("upgrade archer");
+            stageData.gold -= towerUpgradeGold[1][1];
         }
-    }
+    }   
 }

@@ -1,9 +1,11 @@
 /*
  * @Date: 2021-10-09 23:51:20
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-12 23:27:50
+ * @LastEditTime: 2021-10-14 23:30:50
  * @FilePath: /myTowerDefenseGame/js/ui.js
  */
+
+const flags = document.querySelectorAll(".flag");
 
 // Create towerSelectPanel
 const towerSelectPanel = document.createElement("div");
@@ -76,13 +78,18 @@ function SelectTower(btn) {
         });
         DisHighlightFlag();
     }
+}
 
-    
+function unselectTower() {
+    for (const [key , btnValue] of towerSelectBTN.entries()) {
+        btnValue.value = false;
+        btnValue.style.background = "grey";
+    }
+    // dishightlight when player cancels the select BTN
+    DisHighlightFlag();
 }
 
 function HightlightFlag() {
-    console.log("HightlightFlag");
-    const flags = document.querySelectorAll(".flag");
     flags.forEach(flag => {
         if(flag.dataset.placeable === "true"){
             flag.src = "./resource/settlement-highlight.png";
@@ -96,8 +103,6 @@ function HightlightFlag() {
  * change the img and set isHightlight to "false"
 */
 function DisHighlightFlag() {
-    console.log("Dis Hightlight Flag");
-    const flags = document.querySelectorAll(".flag");
     flags.forEach(flag => {
         if(flag.dataset.placeable === "true"){
             flag.src = "./resource/settlement.png";
@@ -108,19 +113,37 @@ function DisHighlightFlag() {
     document.querySelector("body").style.cursor = "default";
 }
 
-
 /* 
  * Settle a Tower
  * If settle a tower then turn off "placeable" 
 */
 function SettleTower(flag) {    
-    if(flag.dataset.placeable == "true" && flag.dataset.isHighlight == "true") {
-        console.log(towerType);
+    if(flag.dataset.placeable == "true" && flag.dataset.isHighlight == "true") {                
+        // remove the flag
+        flag.remove();
+
+        // unselect the tower select panel
+        unselectTower();
         
-        flag.src = "./resource/" + towerType + "/" + towerType +"1.png"
-        
+        DrawTower(flag,towerType);
+
         flag.dataset.placeable = false;
+        // Change the cursor to default 
+        document.querySelector("body").style.cursor = "default";
     }else{
         console.log("can't settle!");
     }
+
 }
+
+// Gold and Gems panel
+const playerPanel = document.createElement("div");
+playerPanel.setAttribute("id","player-panel");
+playerPanel.setAttribute("class","player-panel");
+
+document.querySelector("body").append(playerPanel);
+const playerPanelContent = `
+    <div>Gems: ${game.gems}</div>
+    <div class = "gold">Gold: ${stageData.gold}</div>
+`;
+playerPanel.innerHTML = playerPanelContent;
