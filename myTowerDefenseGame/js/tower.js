@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-06 23:05:22
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-14 23:31:35
+ * @LastEditTime: 2021-10-16 23:45:13
  * @FilePath: /myTowerDefenseGame/js/tower.js
  */
 
@@ -56,12 +56,12 @@ for (const [key , value] of settlementPosition.entries()) {
     flag[key].addEventListener(
         "click",
         function(){
-            SettleTower(flag[key])
+            settleTower(flag[key])
         }
     );
 }
 
-function DrawTower(theFlag,towerType) {
+function drawTower(theFlag,towerType) {
     // fix the tower's position base on the flag
     // issue fixed https://app.gitbook.com/s/-MR93ctAFfSCsQwng6wL/js/operator
     let fixY = Number(theFlag.style.top.replace('px','')) + Number(40);
@@ -105,7 +105,7 @@ function DrawTower(theFlag,towerType) {
     towerElement.addEventListener(
         "click",
         function(){
-            Upgrade(this);
+            towerUpgrade(this);
         }
     );
     
@@ -113,22 +113,11 @@ function DrawTower(theFlag,towerType) {
     towerElement.innerHTML = newTowerContent;
     document.querySelector("body").append(towerElement);
 
-    DrawTowerRange(newTower, positionX, positionY);
+    drawTowerRange(newTower, positionX, positionY);
 }
 
-/*
- * Initialize the battle canvas
- * Get CTX(battle canvas) and set canvas's width and height
- */
-const battleCanvas = document.querySelector("#canvas02");
-// get CTX(battle canvas)
-var battleCTX = battleCanvas.getContext('2d'); // Create a CanvasRenderingContext 2D Object
-
-battleCanvas.width = 700;
-battleCanvas.height = 600;
-
 // Draw the tower's range
-function DrawTowerRange(newTower, positionX, positionY) {
+function drawTowerRange(newTower, positionX, positionY) {
 
     // change the positon to numbers
     let offestX = positionX.replace("px","");
@@ -155,7 +144,7 @@ function DrawTowerRange(newTower, positionX, positionY) {
 /*
  * If the gold enough to upgrade shows the upgrade icon
  */
-function Upgrade(elemnet) {
+function towerUpgrade(elemnet) {
     if(elemnet.classList.contains("archer")){
         if(stageData.gold >= towerUpgradeGold[1][1]) {
             stageData.gold -= towerUpgradeGold[1][1];

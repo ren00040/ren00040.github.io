@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-09 23:51:20
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-14 23:30:50
+ * @LastEditTime: 2021-10-15 12:32:59
  * @FilePath: /myTowerDefenseGame/js/ui.js
  */
 
@@ -53,12 +53,12 @@ for (const [key , btnValue] of towerSelectBTN.entries()) {
             towerType = "warior";
             break;
         }
-        SelectTower(btnValue);
+        selectTower(btnValue);
     }
 }
 
 // Click button to select a tower to settle
-function SelectTower(btn) {
+function selectTower(btn) {
     if(btn.value == "false") {
         // unSelect all buttons
         towerSelectBTN.forEach(element => {
@@ -70,13 +70,13 @@ function SelectTower(btn) {
         btn.value = true;
         btn.style.background = "red";
         // TODO highlight the places which can be settled    
-        HightlightFlag();
+        hightlightFlag();
     }else {
         towerSelectBTN.forEach(element => {
             element.value = false;
             element.style.background = "grey";
         });
-        DisHighlightFlag();
+        disHighlightFlag();
     }
 }
 
@@ -86,10 +86,10 @@ function unselectTower() {
         btnValue.style.background = "grey";
     }
     // dishightlight when player cancels the select BTN
-    DisHighlightFlag();
+    disHighlightFlag();
 }
 
-function HightlightFlag() {
+function hightlightFlag() {
     flags.forEach(flag => {
         if(flag.dataset.placeable === "true"){
             flag.src = "./resource/settlement-highlight.png";
@@ -102,7 +102,7 @@ function HightlightFlag() {
  * if cancel the tower select button Dis-Highlight all flags 
  * change the img and set isHightlight to "false"
 */
-function DisHighlightFlag() {
+function disHighlightFlag() {
     flags.forEach(flag => {
         if(flag.dataset.placeable === "true"){
             flag.src = "./resource/settlement.png";
@@ -117,7 +117,7 @@ function DisHighlightFlag() {
  * Settle a Tower
  * If settle a tower then turn off "placeable" 
 */
-function SettleTower(flag) {    
+function settleTower(flag) {    
     if(flag.dataset.placeable == "true" && flag.dataset.isHighlight == "true") {                
         // remove the flag
         flag.remove();
@@ -125,7 +125,7 @@ function SettleTower(flag) {
         // unselect the tower select panel
         unselectTower();
         
-        DrawTower(flag,towerType);
+        drawTower(flag,towerType);
 
         flag.dataset.placeable = false;
         // Change the cursor to default 

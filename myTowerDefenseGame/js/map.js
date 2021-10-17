@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-07 00:20:13
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-14 22:33:42
+ * @LastEditTime: 2021-10-16 23:38:56
  * @FilePath: /myTowerDefenseGame/js/map.js
  */
 
@@ -26,3 +26,14 @@ function drawBattleMap() {
     }
 }
 
+
+/*
+ * Initialize the battle canvas
+ * Get CTX(battle canvas) and set canvas's width and height
+ */
+const battleCanvas = document.querySelector("#canvas02");
+// get CTX(battle canvas)
+var battleCTX = battleCanvas.getContext('2d'); // Create a CanvasRenderingContext 2D Object
+
+battleCanvas.width = 700;
+battleCanvas.height = 600;

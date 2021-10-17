@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-07 00:32:05
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-14 23:11:31
+ * @LastEditTime: 2021-10-15 12:52:41
  * @FilePath: /myTowerDefenseGame/js/data.js
  */
 
@@ -12,7 +12,9 @@ const game = {
 }
 
 const stageData = {
-    gold : 100
+    gold : 100,
+    wave : 5,
+    enemiesAmount : 30
 }
 
 // Configure where the tower can be placed
@@ -24,9 +26,17 @@ const settlementPosition = [
 
 // Configure the enemy path way
 const pathway = [
-    [100,30],
-    [200,350],
-    [250,500]
+    [325,0],
+    [323,180],
+    [290,220],
+    [240,240],
+    [170,290],
+    [170,370],
+    [220,410],
+    [380,410],
+    [480,430],
+    [600,350],
+    [700,350],
 ];
 
 // the gold needed to upgrade 
