@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-07 00:32:05
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-21 11:22:32
+ * @LastEditTime: 2021-10-21 14:14:57
  * @FilePath: /myTowerDefenseGame/js/data.js
  */
 
@@ -42,5 +42,5 @@ const pathway = [
 // the gold needed to upgrade 
 const towerUpgradeGold = [
     ["archer", 50, 100, 200],
-    ["warrior", 80, 170, 350]
+    ["warior", 80, 170, 350]
 ];

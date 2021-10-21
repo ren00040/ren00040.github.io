@@ -1,9 +1,29 @@
 /*
  * @Date: 2021-10-09 23:51:20
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-15 12:32:59
+ * @LastEditTime: 2021-10-21 14:16:15
  * @FilePath: /myTowerDefenseGame/js/ui.js
  */
+
+// Gold and Gems panel
+
+const playerPanel = document.createElement("div");
+playerPanel.setAttribute("id","player-panel");
+playerPanel.setAttribute("class","player-panel");
+
+document.querySelector("body").append(playerPanel);
+const playerPanelContent = `
+    <div>Gems: ${game.gems}</div>
+    <div class = "gold">Gold: ${stageData.gold}</div>
+`;
+playerPanel.innerHTML = playerPanelContent;
+
+function refreshGold() {
+    playerPanel.innerHTML = `
+    <div>Gems: ${game.gems}</div>
+    <div class = "gold">Gold: ${stageData.gold}</div>
+`;;
+}
 
 const flags = document.querySelectorAll(".flag");
 
@@ -117,33 +137,37 @@ function disHighlightFlag() {
  * Settle a Tower
  * If settle a tower then turn off "placeable" 
 */
-function settleTower(flag) {    
-    if(flag.dataset.placeable == "true" && flag.dataset.isHighlight == "true") {                
-        // remove the flag
-        flag.remove();
-
-        // unselect the tower select panel
-        unselectTower();
-        
-        drawTower(flag,towerType);
-
-        flag.dataset.placeable = false;
-        // Change the cursor to default 
-        document.querySelector("body").style.cursor = "default";
-    }else{
-        console.log("can't settle!");
+function settleTower(flag) {
+    console.log(towerType);
+    switch (towerType) {
+        case "archer":
+            if(stageData.gold >= towerUpgradeGold[0][1]) {
+            settle(flag);
+            stageData.gold -= towerUpgradeGold[0][1];
+            refreshGold();
+        }else{
+            console.log("No enough gold!");
+        }  
+            break;
+    
+        case "warior":
+            if(stageData.gold >= towerUpgradeGold[1][1]) {
+                settle(flag);
+                stageData.gold -= towerUpgradeGold[1][1];
+                refreshGold();
+            }else{
+                console.log("No enough gold!");
+            } 
+            break;
     }
-
 }
 
-// Gold and Gems panel
-const playerPanel = document.createElement("div");
-playerPanel.setAttribute("id","player-panel");
-playerPanel.setAttribute("class","player-panel");
-
-document.querySelector("body").append(playerPanel);
-const playerPanelContent = `
-    <div>Gems: ${game.gems}</div>
-    <div class = "gold">Gold: ${stageData.gold}</div>
-`;
-playerPanel.innerHTML = playerPanelContent;
+function settle(flag) {
+    flag.remove();
+    // unselect the tower select panel
+    unselectTower();
+    drawTower(flag,towerType);
+    flag.dataset.placeable = false;
+    // Change the cursor to default 
+    document.querySelector("body").style.cursor = "default";
+}
