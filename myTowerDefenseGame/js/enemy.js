@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-14 23:12:30
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-17 23:21:50
+ * @LastEditTime: 2021-10-21 00:29:48
  * @FilePath: /myTowerDefenseGame/js/enemy.js
  */
 
@@ -56,6 +56,8 @@ createPathway();
 
 let enemyImg = new Image();
 enemyImg.src = "./resource/enemies/fox.png";
+let enemy = new Enemy("fox", 20, enemyImg.src, 100)
+
 enemyImg.onload = function () {
     drawEnemies();
 }
@@ -64,13 +66,12 @@ enemyImg.onload = function () {
 let enemyWidth = 32;
 let enemyHeight = 32;
 function drawEnemies() {
-    console.log("draw enemies");
     window.requestAnimationFrame(animationStep);
 
 }
 
 function drawEnemyFrame(frameX, frameY, canvasX, canvasY) {
-    battleCTX.drawImage(enemyImg,
+    enemyCTX.drawImage(enemyImg,
                         frameX * enemyWidth, frameY * enemyHeight, enemyWidth, enemyHeight,
                         canvasX, canvasY, enemyWidth, enemyHeight);
 
@@ -85,7 +86,14 @@ const walkLoop = [0,1,0,2];
 let currentLoopIndex = 0;
 let frameCount = 0;
 
+let enemyPosition;
+let pathwayIndex = 0;
+let stepIndex = 0;
+
 function animationStep() {
+    let waypoint = pathway[pathwayIndex];
+    let nextWaypoint = pathway[pathwayIndex+1];
+
     frameCount++;
     if(frameCount<15) {
         window.requestAnimationFrame(animationStep);
@@ -95,12 +103,44 @@ function animationStep() {
     frameCount = 0;
     
     // refresh the canvas
-    battleCTX.clearRect(0,0,mapCanvas.width, mapCanvas.height);
-    drawEnemyFrame(walkLoop[currentLoopIndex++],0,0,0);
+    enemyCTX.clearRect(0,0,mapCanvas.width, mapCanvas.height);
+
+    // get the step distance 
+    let offset =  getOffset(waypoint,nextWaypoint);
+    let currentPosX = waypoint[0] + offset[0]* stepIndex;
+    let currentPosY = waypoint[1] + offset[1]* stepIndex;
+
+    stepIndex++;
+    console.log(offset[3]);
+    
+    drawEnemyFrame(walkLoop[currentLoopIndex++],0,currentPosX,currentPosY);
     if(currentLoopIndex >= walkLoop.length) {
         currentLoopIndex = 0;
     }
 
+    if(stepIndex >= offset[2]) {
+        pathwayIndex++;
+        stepIndex =0;
+    }
+
+    if(pathwayIndex >= pathway.length - 1) {
+        console.log("Destory the enemy");
+        return;
+    }
+
     // update the sprite's animation
     window.requestAnimationFrame(animationStep);
+}
+
+//  get the step distance, the step num needed, the angle between two waypoint
+function getOffset(waypoint, nextWaypoint) {
+    let x = nextWaypoint[0] - waypoint[0];
+    let y = nextWaypoint[1] - waypoint[1];
+    let length = Math.sqrt(x*x +y*y);
+    let step = Math.ceil(length/enemy.speed);
+
+    // TODO need to update
+    let angle =  360*Math.atan(y/x)/(2*Math.PI);
+
+    return [x * enemy.speed / length ,y * enemy.speed / length, step, angle];
 }

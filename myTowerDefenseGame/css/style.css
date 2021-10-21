@@ -1,13 +1,13 @@
 /*
  * @Date: 2021-10-05 22:32:53
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-14 22:59:09
+ * @LastEditTime: 2021-10-17 23:37:50
  * @FilePath: /myTowerDefenseGame/css/style.css
  */
 
 #canvas01
 {
-    z-index: -2;
+    z-index: -3;
     position: absolute;
     top:50%;
     left: 50%;
@@ -15,11 +15,20 @@
 }
 
 #canvas02 {
+    z-index: -2;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#canvas03 {
     z-index: -1;
     position: absolute;
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 2px solid red;
 }
 
 .tower-select-panel {

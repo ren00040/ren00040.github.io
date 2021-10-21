@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-07 00:20:13
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-16 23:38:56
+ * @LastEditTime: 2021-10-20 22:21:49
  * @FilePath: /myTowerDefenseGame/js/map.js
  */
 
@@ -37,3 +37,14 @@ var battleCTX = battleCanvas.getContext('2d'); // Create a CanvasRenderingContex
 
 battleCanvas.width = 700;
 battleCanvas.height = 600;
+
+/*
+ * Initialize the enemy canvas
+ * Get CTX(enemy canvas) and set canvas's width and height
+ */
+const enemyCanvas = document.querySelector("#canvas03");
+// get CTX(enemy canvas)
+var enemyCTX = enemyCanvas.getContext('2d'); // Create a CanvasRenderingContext 2D Object
+
+enemyCanvas.width = 700;
+enemyCanvas.height = 600;
