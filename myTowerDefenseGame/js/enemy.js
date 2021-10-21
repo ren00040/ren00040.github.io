@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-14 23:12:30
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-21 00:29:48
+ * @LastEditTime: 2021-10-21 11:21:40
  * @FilePath: /myTowerDefenseGame/js/enemy.js
  */
 
@@ -111,9 +111,17 @@ function animationStep() {
     let currentPosY = waypoint[1] + offset[1]* stepIndex;
 
     stepIndex++;
-    console.log(offset[3]);
+
+    let angle = offset[3];
+    let direction;
+
+    if (angle>=45 && angle<=135)    { direction = 0; } // direction down
+    if (angle>-45 && angle<45)      { direction = 1; } // direction right
+    if (angle>=-135 && angle<=-45)  { direction = 2; } // direction up
+    if (angle<-135 || angle>135)    { direction = 3; } // direction left
+
     
-    drawEnemyFrame(walkLoop[currentLoopIndex++],0,currentPosX,currentPosY);
+    drawEnemyFrame(walkLoop[currentLoopIndex++],direction,currentPosX-enemyWidth/2,currentPosY-enemyHeight/2);
     if(currentLoopIndex >= walkLoop.length) {
         currentLoopIndex = 0;
     }
@@ -132,15 +140,15 @@ function animationStep() {
     window.requestAnimationFrame(animationStep);
 }
 
-//  get the step distance, the step num needed, the angle between two waypoint
+//  get the step distance, the step num needed, the angle between waypoint and the horizontal
 function getOffset(waypoint, nextWaypoint) {
     let x = nextWaypoint[0] - waypoint[0];
     let y = nextWaypoint[1] - waypoint[1];
     let length = Math.sqrt(x*x +y*y);
     let step = Math.ceil(length/enemy.speed);
 
-    // TODO need to update
-    let angle =  360*Math.atan(y/x)/(2*Math.PI);
+    // get the angle between waypoint and the horizontal
+    let angle =  Math.atan2(y,x)*180/Math.PI;
 
     return [x * enemy.speed / length ,y * enemy.speed / length, step, angle];
 }

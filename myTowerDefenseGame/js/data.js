@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-07 00:32:05
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-21 00:28:44
+ * @LastEditTime: 2021-10-21 11:22:32
  * @FilePath: /myTowerDefenseGame/js/data.js
  */
 
@@ -28,7 +28,7 @@ const settlementPosition = [
 const pathway = [
     [325,0],
     [323,180],
-    [300,150],
+    [280,220],
     [240,240],
     [170,290],
     [170,370],
@@ -36,7 +36,7 @@ const pathway = [
     [380,410],
     [480,430],
     [600,350],
-    [720,350],
+    [750,350],
 ];
 
 // the gold needed to upgrade 
