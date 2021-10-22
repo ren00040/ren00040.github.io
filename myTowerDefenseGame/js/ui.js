@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-09 23:51:20
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-21 14:16:15
+ * @LastEditTime: 2021-10-21 14:19:07
  * @FilePath: /myTowerDefenseGame/js/ui.js
  */
 
@@ -22,7 +22,7 @@ function refreshGold() {
     playerPanel.innerHTML = `
     <div>Gems: ${game.gems}</div>
     <div class = "gold">Gold: ${stageData.gold}</div>
-`;;
+`;
 }
 
 const flags = document.querySelectorAll(".flag");
