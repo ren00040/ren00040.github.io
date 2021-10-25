@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-14 23:12:30
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-21 23:09:29
+ * @LastEditTime: 2021-10-24 23:36:28
  * @FilePath: /myTowerDefenseGame/js/enemy.js
  */
 
@@ -19,7 +19,6 @@ class Enemy {
         this.healPoint = healPoint;
     }
 }
-
 
 // creat the enemy path way
 function createPathway(){
@@ -62,13 +61,12 @@ function drawEnemy() {
     enemyImg.onload = function () {
         drawEnemyAninmation();
     }
-    // draw the path way -- end
     
     // draw enemies
     let enemyWidth = 32;
     let enemyHeight = 32;
     function drawEnemyAninmation() {
-        window.requestAnimationFrame(animationStep);
+        window.requestAnimationFrame(enemyAnimationStep);
     }
     
     function drawEnemyFrame(frameX, frameY, canvasX, canvasY) {
@@ -82,6 +80,7 @@ function drawEnemy() {
      * Draw a sprite animation
      * Reference: Animating Sprite Sheets With JavaScript (Martin Himmel)
      * Link: https://dev.to/martyhimmel/animating-sprite-sheets-with-javascript-ag3
+     * Use setInterval to loop animation
      */
     const walkLoop = [0,1,0,2];
     let currentLoopIndex = 0;
@@ -89,11 +88,11 @@ function drawEnemy() {
     let pathwayIndex = 0;
     let stepIndex = 0;
     
-    function animationStep() {
+    function enemyAnimationStep() {
         let waypoint = pathway[pathwayIndex];
         let nextWaypoint = pathway[pathwayIndex+1];
         
-        var intervalID = setInterval(function(){
+        var intervalEnemyAnimation = setInterval(function(){
             waypoint = pathway[pathwayIndex];
             nextWaypoint = pathway[pathwayIndex+1];
             // refresh the canvas
@@ -106,6 +105,7 @@ function drawEnemy() {
             stepIndex++;
         
             let angle = offset[3];
+            let step = offset[2];
             let direction;
         
             if (angle>=45 && angle<=135)    { direction = 0; } // direction down
@@ -118,24 +118,20 @@ function drawEnemy() {
             if(currentLoopIndex >= walkLoop.length) {
                 currentLoopIndex = 0;
             }
-
-            console.log(stepIndex,offset[2],pathwayIndex);
-            console.log(pathwayIndex,waypoint);
         
-            if(stepIndex >= offset[2]) {
+            // When enemy arrivals the way point, go to the next
+            if(stepIndex >= step) {
                 pathwayIndex++;
                 stepIndex =0;
             }
         
+            // enemy arrivals the end point
             if(pathwayIndex >= pathway.length - 1) {
                 console.log("Destory the enemy");
-                clearInterval(intervalID); //Stop setInterval
+                clearInterval(intervalEnemyAnimation); //Stop setInterval
             }
             
         },200)
-        // update the sprite's animation
-        // window.requestAnimationFrame(animationStep);
-
     
     }
     
@@ -152,5 +148,7 @@ function drawEnemy() {
         return [x * enemy.speed / length ,y * enemy.speed / length, step, angle];
     }
 }
+
+// var intervalDrawEnemies = setInterval(drawEnemy,200);
 
 drawEnemy();

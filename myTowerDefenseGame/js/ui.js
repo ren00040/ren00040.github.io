@@ -1,30 +1,63 @@
 /*
  * @Date: 2021-10-09 23:51:20
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-21 14:19:07
+ * @LastEditTime: 2021-10-25 10:57:02
  * @FilePath: /myTowerDefenseGame/js/ui.js
  */
 
-// Gold and Gems panel
-
+// Player panel
 const playerPanel = document.createElement("div");
 playerPanel.setAttribute("id","player-panel");
 playerPanel.setAttribute("class","player-panel");
 
 document.querySelector("body").append(playerPanel);
-const playerPanelContent = `
-    <div>Gems: ${game.gems}</div>
-    <div class = "gold">Gold: ${stageData.gold}</div>
-`;
-playerPanel.innerHTML = playerPanelContent;
+
+// Gold and gems panel
+const goldGemPanel = document.createElement("div");
+goldGemPanel.setAttribute("id", "gold-gem-panel");
+goldGemPanel.setAttribute("class", "gold-gem-panel");
+
+document.querySelector(".player-panel").append(goldGemPanel);
 
 function refreshGold() {
-    playerPanel.innerHTML = `
+    goldGemPanel.innerHTML = `
     <div>Gems: ${game.gems}</div>
     <div class = "gold">Gold: ${stageData.gold}</div>
 `;
 }
+refreshGold();
 
+// Shwo/Hide waypoints Btn
+const waypointBtn = document.createElement("div");
+waypointBtn.setAttribute("id","waypoint-btn");
+waypointBtn.setAttribute("class","waypoint-btn");
+document.querySelector(".player-panel").append(waypointBtn);
+
+let isWaypointShow = true;
+
+document.querySelector(".player-panel").append(waypointBtn);
+
+// show/hide toggle
+function WaypointBtnToggle() {
+    waypointBtn.innerHTML = `${isWaypointShow?"show":"hide"}`;
+}
+WaypointBtnToggle();
+
+// waypointBtn enent
+waypointBtn.addEventListener("click",function(){
+    const enemyPath = document.querySelector("#enemy-path")
+    if(isWaypointShow) {
+        enemyPath.style.display = "none";
+        isWaypointShow = false;
+    }else{
+        enemyPath.style.display = "block";
+        isWaypointShow = true;
+    }
+    WaypointBtnToggle();
+});
+
+
+// Select all flags
 const flags = document.querySelectorAll(".flag");
 
 // Create towerSelectPanel
@@ -138,7 +171,6 @@ function disHighlightFlag() {
  * If settle a tower then turn off "placeable" 
 */
 function settleTower(flag) {
-    console.log(towerType);
     switch (towerType) {
         case "archer":
             if(stageData.gold >= towerUpgradeGold[0][1]) {

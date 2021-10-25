@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-05 22:32:53
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-17 23:37:50
+ * @LastEditTime: 2021-10-25 10:53:19
  * @FilePath: /myTowerDefenseGame/css/style.css
  */
 
@@ -41,4 +41,14 @@
     top:5%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.waypoint-btn {
+    background-color: gray;
+}
+
+.waypoint-btn:hover {
+    background-color: aqua;
+    cursor: pointer;
 }
