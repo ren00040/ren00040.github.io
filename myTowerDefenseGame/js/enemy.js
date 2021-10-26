@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-14 23:12:30
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-24 23:36:28
+ * @LastEditTime: 2021-10-26 12:32:18
  * @FilePath: /myTowerDefenseGame/js/enemy.js
  */
 
@@ -53,102 +53,69 @@ function createPathway(){
 // draw the path way
 createPathway();
 
-function drawEnemy() {
-    let enemyImg = new Image();
-    enemyImg.src = "./resource/enemies/fox.png";
-    let enemy = new Enemy("fox", 10, enemyImg.src, 100)
-    
-    enemyImg.onload = function () {
-        drawEnemyAninmation();
-    }
-    
-    // draw enemies
-    let enemyWidth = 32;
-    let enemyHeight = 32;
-    function drawEnemyAninmation() {
-        window.requestAnimationFrame(enemyAnimationStep);
-    }
-    
-    function drawEnemyFrame(frameX, frameY, canvasX, canvasY) {
-        enemyCTX.drawImage(enemyImg,
-                            frameX * enemyWidth, frameY * enemyHeight, enemyWidth, enemyHeight,
-                            canvasX, canvasY, enemyWidth, enemyHeight);
-    
-    }
-    
-    /* 
-     * Draw a sprite animation
-     * Reference: Animating Sprite Sheets With JavaScript (Martin Himmel)
-     * Link: https://dev.to/martyhimmel/animating-sprite-sheets-with-javascript-ag3
-     * Use setInterval to loop animation
-     */
-    const walkLoop = [0,1,0,2];
-    let currentLoopIndex = 0;
-    
-    let pathwayIndex = 0;
-    let stepIndex = 0;
-    
-    function enemyAnimationStep() {
-        let waypoint = pathway[pathwayIndex];
-        let nextWaypoint = pathway[pathwayIndex+1];
-        
-        var intervalEnemyAnimation = setInterval(function(){
-            waypoint = pathway[pathwayIndex];
-            nextWaypoint = pathway[pathwayIndex+1];
-            // refresh the canvas
-            enemyCTX.clearRect(0,0,mapCanvas.width, mapCanvas.height);
-            // get the step distance 
-            let offset =  getOffset(waypoint,nextWaypoint);
-            let currentPosX = waypoint[0] + offset[0]* stepIndex;
-            let currentPosY = waypoint[1] + offset[1]* stepIndex;
-        
-            stepIndex++;
-        
-            let angle = offset[3];
-            let step = offset[2];
-            let direction;
-        
-            if (angle>=45 && angle<=135)    { direction = 0; } // direction down
-            if (angle>-45 && angle<45)      { direction = 1; } // direction right
-            if (angle>=-135 && angle<=-45)  { direction = 2; } // direction up
-            if (angle<-135 || angle>135)    { direction = 3; } // direction left
-        
-            
-            drawEnemyFrame(walkLoop[currentLoopIndex++],direction,currentPosX-enemyWidth/2,currentPosY-enemyHeight/2);
-            if(currentLoopIndex >= walkLoop.length) {
-                currentLoopIndex = 0;
-            }
-        
-            // When enemy arrivals the way point, go to the next
-            if(stepIndex >= step) {
-                pathwayIndex++;
-                stepIndex =0;
-            }
-        
-            // enemy arrivals the end point
-            if(pathwayIndex >= pathway.length - 1) {
-                console.log("Destory the enemy");
-                clearInterval(intervalEnemyAnimation); //Stop setInterval
-            }
-            
-        },200)
-    
-    }
-    
-    //  get the step distance, the step num needed, the angle between waypoint and the horizontal
-    function getOffset(waypoint, nextWaypoint) {
-        let x = nextWaypoint[0] - waypoint[0];
-        let y = nextWaypoint[1] - waypoint[1];
-        let length = Math.sqrt(x*x +y*y);
-        let step = Math.ceil(length/enemy.speed);
-    
-        // get the angle between waypoint and the horizontal
-        let angle =  Math.atan2(y,x)*180/Math.PI;
-    
-        return [x * enemy.speed / length ,y * enemy.speed / length, step, angle];
-    }
+// Create enemies
+const enemies = []; // create a array to put all enemies
+const enemyImg = new Image(); 
+enemyImg.src = "./resource/enemies/fox.png";
+let enemiesPosition = []; //stroe all enemies' position
+let enemyWidth = 32;
+let enemyHight = 32;
+
+for (let index = 0; index < stageData.enemiesAmount; index++) {
+    let enemy = new Enemy("fox",10,enemyImg.src,100);
+    enemiesPosition[index] = pathway[0];
+    enemies.push(enemy);
 }
 
-// var intervalDrawEnemies = setInterval(drawEnemy,200);
+//
+window.requestAnimationFrame(drawEnemies);
 
-drawEnemy();
+let enemyLoop = 0; // enemy's animation loop
+let enemyQuantity = 0; // enemies quantity 
+
+let pathwayIndex = 0;
+let waypoint = pathway[pathwayIndex];
+let nextWaypoint = pathway[pathwayIndex+1];
+
+// Draw enemies
+function drawEnemies() {
+    var intervalDrawEnemies = setInterval(function(){
+        enemyCTX.clearRect(0,0,mapCanvas.width, mapCanvas.height);
+        if(enemyQuantity >= stageData.enemiesAmount) {
+            enemyQuantity = stageData.enemiesAmount - 1;
+        }
+
+        for(let enemyAmount = 0; enemyAmount <= enemyQuantity; enemyAmount++) {
+            enemiesPosition[enemyAmount] = enemyStepOffset(enemyAmount,waypoint,nextWaypoint);
+            console.log(enemiesPosition);
+            enemyCTX.drawImage(enemyImg,
+                enemyLoop*32, 0, 32, 32, 200, 100-enemyAmount*32, 32, 32);
+        }
+
+        enemyQuantity++;
+        enemyLoop++;
+        
+        if(enemyLoop >= 4) {
+            enemyLoop=0;
+        }
+    },500);
+}
+
+function enemyStepOffset(index,waypoint,nextWaypoint){
+    let x = nextWaypoint[0] - waypoint[0];
+    let y = nextWaypoint[1] - waypoint[1];
+    let length = Math.sqrt(x*x, +y*y);
+    let step = Math.ceil(length/enemies[index].speed);
+
+    // get the angle between waypoint and the horizontal
+    let angle =  Math.atan2(y,x)*180/Math.PI;
+
+    return [x * enemies[index].speed / length ,y * enemies[index].speed / length, step, angle];
+}
+
+function drawEnemyFrame(frameX, frameY, canvasX, canvasY) {
+    enemyCTX.drawImage(enemyImg,
+                        frameX * enemyWidth, frameY * enemyHeight, enemyWidth, enemyHeight,
+                        canvasX, canvasY, enemyWidth, enemyHeight);
+
+}
