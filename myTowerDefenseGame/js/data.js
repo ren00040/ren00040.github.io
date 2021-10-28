@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-07 00:32:05
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-26 00:40:32
+ * @LastEditTime: 2021-10-28 01:23:15
  * @FilePath: /myTowerDefenseGame/js/data.js
  */
 
@@ -14,7 +14,7 @@ const game = {
 const stageData = {
     gold : 100, // Initial gold
     wave : 5,   // Number of enemies waves
-    enemiesAmount : 3, // Amount of all enemies
+    enemiesAmount : 5, // Amount of all enemies
     life: 10 //player's life
 }
 
