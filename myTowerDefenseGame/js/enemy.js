@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-14 23:12:30
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-28 22:28:54
+ * @LastEditTime: 2021-10-29 13:30:18
  * @FilePath: /myTowerDefenseGame/js/enemy.js
  */
 
@@ -68,7 +68,7 @@ let enemyHeight = 32;
 
 // prepare all enemies
 for (let index = 0; index < stageData.enemiesAmount; index++) {
-    let enemy = new Enemy("fox",20,enemyImg.src,100,pathway[0],0,0);
+    let enemy = new Enemy("fox",10,enemyImg.src,100,pathway[0],0,0);
     enemies.push(enemy);
 }
 
@@ -82,6 +82,7 @@ function drawAllEnemies() {
     let enemyLoop = 0; // enemy's animation loop
     let enemiesAmount = 1;
     let enemiesSpace = 0; // control the space between enemies
+    let destroy = false;
 
     // call a fuction with a delay time
     var intervalDrawEnemies = setInterval(function(){
@@ -93,7 +94,7 @@ function drawAllEnemies() {
          * Use enemyMove() to draw the enemy's current position
         */
 
-        if(enemiesSpace >= 3) { 
+        if(enemiesSpace >= 5 && !destroy) { 
             if (enemiesAmount < stageData.enemiesAmount) {
                 enemiesAmount++;
             }
@@ -106,18 +107,22 @@ function drawAllEnemies() {
             let stepsAngle;
             let totalSteps;
             let step;
+            console.log("index: "+index+" waypointIndex: "+enemies[index].waypointIndex);
             if (enemies[index].waypointIndex < pathway.length -1) {
                 offset = enemyStepOffset(index,enemies[index].position,pathway[enemies[index].waypointIndex+1]);
                 // degrees turn to radians
                 stepsAngle = degreesToRadians(offset[3]);
                 totalSteps = getTotalSteps(index,pathway[enemies[index].waypointIndex],pathway[enemies[index].waypointIndex+1]);
             } else {
-                console.log("index: "+index+" waypointIndex: "+enemies[index].waypointIndex);
+                // push out the first enemy in the array
+                enemies.shift();
+                enemiesAmount--;
+                // console.log("destroy! Amount:"+enemiesAmount);
+                destroy = true;
                 return;
             }
 
             step = enemies[index].step;
-            
             
             // draw enemy animation
             if(enemies[index].step < totalSteps-1) {
@@ -136,7 +141,7 @@ function drawAllEnemies() {
                     stepsAngle = degreesToRadians(offset[3]);
                     enemyMove(index,enemies[index].position,enemyLoop,stepsAngle,step);
                 }else {
-                    console.log("Destroy the enemy! ");
+                    // console.log("Destroy the enemy! ");
                 }
             }
                         
@@ -159,7 +164,7 @@ function drawAllEnemies() {
 
         enemiesSpace++;
 
-    },200);
+    },100);
 }
 
 // get the every step offset
@@ -204,4 +209,9 @@ function getTotalSteps(index, waypoint, nextwaypoint) {
     let y = waypoint[1] - nextwaypoint[1];
     let length = Math.sqrt((x*x)+(y*y));
     return Math.ceil(length/enemies[index].speed);
+}
+
+function enemyHP(enemyIndex,enemyPos,damage) {
+    console.log("enemy is attacked and damaged");
+    enemyCTX.rect(enemyPos[0],enemyPos[1],10,2);
 }
