@@ -1,9 +1,11 @@
 /*
  * @Date: 2021-10-10 23:32:35
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-27 00:01:55
+ * @LastEditTime: 2021-10-28 13:12:52
  * @FilePath: /myTowerDefenseGame/js/method.js
  */
+
+var pi = Math.PI;
 
 // Convert the browser coordinates to the canvs coordinates
 function positionFix(x,y) {
@@ -26,8 +28,12 @@ function positionFixBack(x,y) {
 }
 
 // degrees to radians
-function degrees_to_radians(degrees)
+function degreesToRadians(degrees)
 {
-  var pi = Math.PI;
   return degrees * (pi/180);
+}
+
+// radians to degrees
+function radiansToDegrees(radians) {
+    return radians*180/pi;
 }

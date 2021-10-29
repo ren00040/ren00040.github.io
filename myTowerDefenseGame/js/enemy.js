@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-14 23:12:30
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-28 11:37:05
+ * @LastEditTime: 2021-10-28 22:28:54
  * @FilePath: /myTowerDefenseGame/js/enemy.js
  */
 
@@ -75,68 +75,91 @@ for (let index = 0; index < stageData.enemiesAmount; index++) {
 // Call the draw enemies fuction per frame
 window.requestAnimationFrame(drawAllEnemies);
 
-let enemyLoop = 0; // enemy's animation loop
-let enemiesAmount = 0;
+
 
 // Draw all enemies
 function drawAllEnemies() {
+    let enemyLoop = 0; // enemy's animation loop
+    let enemiesAmount = 1;
+    let enemiesSpace = 0; // control the space between enemies
+
     // call a fuction with a delay time
     var intervalDrawEnemies = setInterval(function(){
         // clear the whole enemyCanvas
         enemyCTX.clearRect(0,0,mapCanvas.width, mapCanvas.height);
 
         /* 
-         * Draw an enemy per 1s
-         * Use setTimeout to increase one enemy every 1.5 second untill the quantity reaches stageData.enemiesAmount
          * Use enemyStepOffset() to get the every step offset
          * Use enemyMove() to draw the enemy's current position
         */
-        if(enemiesAmount < stageData.enemiesAmount){
-            let enemyIntervals = 1500; // Time between each enemy
-            window.setTimeout(enemiesAmount++,enemyIntervals);
+
+        if(enemiesSpace >= 3) { 
+            if (enemiesAmount < stageData.enemiesAmount) {
+                enemiesAmount++;
+            }
+            enemiesSpace = 0;
         }
 
         // Draw each enemy
         for (let index = 0; index < enemiesAmount; index++) {
-            let offset = enemyStepOffset(index,enemies[index].position,pathway[enemies[index].waypointIndex+1]);
-            let stepsAngle = degrees_to_radians(offset[3]);
+            let offset;
+            let stepsAngle;
+            let totalSteps;
+            let step;
+            if (enemies[index].waypointIndex < pathway.length -1) {
+                offset = enemyStepOffset(index,enemies[index].position,pathway[enemies[index].waypointIndex+1]);
+                // degrees turn to radians
+                stepsAngle = degreesToRadians(offset[3]);
+                totalSteps = getTotalSteps(index,pathway[enemies[index].waypointIndex],pathway[enemies[index].waypointIndex+1]);
+            } else {
+                console.log("index: "+index+" waypointIndex: "+enemies[index].waypointIndex);
+                return;
+            }
 
-            let totalSteps = getTotalSteps(index,pathway[enemies[index].waypointIndex],pathway[enemies[index].waypointIndex+1]);
-            let step = enemies[index].step;
+            step = enemies[index].step;
+            
             
             // draw enemy animation
             if(enemies[index].step < totalSteps-1) {
                 enemyMove(index,enemies[index].position,enemyLoop,stepsAngle,step);
                 enemies[index].step++;
-            }else {
-                enemies[index].waypointIndex++;
-                enemies[index].step = 1;
-
-                offset = enemyStepOffset(index,enemies[index].position,pathway[enemies[index].waypointIndex+1]);
-                stepsAngle = degrees_to_radians(offset[3]);
-                totalSteps = getTotalSteps(index,pathway[enemies[index].waypointIndex],pathway[enemies[index].waypointIndex+1]);
-                enemyMove(index,enemies[index].position,enemyLoop,stepsAngle,step);
             }
-            
-            console.log("index:"+index+"; totalSteps:"+totalSteps+"; step:"+step+"; position:"+enemies[index].position);
-            
+            // turn to the next waypoint and draw the first step of the new waypoint
+            else {
+                // turn to the next waypoint
+                enemies[index].waypointIndex++;
+
+                if (enemies[index].waypointIndex < pathway.length -1) {
+                    enemies[index].step = 1;
+                    // draw the first step of the new waypoint
+                    offset = enemyStepOffset(index,enemies[index].position,pathway[enemies[index].waypointIndex+1]);
+                    stepsAngle = degreesToRadians(offset[3]);
+                    enemyMove(index,enemies[index].position,enemyLoop,stepsAngle,step);
+                }else {
+                    console.log("Destroy the enemy! ");
+                }
+            }
+                        
+            // update the enemy's current position
             let offsetX = offset[0];
             let offsetY = offset[1];
             let currentPosX = enemies[index].position[0];
             let currentPosY = enemies[index].position[1];
             currentPosX += offsetX;
             currentPosY += offsetY;
-            
             enemies[index].position = [currentPosX, currentPosY];
         }
 
         // set the sprite's animation place
+        // enemyLoop(frome 0 to 3) means the one of the sprite's frames
         enemyLoop++;
         if(enemyLoop >= 4) {
             enemyLoop=0;
         }
 
-    },500);
+        enemiesSpace++;
+
+    },200);
 }
 
 // get the every step offset
@@ -154,13 +177,25 @@ function enemyStepOffset(index,currentPoint,nextPoint){
 
 // draw the enemy's current position
 function enemyMove(enemyIndex,enemyPos,loop,angle,step) {
-    drawEnemyFrame(loop,0,enemyPos[0],enemyPos[1]);
+    // radians turn to degrees
+    angle = radiansToDegrees(angle);
+    let direction;
+
+    // use difference sprite's part according to angle
+    if (angle>=45 && angle<=135)    { direction = 0; } // direction down
+    if (angle>-45 && angle<45)      { direction = 1; } // direction right
+    if (angle>=-135 && angle<=-45)  { direction = 2; } // direction up
+    if (angle<-135 || angle>135)    { direction = 3; } // direction left
+
+    // draw the enemy sprite's frame
+    drawEnemyFrame(loop,direction,enemyPos[0],enemyPos[1]);
 }
 
+// draw an enemy sprite's frame
 function drawEnemyFrame(frameX, frameY, canvasX, canvasY) {
     enemyCTX.drawImage(enemyImg,
                         frameX * enemyWidth, frameY * enemyHeight, enemyWidth, enemyHeight,
-                        canvasX, canvasY, enemyWidth, enemyHeight);
+                        canvasX-(enemyWidth/2), canvasY-enemyHeight/2, enemyWidth, enemyHeight);
 }
 
 // Calculate how many steps it takes to go to next waypoint
