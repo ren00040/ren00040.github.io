@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-14 23:12:30
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-29 13:30:18
+ * @LastEditTime: 2021-10-30 00:55:41
  * @FilePath: /myTowerDefenseGame/js/enemy.js
  */
 
@@ -107,7 +107,8 @@ function drawAllEnemies() {
             let stepsAngle;
             let totalSteps;
             let step;
-            console.log("index: "+index+" waypointIndex: "+enemies[index].waypointIndex);
+            
+            // console.log("index: "+index+" waypointIndex: "+enemies[index].waypointIndex);
             if (enemies[index].waypointIndex < pathway.length -1) {
                 offset = enemyStepOffset(index,enemies[index].position,pathway[enemies[index].waypointIndex+1]);
                 // degrees turn to radians
@@ -119,6 +120,8 @@ function drawAllEnemies() {
                 enemiesAmount--;
                 // console.log("destroy! Amount:"+enemiesAmount);
                 destroy = true;
+                mapShake();
+                console.log("shake");
                 return;
             }
 
@@ -126,7 +129,7 @@ function drawAllEnemies() {
             
             // draw enemy animation
             if(enemies[index].step < totalSteps-1) {
-                enemyMove(index,enemies[index].position,enemyLoop,stepsAngle,step);
+                enemyMove(index,enemies[index].position,enemyLoop,stepsAngle,step,enemies[index].healPoint);
                 enemies[index].step++;
             }
             // turn to the next waypoint and draw the first step of the new waypoint
@@ -139,7 +142,7 @@ function drawAllEnemies() {
                     // draw the first step of the new waypoint
                     offset = enemyStepOffset(index,enemies[index].position,pathway[enemies[index].waypointIndex+1]);
                     stepsAngle = degreesToRadians(offset[3]);
-                    enemyMove(index,enemies[index].position,enemyLoop,stepsAngle,step);
+                    enemyMove(index,enemies[index].position,enemyLoop,stepsAngle,step,enemies[index].healPoint);
                 }else {
                     // console.log("Destroy the enemy! ");
                 }
@@ -181,7 +184,7 @@ function enemyStepOffset(index,currentPoint,nextPoint){
 }
 
 // draw the enemy's current position
-function enemyMove(enemyIndex,enemyPos,loop,angle,step) {
+function enemyMove(enemyIndex,enemyPos,loop,angle,step,healPoint) {
     // radians turn to degrees
     angle = radiansToDegrees(angle);
     let direction;
@@ -193,14 +196,21 @@ function enemyMove(enemyIndex,enemyPos,loop,angle,step) {
     if (angle<-135 || angle>135)    { direction = 3; } // direction left
 
     // draw the enemy sprite's frame
-    drawEnemyFrame(loop,direction,enemyPos[0],enemyPos[1]);
+    drawEnemyFrame(loop,direction,enemyPos[0],enemyPos[1],healPoint);
 }
 
 // draw an enemy sprite's frame
-function drawEnemyFrame(frameX, frameY, canvasX, canvasY) {
+function drawEnemyFrame(frameX, frameY, canvasX, canvasY,healPoint) {
+    let red = (100-healPoint)*255/100;
+    let green = (healPoint/100)*255;
+    let color = `rgb(${red},${green},0)`;
+    let currentHp = 100;
+    enemyCTX.fillStyle = color;
     enemyCTX.drawImage(enemyImg,
                         frameX * enemyWidth, frameY * enemyHeight, enemyWidth, enemyHeight,
                         canvasX-(enemyWidth/2), canvasY-enemyHeight/2, enemyWidth, enemyHeight);
+    // draw the enemy's HP
+    enemyCTX.fillRect(canvasX-3,canvasY-10,10*healPoint/currentHp,2);
 }
 
 // Calculate how many steps it takes to go to next waypoint
@@ -209,9 +219,4 @@ function getTotalSteps(index, waypoint, nextwaypoint) {
     let y = waypoint[1] - nextwaypoint[1];
     let length = Math.sqrt((x*x)+(y*y));
     return Math.ceil(length/enemies[index].speed);
-}
-
-function enemyHP(enemyIndex,enemyPos,damage) {
-    console.log("enemy is attacked and damaged");
-    enemyCTX.rect(enemyPos[0],enemyPos[1],10,2);
 }
