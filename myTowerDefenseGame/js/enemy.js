@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-14 23:12:30
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-30 00:55:41
+ * @LastEditTime: 2021-11-05 00:42:32
  * @FilePath: /myTowerDefenseGame/js/enemy.js
  */
 
@@ -65,17 +65,16 @@ const enemyImg = new Image();
 enemyImg.src = "./resource/enemies/fox.png";
 let enemyWidth = 32;
 let enemyHeight = 32;
+let enemySpeed = 4;
 
 // prepare all enemies
 for (let index = 0; index < stageData.enemiesAmount; index++) {
-    let enemy = new Enemy("fox",10,enemyImg.src,100,pathway[0],0,0);
+    let enemy = new Enemy("fox",enemySpeed,enemyImg.src,100,pathway[0],0,0);
     enemies.push(enemy);
 }
 
 // Call the draw enemies fuction per frame
 window.requestAnimationFrame(drawAllEnemies);
-
-
 
 // Draw all enemies
 function drawAllEnemies() {
@@ -85,90 +84,152 @@ function drawAllEnemies() {
     let destroy = false;
 
     // call a fuction with a delay time
-    var intervalDrawEnemies = setInterval(function(){
-        // clear the whole enemyCanvas
-        enemyCTX.clearRect(0,0,mapCanvas.width, mapCanvas.height);
+    var intervalDrawEnemies = setInterval(enemiesMoving,100);
+    var intervalAttack = setInterval(attack,100);
+
+    // Render enemies moving
+    function enemiesMoving() {
+    // clear the whole enemyCanvas
+    enemyCTX.clearRect(0,0,mapCanvas.width, mapCanvas.height);
+
+    /* 
+     * Use enemyStepOffset() to get the every step offset
+     * Use enemyMove() to draw the enemy's current position
+    */
+
+    if(enemiesSpace >= 5 && !destroy) { 
+        if (enemiesAmount < stageData.enemiesAmount) {
+            enemiesAmount++;
+        }
+        enemiesSpace = 0;
+    }
+
+    // Draw each enemy
+    for (let index = 0; index < enemiesAmount; index++) {
+        let offset;
+        let stepsAngle;
+        let totalSteps;
+        let step;
+        
+        if (enemies[index].waypointIndex < pathway.length -1) {
+            offset = enemyStepOffset(index,enemies[index].position,pathway[enemies[index].waypointIndex+1]);
+            // degrees turn to radians
+            stepsAngle = degreesToRadians(offset[3]);
+            totalSteps = getTotalSteps(index,pathway[enemies[index].waypointIndex],pathway[enemies[index].waypointIndex+1]);
+        } else {
+            // push out the first enemy in the array
+            enemies.shift();
+            enemiesAmount--;
+            destroy = true;
+            mapShake();
+            console.log("shake");
+            return;
+        }
+
+        step = enemies[index].step;
+        
+        // draw enemy animation
+        if(enemies[index].step < totalSteps-1) {
+            enemyMove(index,enemies[index].position,enemyLoop,stepsAngle,step,enemies[index].healPoint);
+            enemies[index].step++;
+        }
+        // turn to the next waypoint and draw the first step of the new waypoint
+        else {
+            // turn to the next waypoint
+            enemies[index].waypointIndex++;
+
+            if (enemies[index].waypointIndex < pathway.length -1) {
+                enemies[index].step = 1;
+                // draw the first step of the new waypoint
+                offset = enemyStepOffset(index,enemies[index].position,pathway[enemies[index].waypointIndex+1]);
+                stepsAngle = degreesToRadians(offset[3]);
+                enemyMove(index,enemies[index].position,enemyLoop,stepsAngle,step,enemies[index].healPoint);
+            }else {
+                // console.log("Destroy the enemy! ");
+            }
+        }
+                    
+        // update the enemy's current position
+        let offsetX = offset[0];
+        let offsetY = offset[1];
+        let currentPosX = enemies[index].position[0];
+        let currentPosY = enemies[index].position[1];
+        currentPosX += offsetX;
+        currentPosY += offsetY;
+        enemies[index].position = [currentPosX, currentPosY];
+    }
+
+    // set the sprite's animation place
+    // enemyLoop(frome 0 to 3) means the one of the sprite's frames
+    enemyLoop++;
+    if(enemyLoop >= 4) {
+        enemyLoop=0;
+    }
+
+    enemiesSpace++;
+}
+
+    /* 
+     * tower attack the enemies
+     * 1. get all tower's position
+     * 2. judge if the enemy nearby the tower
+     * 3. draw all bullets according to tower style and if should shoot
+     * 4. boom(bullets disappear) and reduce the enemies' HP
+     */
+    function attack() {
+        // console.log("1. get all tower's position");
+        // console.log(towers);
+        // console.log("2. judge if the enemy nearby the towe");
+        calDistance();
 
         /* 
-         * Use enemyStepOffset() to get the every step offset
-         * Use enemyMove() to draw the enemy's current position
+         * Calculate the distance between the enemy and the tower
+         * if the distance <= tower.range turn on the shooting toggle
+         */
+        function calDistance() {
+            towers.forEach(tower => {
+                let x = pxToNum(tower.position[0])+18;
+                let y = pxToNum(tower.position[1])+14;
+                let towerPosition = positionFixBack(x,y);
+                enemies.forEach(enemy => {
+                    let enemyPosition = enemy.position;
+                    let distance = getDistance(towerPosition,enemyPosition)
+                    if(distance <= tower.range) {
+                        tower.isShoot = true;
+                        // shoot bullets at the enemy from tower
+                        shooting(tower,enemy);
+                    }else tower.isShoot = false;
+                });
+            });
+        }
+        // 3. draw all bullets according to tower style and if should shoot;
+        function shooting(tower,enemy) {
+            let enemyPos = enemy.position;
+            let bulletPos = tower.bulletPos;
+            
+            // linear interpolation between enemy and bullet
+            let delta = pSub(bulletPos,enemyPos);
+            // get the distance between enemy and bullet
+            let distance = getDistance(bulletPos,enemyPos);
+
+            // calculate the next position fo the bullet
+            let offsetX = bulletPos[0] + tower.bulletSpeed * delta[0] / distance;
+            let offsetY = bulletPos[1] + tower.bulletSpeed * delta[1] / distance;
+            tower.bulletPos = [offsetX,offsetY];
+
+            // draw a bullet
+            enemyCTX.beginPath();
+            enemyCTX.arc(tower.bulletPos[0], tower.bulletPos[1], 3, 0, 2 * Math.PI);
+            enemyCTX.stroke();
+        }
+
+        /* 
+        console.log("4. boom(bullets disappear) and reduce the enemies' HP");
         */
+    }
 
-        if(enemiesSpace >= 5 && !destroy) { 
-            if (enemiesAmount < stageData.enemiesAmount) {
-                enemiesAmount++;
-            }
-            enemiesSpace = 0;
-        }
-
-        // Draw each enemy
-        for (let index = 0; index < enemiesAmount; index++) {
-            let offset;
-            let stepsAngle;
-            let totalSteps;
-            let step;
-            
-            // console.log("index: "+index+" waypointIndex: "+enemies[index].waypointIndex);
-            if (enemies[index].waypointIndex < pathway.length -1) {
-                offset = enemyStepOffset(index,enemies[index].position,pathway[enemies[index].waypointIndex+1]);
-                // degrees turn to radians
-                stepsAngle = degreesToRadians(offset[3]);
-                totalSteps = getTotalSteps(index,pathway[enemies[index].waypointIndex],pathway[enemies[index].waypointIndex+1]);
-            } else {
-                // push out the first enemy in the array
-                enemies.shift();
-                enemiesAmount--;
-                // console.log("destroy! Amount:"+enemiesAmount);
-                destroy = true;
-                mapShake();
-                console.log("shake");
-                return;
-            }
-
-            step = enemies[index].step;
-            
-            // draw enemy animation
-            if(enemies[index].step < totalSteps-1) {
-                enemyMove(index,enemies[index].position,enemyLoop,stepsAngle,step,enemies[index].healPoint);
-                enemies[index].step++;
-            }
-            // turn to the next waypoint and draw the first step of the new waypoint
-            else {
-                // turn to the next waypoint
-                enemies[index].waypointIndex++;
-
-                if (enemies[index].waypointIndex < pathway.length -1) {
-                    enemies[index].step = 1;
-                    // draw the first step of the new waypoint
-                    offset = enemyStepOffset(index,enemies[index].position,pathway[enemies[index].waypointIndex+1]);
-                    stepsAngle = degreesToRadians(offset[3]);
-                    enemyMove(index,enemies[index].position,enemyLoop,stepsAngle,step,enemies[index].healPoint);
-                }else {
-                    // console.log("Destroy the enemy! ");
-                }
-            }
-                        
-            // update the enemy's current position
-            let offsetX = offset[0];
-            let offsetY = offset[1];
-            let currentPosX = enemies[index].position[0];
-            let currentPosY = enemies[index].position[1];
-            currentPosX += offsetX;
-            currentPosY += offsetY;
-            enemies[index].position = [currentPosX, currentPosY];
-        }
-
-        // set the sprite's animation place
-        // enemyLoop(frome 0 to 3) means the one of the sprite's frames
-        enemyLoop++;
-        if(enemyLoop >= 4) {
-            enemyLoop=0;
-        }
-
-        enemiesSpace++;
-
-    },100);
 }
+
 
 // get the every step offset
 function enemyStepOffset(index,currentPoint,nextPoint){

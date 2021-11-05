@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-10-06 23:05:22
  * @LastEditors: Ke Ren
- * @LastEditTime: 2021-10-16 23:45:13
+ * @LastEditTime: 2021-11-05 00:42:04
  * @FilePath: /myTowerDefenseGame/js/tower.js
  */
 
@@ -14,6 +14,10 @@ class Tower {
         maxDamage,
         level,
         img,
+        position,
+        isShoot,
+        bulletPos,
+        bulletSpeed
     ){
         this.name = name;
         this.type = type;
@@ -22,8 +26,14 @@ class Tower {
         this.maxDamage = maxDamage;
         this.level = level;
         this.img = img;
+        this.position = position;
+        this.isShoot = isShoot;
+        this.bulletPos = bulletPos;
+        this.bulletSpeed = bulletSpeed;
     }
 }
+
+const towers = [];
 
 // Create a flag img and container
 const flag = [];
@@ -67,6 +77,7 @@ function drawTower(theFlag,towerType) {
     let fixY = Number(theFlag.style.top.replace('px','')) + Number(40);
     let positionX = theFlag.style.left;
     let positionY = fixY + "px";
+    let bulletPos = [Number(theFlag.style.left.replace('px','')),fixY]
 
     // set the tower's default attack type 
     let attackType;
@@ -76,16 +87,16 @@ function drawTower(theFlag,towerType) {
     switch(towerType) {
         case "archer":
             attackType = "single";
-            range = 80;
+            range = 200;
             break;
         case "warior":
             attackType = "aoe";
-            range = 40;
+            range = 80;
             break;
     }
 
     // create a tower by html
-    const newTower = new Tower(towerType, attackType, range, 3, 5, 1, new Image());
+    const newTower = new Tower(towerType, attackType, range, 3, 5, 1, new Image(),[positionX,positionY],false,bulletPos,5);
     const newTowerContent = `
         <img src = "./resource/${towerType}/${towerType}1.png">
         <div>${newTower.name}</div>
@@ -113,6 +124,8 @@ function drawTower(theFlag,towerType) {
     towerElement.innerHTML = newTowerContent;
     document.querySelector("body").append(towerElement);
 
+    towers.push(newTower);
+
     drawTowerRange(newTower, positionX, positionY);
 }
 
@@ -138,7 +151,10 @@ function drawTowerRange(newTower, positionX, positionY) {
     battleCTX.arc(x, y, newTower.range, 0, 2 * Math.PI);
     battleCTX.stroke();
 
-    console.log(x, y);
+    // set each tower's begining bullet position
+    newTower.bulletPos = [x,y];
+
+    console.log(newTower.bulletPos);
 }
 
 /*
