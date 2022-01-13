@@ -1,8 +1,8 @@
 <!--
- * @Date: 2021-07-29 14:53:06
+ * @Date: 2021-07-20 10:51:29
  * @LastEditors: Ke Ren
- * @LastEditTime: 2022-01-12 23:12:31
- * @FilePath: /portfolio/page/web-development.html
+ * @LastEditTime: 2022-01-12 23:12:26
+ * @FilePath: /portfolio/page/about.html
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -19,9 +19,6 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <!-- Fontawsome Icons-->
-    <script src="https://kit.fontawesome.com/aabe81573e.js" crossorigin="anonymous"></script>
-
     <!-- Cutstom CSS -->
     <link rel="stylesheet" href="../css/style.css">
 
@@ -37,7 +34,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../imgs/favicon.png">
-    <title>Ke Ren - Web Development</title>
+    <title>Ke Ren - About</title>
 </head>
 
 <body>
@@ -85,13 +82,13 @@
                             <a class="nav-link" aria-current="page" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
+                            <a class="nav-link menu-active" href="about.html">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="portfolio.html">Portfolio</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link menu-active dropdown-toggle" href="#" id="dropdown02" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-bs-toggle="dropdown"
                                 aria-expanded="false">Cases</a>
                             <ul class="dropdown-menu dropdown-light" aria-labelledby="dropdown02">
                                 <li><a class="dropdown-item dropdown-light-item" href="virtual.html">Virtual
@@ -132,14 +129,50 @@
     </header>
 
     <main class="page-content container text-center">
-        <!-- Web Development -->
-        <section id="virtual-reality" class="mb-2 mb-md-4 ">
-            <h2 class="pt-3">Web Development</h2>
-            <p>Internet connects you to the world. The website is the first door.</p>
-            <div class="web-develop-container">
-                <div><img src="../imgs/protolio-web-happyangels.png" alt="Happyangles"></div>
-                <div><img src="../imgs/protolio-web-toonice.png" alt="ToonIce"></div>
-                <div><img src="../imgs/protolio-web-strong.png" alt="The Strong"></div>
+        <!-- ABOUT -->
+        <section id="about">
+            <h2 class="pt-3">About Me</h2>
+            <p>I have over 15 years of 3D art design experience in games, animation and movies. Familiar with game and 
+                animation production processes. Skilled 3Ds Max, Adobe suite, Unity3D. Good at interaction design.Now I'm 
+                learning computer programming and trying to combine it with my previous design background. I've 
+                been trying to find something better for user experience.</p>
+            <div><img src="../imgs/about-768x512.jpeg" alt="People cheering in the office"></div>
+        </section>
+        <section id="team" class="team">
+            <h2 class="pt-3">Our Team</h2>
+            <div class="team-container">
+                <div class="staff">
+                    <img src="../imgs/staff1.png" alt="staff-1">
+                    <h3>Ke Ren</h3>
+                    <p class="grey-text">Interactive design Artist</p>
+                    <p class="team-text">More than 15 years of 3D art design experience in games, animation and movies. Familiar with game and animation production processes. Skilled 3Ds Max, Adobe suite, Unity3D. Good at interaction design.</p>
+                    <div class="personal-social-media">
+                        <a href="http://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="http://www.twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="http://www.linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="staff">
+                    <img src="../imgs/avatar.png" alt="staff-2">
+                    <h3>Looking forward to joining</h3>
+                    <p class="grey-text">Vacant</p>
+                    <p class="team-text">The studio is looking forward to your joining</p>
+                    <div class="personal-social-media">
+                        <a href="http://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="http://www.twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="http://www.linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="staff">
+                    <img src="../imgs/avatar.png" alt="staff-3">
+                    <h3>Looking forward to joining</h3>
+                    <p class="grey-text">Vacant</p>
+                    <p class="team-text">The studio is looking forward to your joining</p>
+                    <div class="personal-social-media">
+                        <a href="http://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="http://www.twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="http://www.linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
             </div>
         </section>
     </main>
@@ -181,10 +214,9 @@
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-        -->
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
 </body>
 
 </html>
