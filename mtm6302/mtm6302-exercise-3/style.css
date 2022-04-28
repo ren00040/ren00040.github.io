@@ -1,0 +1,20 @@
+#jobListFormContainer {
+  width: 720px;
+}
+
+#formButton,#saveInfo {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.hide {
+  display: none;
+}
+
+.submitted {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

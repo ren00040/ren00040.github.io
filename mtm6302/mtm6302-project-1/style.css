@@ -1,0 +1,52 @@
+.idea-box {
+  min-height: 150px;
+}
+
+#vote-container {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  gap: 5px;
+}
+
+#vote-container .btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#vote-container .btn>i {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+#input-container,
+#edit-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#input-container > .btn {
+  width:fit-content;
+  align-self: flex-end;
+}
+
+#edit-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: white;
+}
+
+#edit-container > .edit-buttons {
+  width:fit-content;
+  align-self: flex-end;
+}

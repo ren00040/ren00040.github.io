@@ -1,0 +1,62 @@
+<!--
+ * @Date: 2022-03-13 00:03:10
+ * @LastEditors: Ke Ren
+ * @LastEditTime: 2022-03-13 23:37:05
+ * @FilePath: /mtm6302-exercise-3/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Job List</title>
+</head>
+<body>
+  <div class="container mt-4" id="jobListFormContainer">
+    <h1>Job List</h1>
+    <form id="jobListForm">
+      <div class="save-info hide" id="saveInfo"></div>
+      <div class="mb-3">
+        <label for="userName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="userName" required>
+      </div>
+      <div class="mb-3">
+        <label for="formSelect" class="form-label">Current Employment Status</label>
+        <select class="form-select" id="formSelect" aria-label="Default select example" required>
+          <option value="">Select an option</option>
+          <option value="1">Full Time</option>
+          <option value="2">Part Time</option>
+          <option value="3">Unemployed</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="qualifications" class="form-label">What are your qualifications</label>
+        <textarea rows="6" type="text" class="form-control" id="qualifications" required></textarea>
+      </div>
+      <div class="mb-3 form-check" id="acceptTerms">
+        <input type="checkbox" class="form-check-input" id="formCheck" required>
+        <label class="form-check-label" for="formCheck">Accept the Terms and Conditions</label>
+      </div>
+      <div class="mb-3" id="formButton">
+        <button type="button" class="btn btn-secondary" id="saveButton">Save</button>
+        <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+      </div>
+    </form>
+    <div class="submitted">
+      <div class="alert alert-primary hide" id="popup" role="alert">
+        The application has been submitted.
+        <button type="button" class="btn-close" id="btnClose" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src = "script.js"></script>
+</body>
+</html>
